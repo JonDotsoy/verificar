@@ -1,0 +1,32 @@
+{
+  "name": "verificar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/verificar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonDotsoy/verificar/issues"
+  },
+  "homepage": "https://github.com/JonDotsoy/verificar#readme",
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "@types/react": "^16.8.23",
+    "@types/styled-components": "^4.1.18",
+    "next": "^9.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "styled-components": "^5.0.0-beta.8"
+  }
+}
