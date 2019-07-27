@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NavBarComponent from '../components/Navbar/NavBar.component';
 import ContainerComponent from '../components/Container.component';
 import Head from 'next/head';
-import ResetCSS from "../asserts/ResetCSS";
+import ResetCSS from "../components/ResetCSS";
 import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.component";
 
 const Background = styled.div`
