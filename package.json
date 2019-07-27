@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev"
   },
   "repository": {
     "type": "git",
@@ -18,15 +18,22 @@
   },
   "homepage": "https://github.com/JonDotsoy/verificar#readme",
   "devDependencies": {
+    "@types/glob": "^7.1.1",
     "@types/node": "^12.6.8",
     "@types/react": "^16.8.23",
     "@types/styled-components": "^4.1.18",
+    "@types/webpack": "^4.32.1",
+    "babel-plugin-styled-components": "^1.10.6",
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "typescript": "^3.5.3"
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "glob": "^7.1.4",
     "styled-components": "^5.0.0-beta.8"
   }
 }
