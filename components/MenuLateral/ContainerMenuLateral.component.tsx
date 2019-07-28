@@ -2,9 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 import ItemMenuComponent from "./ItemMenu.component";
 import BaselineTimelineCompoent from '../icons/BaselineTimeline.compoent';
-import BaselineTrending from '../icons/BaselineTrending';
-import BaselineBuild from '../icons/BaselineBuild';
-import BaselineMonetizationOn from '../icons/BaselineMonetizationOn';
+import BaselineTrending from '../icons/BaselineTrending.component';
+import BaselineBuild from '../icons/BaselineBuild.component';
+import BaselineMonetizationOn from '../icons/BaselineMonetizationOn.component';
 
 const Container = styled.div`
   background-color: black;

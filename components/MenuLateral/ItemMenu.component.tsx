@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { BaseSVGIcon } from '../icons/BaseSVGIcon';
+import { BaseSVGIcon } from '../icons/BaseSVGIcon.component';
 
 const Title = styled.div`
   flex: 1;
