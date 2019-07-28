@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
 import { BaseSVGIcon } from '../icons/BaseSVGIcon.component';
+import Link from 'next/link';
+import { useRouter } from 'next/dist/client/router';
 
-const Title = styled.div`
+const Title = styled.a`
+  display: inline-block;
   flex: 1;
   font-family: 'Source Sans Pro', sans-serif;
   color: #818e9a;
@@ -78,14 +81,23 @@ type Props = {
   title?: string;
   actived?: boolean;
   Icon?: any;
+  href?: string;
 };
 
 export default ({
   title = '{title}',
   actived = false,
   Icon = () => null,
-}: Props) =>
-  <ItemMenu actived={actived}>
+  href,
+}: Props) => {
+  const router = useRouter();
+
+  if (router && href && router.pathname) {
+    actived = router.pathname === href;
+  }
+
+  return <ItemMenu actived={actived}>
     <IconContainer><Icon></Icon></IconContainer>
-    <Title>{title}</Title>
-  </ItemMenu>
+    <Link href={href}><Title>{title}</Title></Link>
+  </ItemMenu>;
+}

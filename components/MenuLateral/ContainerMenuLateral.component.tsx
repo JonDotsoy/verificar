@@ -15,9 +15,9 @@ const Container = styled.div`
 
 export default () =>
   <Container>
-    <ItemMenuComponent Icon={BaselineTimelineCompoent} title="Inicio" actived={true} />
-    <ItemMenuComponent Icon={BaselineTimelineCompoent} title="Siniestros" />
-    <ItemMenuComponent Icon={BaselineTrending} title="Liquidadores" />
-    <ItemMenuComponent Icon={BaselineBuild} title="Talleres" />
-    <ItemMenuComponent Icon={BaselineMonetizationOn} title="Presupuesto" />
+    <ItemMenuComponent href="/inicio" Icon={BaselineTimelineCompoent} title="Inicio" actived={true} />
+    <ItemMenuComponent href="/siniestros" Icon={BaselineTimelineCompoent} title="Siniestros" />
+    <ItemMenuComponent href="/" Icon={BaselineTrending} title="Liquidadores" />
+    <ItemMenuComponent href="/" Icon={BaselineBuild} title="Talleres" />
+    <ItemMenuComponent href="/" Icon={BaselineMonetizationOn} title="Presupuesto" />
   </Container>

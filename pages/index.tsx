@@ -1,32 +1,11 @@
-import React from 'react';
-import styled from "styled-components";
-import NavBarComponent from '../components/Navbar/NavBar.component';
-import ContainerComponent from '../components/Container';
-import Head from 'next/head';
-import ResetCSS from "../components/ResetCSS";
-import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.component";
-
-const Background = styled.div`
-  background-image: url('/static/Vista-Gerente-Inicio-1.jpg');
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: center -100px;
-  height: 100vh;
-`;
+import { useRouter } from "next/dist/client/router";
 
 export default () => {
-  return <>
-    <Head>
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap" rel="stylesheet" />
-      <style dangerouslySetInnerHTML={{ __html: ResetCSS }}></style>
-    </Head>
+  const router = useRouter();
 
-    <NavBarComponent></NavBarComponent>
+  try {
+    router.push('/inicio');
+  } catch {}
 
-    <ContainerComponent>
-      <MenuNavComponent></MenuNavComponent>
-    </ContainerComponent>
-
-    {/* <Background /> */}
-  </>;
+  return null;
 }
