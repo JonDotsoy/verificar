@@ -1,5 +1,5 @@
+import React from 'react';
 import App, { Container } from 'next/app'
-import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 const theme = {}

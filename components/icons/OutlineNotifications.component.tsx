@@ -1,3 +1,4 @@
+import React from 'react';
 import { SVGIconNavbarWhite } from "./SVGIconNavbar";
 
 export default () =>

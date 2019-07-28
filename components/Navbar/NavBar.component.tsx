@@ -1,3 +1,4 @@
+import React from 'react';
 import OutlineSearch from '../icons/OutlineSearch.component';
 import OutlineNotifications from '../icons/OutlineNotifications.component';
 import OutlineSettings from '../icons/OutlineSettings.component';
@@ -35,6 +36,7 @@ const ItemMenu = styled.div`
 const ItemMenuName = styled.div`
   display: flex;
   align-self: center;
+  align-items: center;
 `;
 
 const ContainerAvatar = styled.div`

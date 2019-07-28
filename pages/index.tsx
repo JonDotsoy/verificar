@@ -1,4 +1,4 @@
-
+import React from 'react';
 import styled from "styled-components";
 import NavBarComponent from '../components/Navbar/NavBar.component';
 import ContainerComponent from '../components/Container.component';
@@ -27,6 +27,6 @@ export default () => {
       <MenuNavComponent></MenuNavComponent>
     </ContainerComponent>
 
-    <Background />
+    {/* <Background /> */}
   </>;
 }
