@@ -7,7 +7,6 @@ import path from 'path';
 import { writeFileSync, mkdirSync } from 'fs';
 import { EOL } from 'os';
 import { log } from 'util';
-import ResetCSS from '../components/ResetCSS';
 
 export async function run() {
   const all = await Promise.all(importall);
