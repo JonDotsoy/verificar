@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import BaselineTimelineCompoent from "../icons/BaselineTimeline.compoent";
+import { BaseSVGIcon } from '../icons/BaseSVGIcon';
 
 const Title = styled.div`
   flex: 1;
@@ -13,18 +13,44 @@ const IconContainer = styled.div`
   margin: 0px 28px;
 `;
 
-const sizeIcon = '35px';
+const style = ({ actived }: {
+  actived?: boolean;
+}) => actived && `
+  background-color: #0c1d25;
 
-const Icon = styled(BaselineTimelineCompoent)`
-  width: ${sizeIcon};
-  height: ${sizeIcon};
-  fill: #818e9a;
+  &::after {
+    content: "";
+    background-color: #fe9a01;
+    position: absolute;
+    width: 12px;
+    height: 24px;
+    z-index: 1;
+    top: 50%;
+    right: 0px;
+    margin-top: -12px;
+    border-radius: 100px 0px 0px 100px;
+  }
+
+  &::before {
+    content: "";
+    background-color: #fe9a01;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    z-index: 1;
+    width: 3px;
+  }
+
+  ${BaseSVGIcon} {
+    fill: #fe9a01;
+  }
+  ${Title} {
+    color: #fe9a01;
+  }
 `;
 
-type Props = {
-  title?: string;
-  actived?: boolean;
-};
+const sizeIcon = '35px';
 
 const ItemMenu = styled.div`
   display: flex;
@@ -33,45 +59,31 @@ const ItemMenu = styled.div`
   height: 70px;
   border-bottom: solid 1px #818e9a;
 
-  ${({ actived }: { actived?: boolean }) => actived && `
-    background-color: #0c1d25;
-
-    &::after {
-      content: "";
-      background-color: #fe9a01;
-      position: absolute;
-      width: 12px;
-      height: 24px;
-      z-index: 1;
-      top: 50%;
-      right: 0px;
-      margin-top: -12px;
-      border-radius: 100px 0px 0px 100px;
+  ${() => `
+  
+    ${BaseSVGIcon} {
+      width: ${sizeIcon};
+      height: ${sizeIcon};
+      fill: #818e9a;
     }
 
-    &::before {
-      content: "";
-      background-color: #fe9a01;
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      height: 100%;
-      z-index: 1;
-      width: 3px;
-    }
-
-    ${Icon} {
-      fill: #fe9a01;
-    }
-    ${Title} {
-      color: #fe9a01;
-    }
   `}
+  
+  ${style}
 `;
+
+// ---
+
+type Props = {
+  title?: string;
+  actived?: boolean;
+  Icon?: any;
+};
 
 export default ({
   title = '{title}',
   actived = false,
+  Icon = () => null,
 }: Props) =>
   <ItemMenu actived={actived}>
     <IconContainer><Icon></Icon></IconContainer>
