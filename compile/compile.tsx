@@ -27,7 +27,7 @@ export async function run() {
 
       const html = `
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap" rel="stylesheet" />
-        <style preload>${ResetCSS}</style>
+        <link href="https://unpkg.com/reset.css@2.0.2/reset.css" rel="stylesheet" />
 
         ${styles}
       
