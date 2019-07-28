@@ -17,7 +17,7 @@ export default () =>
   <Container>
     <ItemMenuComponent href="/inicio" Icon={BaselineTimelineCompoent} title="Inicio" actived={true} />
     <ItemMenuComponent href="/siniestros" Icon={BaselineTimelineCompoent} title="Siniestros" />
-    <ItemMenuComponent href="/" Icon={BaselineTrending} title="Liquidadores" />
-    <ItemMenuComponent href="/" Icon={BaselineBuild} title="Talleres" />
-    <ItemMenuComponent href="/" Icon={BaselineMonetizationOn} title="Presupuesto" />
+    <ItemMenuComponent href="/liquidadores" Icon={BaselineTrending} title="Liquidadores" />
+    <ItemMenuComponent href="/talleres" Icon={BaselineBuild} title="Talleres" />
+    <ItemMenuComponent href="/presupuesto" Icon={BaselineMonetizationOn} title="Presupuesto" />
   </Container>

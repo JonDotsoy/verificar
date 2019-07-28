@@ -4,7 +4,7 @@ import { BaseSVGIcon } from '../icons/BaseSVGIcon.component';
 import Link from 'next/link';
 import { useRouter } from 'next/dist/client/router';
 
-const Title = styled.a`
+const Title = styled.div`
   display: inline-block;
   flex: 1;
   font-family: 'Source Sans Pro', sans-serif;
@@ -96,8 +96,10 @@ export default ({
     actived = router.pathname === href;
   }
 
-  return <ItemMenu actived={actived}>
-    <IconContainer><Icon></Icon></IconContainer>
-    <Link href={href}><Title>{title}</Title></Link>
-  </ItemMenu>;
+  return <Link href={href}>
+    <ItemMenu actived={actived}>
+      <IconContainer><Icon></Icon></IconContainer>
+      <Title>{title}</Title>
+    </ItemMenu>
+  </Link>;
 }
