@@ -6,6 +6,7 @@ import ResetCSS from "../components/ResetCSS";
 import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.component";
 import styled from 'styled-components';
 import IconfinderSedan285810Component from '../components/icons/IconfinderSedan285810.component';
+import MetricReparationsComponent from '../components/panels/MetricReparations.component';
 
 const Content = styled.div`
   flex: 1;
@@ -14,13 +15,21 @@ const Content = styled.div`
 
 const Box = styled.div`
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
 `
+
+const ItemBox = styled.div`
+  flex: 1;
+  min-width: 400px;
+  padding: 0px 30px 30px 30px;
+`;
 
 export default () => {
   return <>
     <Head>
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900&display=swap" rel="stylesheet" />
       <style dangerouslySetInnerHTML={{ __html: ResetCSS }}></style>
     </Head>
 
@@ -31,9 +40,15 @@ export default () => {
 
       <Content>
         <Box>
-          <IconfinderSedan285810Component p={75}/>
-          <IconfinderSedan285810Component p={50}/>
-          <IconfinderSedan285810Component p={0}/>
+          <ItemBox>
+            <MetricReparationsComponent></MetricReparationsComponent>
+          </ItemBox>
+          <ItemBox>
+
+          </ItemBox>
+          <ItemBox>
+
+          </ItemBox>
         </Box>
       </Content>
 

@@ -27,10 +27,11 @@ const Blox = styled.div(({ p = 0 }: { p: number }) => `
   }
 `);
 
-export default ({ className, p }: {
+export default ({ className, p, w }: {
   className?: string;
+  w?: number;
   p: number;
 }) => <Blox p={p}>
-    <IconCar className={className} color={'red'}></IconCar>
-    <Cover className={className} color={'black'}></Cover>
+    <IconCar className={className} w={w} color={'red'}></IconCar>
+    <Cover className={className} w={w} color={'black'}></Cover>
   </Blox>
