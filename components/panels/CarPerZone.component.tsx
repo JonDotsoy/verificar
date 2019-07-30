@@ -43,11 +43,11 @@ export default () =>
     </PanelHeader>
     <PanelBody>
       <Grid showHead={false}>
+
         <RowHeader>
           <Cell>Medición</Cell>
           <Cell>Descripción</Cell>
         </RowHeader>
-
 
         <Row>
           <Cell>
