@@ -2,29 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import IconfinderSedan285810Component from '../icons/IconfinderSedan285810.component';
 import { Grid, Row, Cell } from '../grid';
-
-const Box = styled.div`
-  display: block;
-  font-family: 'Source Sans Pro', sans-serif;
-  box-shadow: 0px 4px 4px 0px #00000012, 0px 2px 2px 0px #00000029;
-  border-radius: 4px;
-  overflow: hidden;
-`;
-
-const HeaderBox = styled.div`
-  background-color: #ff9a01;
-  padding: 10px;
-  h1 {
-    color: white;
-    font-size: 28px;
-  }
-  h2 {
-    color: #9fe4fa;
-    font-size: 19px;
-  }
-`;
-
-const BodyBox = styled.div``;
+import { PanelContainer, PanelHeader, PanelBody } from '../Panel';
 
 const RowHeader = styled(Row)`
   text-align: center;
@@ -51,14 +29,24 @@ const CellTitle = styled(Cell)`
   padding: 20px;
 `;
 
-export default ({ sizeIcon = 100 }) =>
-  <Box>
-    <HeaderBox>
+const TextDecorato2 = styled.span`
+  color: #5d5151;
+  text-transform: uppercase;
+  padding: 20px;
+`;
+
+const ContainerIcon = styled.div`
+  padding: 20px;
+`;
+
+export default ({ sizeIcon = 60 }) =>
+  <PanelContainer>
+    <PanelHeader>
       <h1>Reparación según nivel de daño</h1>
       <h2>Denuncia v/s Reparación</h2>
-    </HeaderBox>
+    </PanelHeader>
 
-    <BodyBox>
+    <PanelBody>
 
       <Grid2>
         <RowHeader>
@@ -67,34 +55,34 @@ export default ({ sizeIcon = 100 }) =>
         </RowHeader>
         <Row2>
           <Cell2>
-            <IconfinderSedan285810Component w={sizeIcon} p={75} />
+            <ContainerIcon><IconfinderSedan285810Component w={sizeIcon} p={75} /></ContainerIcon>
           </Cell2>
           <Cell2>
-            Leve
+            <TextDecorato2>Leve</TextDecorato2>
           </Cell2>
           <Cell2TimeMiddle>21 días</Cell2TimeMiddle>
         </Row2>
         <Row2>
           <Cell2>
-            <IconfinderSedan285810Component w={sizeIcon} p={50} />
+            <ContainerIcon><IconfinderSedan285810Component w={sizeIcon} p={50} /></ContainerIcon>
           </Cell2>
           <Cell2>
-            MEDIANO
+            <TextDecorato2>Mediano</TextDecorato2>
           </Cell2>
           <Cell2TimeMiddle>33 días</Cell2TimeMiddle>
         </Row2>
         <Row2>
           <Cell2>
-            <IconfinderSedan285810Component w={sizeIcon} p={0} />
+            <ContainerIcon><IconfinderSedan285810Component w={sizeIcon} p={0} /></ContainerIcon>
           </Cell2>
           <Cell2>
-            GRAVE
+            <TextDecorato2>Grave</TextDecorato2>
           </Cell2>
           <Cell2TimeMiddle>64 días</Cell2TimeMiddle>
         </Row2>
       </Grid2>
 
 
-    </BodyBox>
-  </Box>
+    </PanelBody>
+  </PanelContainer>
 

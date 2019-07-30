@@ -5,8 +5,9 @@ import Head from 'next/head';
 import ResetCSS from "../components/ResetCSS";
 import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.component";
 import styled from 'styled-components';
-import IconfinderSedan285810Component from '../components/icons/IconfinderSedan285810.component';
 import MetricReparationsComponent from '../components/panels/MetricReparations.component';
+import CarPerZoneComponent from '../components/panels/CarPerZone.component';
+import SummaryGarageComponent from '../components/panels/SummaryGarage.component';
 
 const Content = styled.div`
   flex: 1;
@@ -40,15 +41,23 @@ export default () => {
 
       <Content>
         <Box>
+
           <ItemBox>
             <MetricReparationsComponent></MetricReparationsComponent>
           </ItemBox>
-          <ItemBox>
 
-          </ItemBox>
           <ItemBox>
-
+            <CarPerZoneComponent></CarPerZoneComponent>
           </ItemBox>
+
+          <ItemBox>
+            <SummaryGarageComponent></SummaryGarageComponent>
+          </ItemBox>
+
+          <ItemBox>
+            <SummaryGarageComponent></SummaryGarageComponent>
+          </ItemBox>
+
         </Box>
       </Content>
 
