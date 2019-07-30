@@ -35,8 +35,8 @@ const Description = ({
     <SubTitleDescriptionContainer>{subTitle}</SubTitleDescriptionContainer>
   </DescriptionContainer>
 
-export default () =>
-  <XPanelContainer>
+export default ({ ...props }) =>
+  <XPanelContainer {...props}>
     <PanelHeader>
       <h1>Autos por zona</h1>
       <h2>Día v/s atrasados.</h2>

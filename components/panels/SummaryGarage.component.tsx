@@ -55,8 +55,8 @@ const ItemDescriptionTaller = ({
     <div><BotonInfo color={'#ff6868'}>{redValue}</BotonInfo></div>
   </ContenetItemDescriptionTaller>
 
-export default () =>
-  <PanelContainer>
+export default ({ ...props }) =>
+  <PanelContainer {...props}>
     <PanelHeader>
       <h1>Estado resumen según taller</h1>
       <h2>Estado trabajos taller</h2>
@@ -64,10 +64,10 @@ export default () =>
 
     <PanelBody>
 
-      <ItemDescriptionTaller title={'Taller sin Golpes'} subTitle={'30 Vehículos'} greenValue={20} yellowValue={10} redValue={10}/>
-      <ItemDescriptionTaller title={'Taller Ratoncito'} subTitle={'76 Vehículos'} greenValue={30} yellowValue={10} redValue={36}/>
-      <ItemDescriptionTaller title={'Taller La Rueda'} subTitle={'12 Vehículos'} greenValue={6} yellowValue={4} redValue={2}/>
-      <ItemDescriptionTaller title={'Taller Pulento'} subTitle={'91 Vehículos'} greenValue={36} yellowValue={40} redValue={15}/>
+      <ItemDescriptionTaller title={'Taller sin Golpes'} subTitle={'30 Vehículos'} greenValue={20} yellowValue={10} redValue={10} />
+      <ItemDescriptionTaller title={'Taller Ratoncito'} subTitle={'76 Vehículos'} greenValue={30} yellowValue={10} redValue={36} />
+      <ItemDescriptionTaller title={'Taller La Rueda'} subTitle={'12 Vehículos'} greenValue={6} yellowValue={4} redValue={2} />
+      <ItemDescriptionTaller title={'Taller Pulento'} subTitle={'91 Vehículos'} greenValue={36} yellowValue={40} redValue={15} />
 
     </PanelBody>
   </PanelContainer>

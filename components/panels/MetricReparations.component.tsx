@@ -39,8 +39,8 @@ const ContainerIcon = styled.div`
   padding: 20px;
 `;
 
-export default ({ sizeIcon = 60 }) =>
-  <PanelContainer>
+export default ({ sizeIcon = 60, ...props }) =>
+  <PanelContainer {...props}>
     <PanelHeader>
       <h1>Reparación según nivel de daño</h1>
       <h2>Denuncia v/s Reparación</h2>
