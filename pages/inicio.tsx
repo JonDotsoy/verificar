@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import MetricReparationsComponent from '../components/panels/MetricReparations.component';
 import CarPerZoneComponent from '../components/panels/CarPerZone.component';
 import SummaryGarageComponent from '../components/panels/SummaryGarage.component';
+import MetricsCarComponent from '../components/panels/MetricsCar.component';
 
 const Content = styled.div`
   flex: 1;
@@ -51,7 +52,7 @@ export default () => {
           </ItemBox>
 
           <ItemBox>
-            <SummaryGarageComponent></SummaryGarageComponent>
+            <MetricsCarComponent></MetricsCarComponent>
           </ItemBox>
 
           <ItemBox>
