@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { DetailedHTMLProps } from 'react';
 import NavBarComponent from '../components/Navbar/NavBar.component';
 import ContainerComponent from '../components/Container';
 import Head from 'next/head';
@@ -9,18 +9,7 @@ import MetricReparationsComponent from '../components/panels/MetricReparations.c
 import CarPerZoneComponent from '../components/panels/CarPerZone.component';
 import SummaryGarageComponent from '../components/panels/SummaryGarage.component';
 import MetricsCarComponent from '../components/panels/MetricsCar.component';
-
-const Content = styled.div`
-  flex: 1;
-  display: block;
-`;
-
-const Box = styled.div`
-  margin: 20px auto;
-  max-width: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-`
+import ContainerBody from '../components/ContainerBody';
 
 const ItemBox = styled.div`
   flex: 1;
@@ -40,27 +29,25 @@ export default () => {
     <ContainerComponent>
       <MenuNavComponent></MenuNavComponent>
 
-      <Content>
-        <Box>
+      <ContainerBody>
 
-          <ItemBox>
-            <MetricReparationsComponent></MetricReparationsComponent>
-          </ItemBox>
+        <ItemBox>
+          <MetricReparationsComponent></MetricReparationsComponent>
+        </ItemBox>
 
-          <ItemBox>
-            <CarPerZoneComponent></CarPerZoneComponent>
-          </ItemBox>
+        <ItemBox>
+          <CarPerZoneComponent></CarPerZoneComponent>
+        </ItemBox>
 
-          <ItemBox>
-            <MetricsCarComponent></MetricsCarComponent>
-          </ItemBox>
+        <ItemBox>
+          <MetricsCarComponent></MetricsCarComponent>
+        </ItemBox>
 
-          <ItemBox>
-            <SummaryGarageComponent></SummaryGarageComponent>
-          </ItemBox>
+        <ItemBox>
+          <SummaryGarageComponent></SummaryGarageComponent>
+        </ItemBox>
 
-        </Box>
-      </Content>
+      </ContainerBody>
 
     </ContainerComponent>
   </>;

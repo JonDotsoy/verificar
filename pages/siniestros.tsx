@@ -5,6 +5,8 @@ import ContainerComponent from '../components/Container';
 import Head from 'next/head';
 import ResetCSS from "../components/ResetCSS";
 import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.component";
+import ContainerBody from '../components/ContainerBody';
+import SinisterDetailComponent from '../components/panels/SinisterDetail.component';
 
 export default () => {
   return <>
@@ -16,7 +18,17 @@ export default () => {
     <NavBarComponent></NavBarComponent>
 
     <ContainerComponent>
+
       <MenuNavComponent></MenuNavComponent>
+
+      <ContainerBody>
+
+        <SinisterDetailComponent
+          sinisterId={'ID234'}
+        />
+
+      </ContainerBody>
+
     </ContainerComponent>
   </>;
 }
