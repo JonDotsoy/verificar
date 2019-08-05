@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const Container = styled.div`
-  flex: 1;
-  display: block;
-`;
+import { declareRemplace } from '../utils/renameClassNames';
 
 const Box = styled.div`
   margin: 20px auto;
@@ -16,10 +12,27 @@ const Box = styled.div`
   }
 `;
 
+const Container = styled.div`
+  flex: 1;
+  display: block;
+
+  ${({ containerFluid }: { containerFluid?: boolean }) => containerFluid && `
+    ${Box} {
+      display: block;
+      max-width: initial;
+      @media (max-width: 1370px) {
+        margin: 0px 0px;
+      }
+    }
+  `}
+`;
+
+declareRemplace(Container, 'container');
+
 export default ({ children, ...props }: {
   [x: string]: any;
   children?: any;
-}) => <Container>
+}) => <Container {...props}>
     <Box>
       {children}
     </Box>

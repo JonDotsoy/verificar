@@ -96,10 +96,16 @@ export default ({
     actived = router.pathname === href;
   }
 
-  return <Link href={href}>
-    <ItemMenu actived={actived}>
-      <IconContainer><Icon></Icon></IconContainer>
-      <Title>{title}</Title>
-    </ItemMenu>
-  </Link>;
+  const newLocal = <ItemMenu actived={actived}>
+    <IconContainer><Icon></Icon></IconContainer>
+    <Title>{title}</Title>
+  </ItemMenu>;
+
+  if (href) {
+    return <Link href={href} prefetch={true}>
+      {newLocal}
+    </Link>;
+  } else {
+    return newLocal;
+  }
 }

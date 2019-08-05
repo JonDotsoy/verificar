@@ -20,8 +20,7 @@ const ItemBox = styled.div`
 export default () => {
   return <>
     <Head>
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900&display=swap" rel="stylesheet" />
-      <style dangerouslySetInnerHTML={{ __html: ResetCSS }}></style>
+      <ResetCSS />
     </Head>
 
     <NavBarComponent></NavBarComponent>

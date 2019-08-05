@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import IconfinderSedan285810Component from '../icons/IconfinderSedan285810.component';
-import { Grid, Row, Cell } from '../grid';
+import { GridTable, RowTable, CellTable } from '../grid';
 import { PanelContainer, PanelHeader, PanelBody } from '../Panel';
 
-const RowHeader = styled(Row)`
+const RowHeader = styled(RowTable)`
   text-align: center;
   text-size: bold;
 `
 
-const Grid2 = styled(Grid)``;
+const Grid2 = styled(GridTable)``;
 
-const Row2 = styled(Row)`
+const Row2 = styled(RowTable)`
   border-bottom: solid 1px #e9e9e9;
 `
 
-const Cell2 = styled(Cell)`
+const Cell2 = styled(CellTable)`
   vertical-align: middle;
   text-align: center;
 `
@@ -24,7 +24,7 @@ const Cell2TimeMiddle = styled(Cell2)`
   border-left: solid 1px black;
 `;
 
-const CellTitle = styled(Cell)`
+const CellTitle = styled(CellTable)`
   font-weight: 900; 
   padding: 20px;
 `;

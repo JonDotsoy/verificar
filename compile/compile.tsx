@@ -7,6 +7,7 @@ import path from 'path';
 import { writeFileSync, mkdirSync } from 'fs';
 import { EOL } from 'os';
 import { log } from 'util';
+import ResetCSS from '../components/ResetCSS';
 
 export async function run() {
   const all = await Promise.all(importall);
@@ -28,8 +29,7 @@ export async function run() {
 
         const html = `
         <!-- Global dep -->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap" rel="stylesheet" />
-        <link href="https://unpkg.com/reset.css@2.0.2/reset.css" rel="stylesheet" />
+        ${renderToString(<ResetCSS />)}
 
         <!-- Styles -->
         ${styles}

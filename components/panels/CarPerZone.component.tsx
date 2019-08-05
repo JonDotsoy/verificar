@@ -1,16 +1,16 @@
 import React from 'react';
 import { PanelHeader, PanelContainer, PanelBody } from "../Panel";
-import { Grid, Row, Cell } from "../grid";
+import { GridTable, CellTable, RowTable } from "../grid";
 import IconProgressBarComponent from "../icons/IconProgressBar.component";
 import styled from "styled-components";
 
-const RowHeader = styled(Row)`
+const RowHeader = styled(RowTable)`
   font-weight: 900;
   text-align: center;
 `;
 
 const XPanelContainer = styled(PanelContainer)`
-  ${Cell} {
+  ${CellTable} {
     padding: 20px;
   }
 `;
@@ -42,50 +42,50 @@ export default ({ ...props }) =>
       <h2>Día v/s atrasados.</h2>
     </PanelHeader>
     <PanelBody>
-      <Grid showHead={false}>
+      <GridTable showHead={false}>
 
         <RowHeader>
-          <Cell>Medición</Cell>
-          <Cell>Descripción</Cell>
+          <CellTable>Medición</CellTable>
+          <CellTable>Descripción</CellTable>
         </RowHeader>
 
-        <Row>
-          <Cell>
+        <RowTable>
+          <CellTable>
             <IconProgressBarComponent valueLeft={160} valueRigth={140} progressValue={50} />
-          </Cell>
-          <Cell>
+          </CellTable>
+          <CellTable>
             <Description title={'Centro'} subTitle={'300 Vehículos'} />
-          </Cell>
-        </Row>
+          </CellTable>
+        </RowTable>
 
 
-        <Row>
-          <Cell>
+        <RowTable>
+          <CellTable>
             <IconProgressBarComponent valueLeft={76} valueRigth={200} progressValue={25} />
-          </Cell>
-          <Cell>
+          </CellTable>
+          <CellTable>
             <Description title={'Centro Sur'} subTitle={'276 Vehículos'} />
-          </Cell>
-        </Row>
+          </CellTable>
+        </RowTable>
 
-        <Row>
-          <Cell>
+        <RowTable>
+          <CellTable>
             <IconProgressBarComponent valueLeft={99} valueRigth={31} progressValue={75} />
-          </Cell>
-          <Cell>
+          </CellTable>
+          <CellTable>
             <Description title={'Centro Norte'} subTitle={'120 Vehículos'} />
-          </Cell>
-        </Row>
+          </CellTable>
+        </RowTable>
 
-        <Row>
-          <Cell>
+        <RowTable>
+          <CellTable>
             <IconProgressBarComponent valueLeft={60} valueRigth={31} progressValue={60} />
-          </Cell>
-          <Cell>
+          </CellTable>
+          <CellTable>
             <Description title={'Sur'} subTitle={'91 Vehículos'} />
-          </Cell>
-        </Row>
+          </CellTable>
+        </RowTable>
 
-      </Grid>
+      </GridTable>
     </PanelBody>
   </XPanelContainer>

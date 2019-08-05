@@ -9,8 +9,7 @@ import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.com
 export default () => {
   return <>
     <Head>
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap" rel="stylesheet" />
-      <style dangerouslySetInnerHTML={{ __html: ResetCSS }}></style>
+      <ResetCSS />
     </Head>
 
     <NavBarComponent></NavBarComponent>

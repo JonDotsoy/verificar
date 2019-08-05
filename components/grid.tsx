@@ -5,7 +5,7 @@ const GridStyle = styled.table`
   width: 100%;
 `;
 
-export const Grid = ({ children: [childrenHead, ...children], showHead = true, ...props }: any) => <GridStyle {...props}>
+export const GridTable = ({ children: [childrenHead, ...children], showHead = true, ...props }: any) => <GridStyle {...props}>
   {showHead &&
     <thead>
       {childrenHead}
@@ -16,6 +16,15 @@ export const Grid = ({ children: [childrenHead, ...children], showHead = true, .
   </tbody>
 </GridStyle>;
 
-export const Row = styled.tr``
-export const Column = styled.col``
-export const Cell = styled.td``
+export const RowTable = styled.tr``
+export const ColumnTable = styled.col``
+export const CellTable = styled.td``
+
+export const Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+export const Col = styled.div`
+  flex-grow: 1;
+  flex-basis: 0;
+`;

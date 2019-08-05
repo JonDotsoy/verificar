@@ -1,18 +1,21 @@
 import React from 'react';
-import styled from "styled-components";
 import NavBarComponent from '../components/Navbar/NavBar.component';
 import ContainerComponent from '../components/Container';
 import Head from 'next/head';
-import ResetCSS from "../components/ResetCSS";
 import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.component";
-import ContainerBody from '../components/ContainerBody';
-import SinisterDetailComponent from '../components/panels/SinisterDetail.component';
+import SinisterBudget from '../components/panels/SinisterBudget.component';
+import SinisterUncheckedBudgetComponent from '../components/panels/SinisterUncheckedBudget.component';
+import styled from 'styled-components';
+import ResetCSS from '../components/ResetCSS';
+
+const Container = styled.div`
+  flex-grow: 1;
+`;
 
 export default () => {
   return <>
     <Head>
-      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&display=swap" rel="stylesheet" />
-      <style dangerouslySetInnerHTML={{ __html: ResetCSS }}></style>
+      <ResetCSS />
     </Head>
 
     <NavBarComponent></NavBarComponent>
@@ -21,13 +24,13 @@ export default () => {
 
       <MenuNavComponent></MenuNavComponent>
 
-      <ContainerBody>
+      <Container>
 
-        <SinisterDetailComponent
-          sinisterId={'ID234'}
-        />
+        <SinisterBudget />
 
-      </ContainerBody>
+        <SinisterUncheckedBudgetComponent />
+
+      </Container>
 
     </ContainerComponent>
   </>;
