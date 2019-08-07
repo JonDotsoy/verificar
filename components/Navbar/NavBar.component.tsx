@@ -3,8 +3,8 @@ import OutlineSearch from '../icons/OutlineSearch.component';
 import OutlineNotifications from '../icons/OutlineNotifications.component';
 import OutlineSettings from '../icons/OutlineSettings.component';
 import Avatar from './Avatar.component';
-import BaselineExpandMore from '../icons/BaselineExpandMore.component';
 import styled from 'styled-components';
+import NameProfileComponent from './NameProfile.component';
 
 const Container = styled.div`
   display: flex;
@@ -17,11 +17,17 @@ const SectionLeft = styled.div`
 `;
 
 const SectionRigth = styled.div`
-  display: inline-flex;
-  margin-left: 20px;
+  padding-right: 40px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 
   & > * {
-    align-self: center;
+    margin: 0px 7px;
   }
 `;
 
@@ -29,44 +35,11 @@ const Background = styled.div`
   background: linear-gradient(to left, #746e6e, #979694);
 `;
 
-const NavigationMenu = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 const ItemMenu = styled.div`
   display: inline-block;
-  padding: 0px 14px;
 `;
 
-const ItemMenuName = styled.div`
-  display: flex;
-  align-self: center;
-  align-items: center;
-`;
-
-const ContainerAvatar = styled.div`
-  display: inline-block;
-  align-self: center;
-  padding: 0px 25px;
-`;
-
-const NameProfile = styled.div`
-  display: inline-block;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: white;
-  font-weight: 300;
-  font-size: 27px;
-  width: 150px;
-  text-align: center;
-  align-self: center;
-`;
-
-interface PropsNavBar { }
-
-const defaultPorps: PropsNavBar = {}
-
-export default (props: PropsNavBar = defaultPorps) => {
+export default () => {
   return <Background>
     <Container>
       <SectionLeft>
@@ -84,10 +57,10 @@ export default (props: PropsNavBar = defaultPorps) => {
           <OutlineSettings></OutlineSettings>
         </ItemMenu>
 
-        <NameProfile>Juan Gerente</NameProfile>
-        <BaselineExpandMore></BaselineExpandMore>
+        <NameProfileComponent></NameProfileComponent>
 
-        <Avatar />
+        <Avatar avatarUri="https://i.pravatar.cc/300?u=1" />
+        <Avatar avatarUri="https://icon-library.net/images/smile-icon/smile-icon-6.jpg" />
 
       </SectionRigth>
     </Container>

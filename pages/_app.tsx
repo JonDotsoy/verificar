@@ -7,12 +7,14 @@ import ResetCSS from '../components/ResetCSS';
 const theme = {}
 
 export default class MyApp extends App {
-  render () {
+  render() {
     const { Component, pageProps } = this.props
     return (
       <Container>
         <Head>
           <ResetCSS />
+          <link rel="preload" href="https://i.pravatar.cc/300?u=1" as="image" />
+          <link rel="preload" href="https://icon-library.net/images/smile-icon/smile-icon-6.jpg" as="image" />
         </Head>
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />

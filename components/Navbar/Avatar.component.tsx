@@ -7,11 +7,15 @@ const Avatar = styled.div`
   height: 80px;
   border-radius: 100%;
   background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
-export default () =>
+export default ({
+  avatarUri = 'https://i.pravatar.cc/300?u=1',
+}) =>
   <Avatar
     style={{
-      backgroundImage: `url('https://i.pravatar.cc/300?u=1')`,
+      backgroundImage: `url('${avatarUri}')`,
     }}
   ></Avatar>
