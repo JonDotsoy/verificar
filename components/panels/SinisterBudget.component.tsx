@@ -2,6 +2,7 @@ import React from 'react';
 import { PanelRContainer, PanelRHeader, PanelRBody } from '../PanelR';
 import { Row, Col, GridTable, RowTable, CellTable } from '../grid';
 import styled from 'styled-components';
+import PieGraphComponent from '../graphs/PieGraph.component';
 
 const BtnFilter = styled.button`
   text-transform: uppercase;
@@ -27,6 +28,7 @@ const ContentTable = styled.div`
 `;
 
 const ContentTitle = styled.div`
+  min-width: 200px;
   background-color: rgb(34,255,6);
   text-transform: uppercase;
   border: solid 1px black;
@@ -52,6 +54,13 @@ const Patente = styled(CellTable)`
   font-family: 'Source Code Pro', monospace;
 `;
 
+const ColorView = styled.div`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: ${({ color = 'rgb(252,255,13)' }) => color};
+`;
+
 export default ({
   ...props
 }) =>
@@ -59,7 +68,8 @@ export default ({
     <PanelRHeader title={'Presupuesto'}></PanelRHeader>
     <PanelRBody>
 
-      <Row>
+      <Row style={{
+      }}>
         <Col>
           <div>
             <BtnFilter type="button" className="actived">último mes</BtnFilter>
@@ -71,9 +81,45 @@ export default ({
             <BtnFilter type="button">último año</BtnFilter>
           </div>
         </Col>
+
         <Col>
-          Graphic
+
+          <Row style={{minWidth:460}}>
+            <Col>
+
+              <PieGraphComponent></PieGraphComponent>
+            </Col>
+
+            <Col>
+              <GridTable style={{minWidth: "300px"}} showHead={false}>
+                <RowTable></RowTable>
+                <RowTable>
+                  <CellTable><ColorView color="rgb(252,255,13)"></ColorView></CellTable>
+                  <CellTable>Rechazados</CellTable>
+                  <CellTable>2 vehiculos 10%</CellTable>
+                </RowTable>
+                <RowTable>
+                  <CellTable><ColorView color="rgb(34,255,6)"></ColorView></CellTable>
+                  <CellTable>Sin Revisar</CellTable>
+                  <CellTable>7 vehiculos 22%</CellTable>
+                </RowTable>
+                <RowTable>
+                  <CellTable><ColorView color="rgb(176,176,176)"></ColorView></CellTable>
+                  <CellTable>Aprobados P</CellTable>
+                  <CellTable>26 vehiculos 33%</CellTable>
+                </RowTable>
+                <RowTable>
+                  <CellTable><ColorView color="rgb(251,0,6)"></ColorView></CellTable>
+                  <CellTable>Aprobados</CellTable>
+                  <CellTable>42 vehiculos 35%</CellTable>
+                </RowTable>
+              </GridTable>
+            </Col>
+
+          </Row>
+
         </Col>
+
         <Col>
 
           <ContentTitle>Aprobados</ContentTitle>

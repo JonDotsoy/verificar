@@ -12,7 +12,7 @@ const PanelRHeaderStyled = styled.div`
   padding: 10px;
 
   h1 {
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     color: rgb(73, 85, 88);
     text-transform: uppercase;
@@ -45,6 +45,6 @@ export const PanelRHeader = ({ title = '[title]', ...props }: { title: string })
 export const PanelRBody = styled.div`
   padding: 10px;
   background-color: white;
-  max-width: calc(800px - 12px);
+  max-width: calc(1000px - 12px);
   margin: auto;
 `;

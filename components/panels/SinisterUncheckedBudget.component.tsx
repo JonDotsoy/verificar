@@ -12,6 +12,7 @@ const ContentTable = styled.div`
 `;
 
 const ContentTitle = styled.div`
+  min-width: 200px;
   background-color: rgb(248, 0, 7);
   color: white;
   text-transform: uppercase;

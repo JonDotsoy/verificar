@@ -23,8 +23,9 @@ export const CellTable = styled.td``
 export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;
+
 export const Col = styled.div`
-  flex-grow: 1;
   flex-basis: 0;
 `;
