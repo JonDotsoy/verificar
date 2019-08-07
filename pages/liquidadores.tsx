@@ -8,10 +8,6 @@ import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.com
 
 export default () => {
   return <>
-    <Head>
-      <ResetCSS />
-    </Head>
-
     <NavBarComponent></NavBarComponent>
 
     <ContainerComponent>

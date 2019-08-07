@@ -8,15 +8,21 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
+  flex-flow: row;
+  justify-content: space-between;
 `;
 
 const SectionLeft = styled.div`
-  flex: 1;
   padding: 5px 70px;
 `;
 
 const SectionRigth = styled.div`
-  display: flex;
+  display: inline-flex;
+  margin-left: 20px;
+
+  & > * {
+    align-self: center;
+  }
 `;
 
 const Background = styled.div`
@@ -67,25 +73,21 @@ export default (props: PropsNavBar = defaultPorps) => {
         <img src="static/logo.png" alt="verificar" />
       </SectionLeft>
       <SectionRigth>
-        <NavigationMenu>
-          <ItemMenu>
-            <OutlineSearch></OutlineSearch>
-          </ItemMenu>
-          <ItemMenu>
-            <OutlineNotifications></OutlineNotifications>
-          </ItemMenu>
-          <ItemMenu>
-            <OutlineSettings></OutlineSettings>
-          </ItemMenu>
-        </NavigationMenu>
 
-        <ItemMenuName>
-          <NameProfile>Juan Gerente</NameProfile>
-          <BaselineExpandMore></BaselineExpandMore>
-        </ItemMenuName>
-        <ContainerAvatar>
-          <Avatar />
-        </ContainerAvatar>
+        <ItemMenu>
+          <OutlineSearch></OutlineSearch>
+        </ItemMenu>
+        <ItemMenu>
+          <OutlineNotifications></OutlineNotifications>
+        </ItemMenu>
+        <ItemMenu>
+          <OutlineSettings></OutlineSettings>
+        </ItemMenu>
+
+        <NameProfile>Juan Gerente</NameProfile>
+        <BaselineExpandMore></BaselineExpandMore>
+
+        <Avatar />
 
       </SectionRigth>
     </Container>

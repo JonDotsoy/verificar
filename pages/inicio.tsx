@@ -19,10 +19,6 @@ const ItemBox = styled.div`
 
 export default () => {
   return <>
-    <Head>
-      <ResetCSS />
-    </Head>
-
     <NavBarComponent></NavBarComponent>
 
     <ContainerComponent>
