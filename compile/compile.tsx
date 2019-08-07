@@ -39,8 +39,8 @@ export async function run() {
       `;
 
         const dir = new RegExp('.component.tsx').test(i.partialpath)
-          ? path.resolve(`${__dirname}/../out/${path.dirname(i.partialpath)}/${path.basename(i.partialpath, '.component.tsx')}`)
-          : path.resolve(`${__dirname}/../out/${path.dirname(i.partialpath)}/${path.basename(i.partialpath, '.tsx')}`);
+          ? path.resolve(`${__dirname}/../html/${path.dirname(i.partialpath)}/${path.basename(i.partialpath, '.component.tsx')}`)
+          : path.resolve(`${__dirname}/../html/${path.dirname(i.partialpath)}/${path.basename(i.partialpath, '.tsx')}`);
 
         mkdirSync(dir, { recursive: true });
 
