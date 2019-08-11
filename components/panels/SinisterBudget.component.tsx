@@ -132,7 +132,7 @@ export default ({
           <ContentTable>
             <Table>
               <RowTable>
-                <CellTable>IDE</CellTable>
+                <CellTable>ID</CellTable>
                 <CellTable>PATENTES</CellTable>
               </RowTable>
               {defaultDataTable.map(([ide, patente], i) =>

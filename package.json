@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/JonDotsoy/verificar#readme",
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/color": "^3.0.0",
     "@types/d3": "^5.7.2",
     "@types/glob": "^7.1.1",
@@ -48,6 +49,7 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "color": "^3.1.2",
     "d3": "^5.9.7",
     "glob": "^7.1.4",
