@@ -93,7 +93,7 @@ export default ({
   const router = useRouter();
 
   if (router && href && router.pathname) {
-    actived = router.pathname === href;
+    actived = router.pathname.startsWith(href);
   }
 
   const newLocal = <ItemMenu actived={actived}>

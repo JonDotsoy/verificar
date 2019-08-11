@@ -3,6 +3,7 @@ import { PanelRContainer, PanelRHeader, PanelRBody } from '../PanelR';
 import { Row, Col, GridTable, RowTable, CellTable } from '../grid';
 import styled from 'styled-components';
 import PieGraphComponent from '../graphs/PieGraph.component';
+import Link from 'next/link';
 
 const BtnFilter = styled.button`
   text-transform: uppercase;
@@ -25,6 +26,11 @@ const ContentTable = styled.div`
   max-height: 200px;
   overflow: scroll;
   border: solid 1px black;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
 `;
 
 const ContentTitle = styled.div`
@@ -84,14 +90,14 @@ export default ({
 
         <Col>
 
-          <Row style={{minWidth:460}}>
+          <Row style={{ minWidth: 460 }}>
             <Col>
 
               <PieGraphComponent></PieGraphComponent>
             </Col>
 
             <Col>
-              <GridTable style={{minWidth: "300px"}} showHead={false}>
+              <GridTable style={{ minWidth: "300px" }} showHead={false}>
                 <RowTable></RowTable>
                 <RowTable>
                   <CellTable><ColorView color="rgb(252,255,13)"></ColorView></CellTable>
@@ -131,8 +137,8 @@ export default ({
               </RowTable>
               {defaultDataTable.map(([ide, patente], i) =>
                 <RowTable key={i}>
-                  <CellTable>{ide}</CellTable>
-                  <Patente>{patente}</Patente>
+                  <CellTable><Link href="/siniestros/presupuesto"><a>{ide}</a></Link></CellTable>
+                  <Patente><Link href="/siniestros/presupuesto"><a>{patente}</a></Link></Patente>
                 </RowTable>
               )}
             </Table>

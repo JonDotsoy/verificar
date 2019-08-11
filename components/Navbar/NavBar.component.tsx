@@ -43,7 +43,7 @@ export default () => {
   return <Background>
     <Container>
       <SectionLeft>
-        <img src="static/logo.png" alt="verificar" />
+        <img src="/static/logo.png" alt="verificar" />
       </SectionLeft>
       <SectionRigth>
 
