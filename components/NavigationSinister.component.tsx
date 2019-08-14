@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { useRouter } from 'next/dist/client/router';
 import classnames from 'classnames';
 import Link from 'next/link';
+import IconPricingComponent from './icons/IconPricing.component';
 
 const ContainerButton = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(224, 91, 9);
+  background-color: rgb(232, 112, 2);
   border: none;
   box-shadow: none;
   border-radius: 5px;
@@ -32,17 +33,24 @@ const ContainerButtonIcon = styled.div`
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: white;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+  }
 `;
 
-const BtnNavitagionSinister = ({ text = '{text}', href = '{href}', ...props }) => {
+const BtnNavitagionSinister = ({ Icon = () => null, text = '{text}', href = '{href}', ...props }) => {
   const router = useRouter();
 
   const actived = router && router.route ? router.route.startsWith(href) : false;
 
   return <Link href={href}>
     <ContainerButton className={classnames({ actived })} {...props}>
-      <ContainerButtonIcon></ContainerButtonIcon>
+      <ContainerButtonIcon>
+        <Icon></Icon>
+      </ContainerButtonIcon>
       <label>{text}</label>
     </ContainerButton>
   </Link>
@@ -68,7 +76,7 @@ export default ({ ...props }) => {
     <BtnNavitagionSinister text="Vehiculo" href="/siniestros/vehiculo"></BtnNavitagionSinister>
     <BtnNavitagionSinister text="Trabajos" href="/siniestros/trabajos"></BtnNavitagionSinister>
     <BtnNavitagionSinister text="Taller" href="/siniestros/taller"></BtnNavitagionSinister>
-    <BtnNavitagionSinister text="Presupuesto" href="/siniestros/presupuesto"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={IconPricingComponent} text="Presupuesto" href="/siniestros/presupuesto"></BtnNavitagionSinister>
     <BtnNavitagionSinister text="Multimedia" href="/siniestros/multimedia"></BtnNavitagionSinister>
   </ContainerMenuTop>;
 }
