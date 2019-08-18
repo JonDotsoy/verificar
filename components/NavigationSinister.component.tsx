@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import { useRouter } from 'next/dist/client/router';
 import classnames from 'classnames';
@@ -42,7 +42,7 @@ const ContainerButtonIcon = styled.div`
 `;
 
 const BtnNavitagionSinister = ({ Icon = () => null, text = '{text}', href = '{href}', ...props }: {
-  Icon?: Function,
+  Icon?: FunctionComponent<any>,
   text?: string,
   href?: string,
 }) => {
