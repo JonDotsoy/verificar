@@ -41,7 +41,11 @@ const ContainerButtonIcon = styled.div`
   }
 `;
 
-const BtnNavitagionSinister = ({ Icon = () => null, text = '{text}', href = '{href}', ...props }) => {
+const BtnNavitagionSinister = ({ Icon = () => null, text = '{text}', href = '{href}', ...props }: {
+  Icon?: Function,
+  text?: string,
+  href?: string,
+}) => {
   const router = useRouter();
 
   const actived = router && router.route ? router.route.startsWith(href) : false;
