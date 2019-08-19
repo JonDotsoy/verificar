@@ -4,6 +4,7 @@ import { useRouter } from 'next/dist/client/router';
 import classnames from 'classnames';
 import Link from 'next/link';
 import IconPricingComponent from './icons/IconPricing.component';
+import CustomerSupportComponent from './icons/CustomerSupport.component';
 
 const ContainerButton = styled.button`
   display: flex;
@@ -78,7 +79,7 @@ export default ({ ...props }) => {
     <BtnNavitagionSinister text="Poliza" href="/siniestros/poliza"></BtnNavitagionSinister>
     <BtnNavitagionSinister text="Sinistro" href="/siniestros/sinistro"></BtnNavitagionSinister>
     <BtnNavitagionSinister text="Vehiculo" href="/siniestros/vehiculo"></BtnNavitagionSinister>
-    <BtnNavitagionSinister text="Trabajos" href="/siniestros/trabajos"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={CustomerSupportComponent} text="Trabajos" href="/siniestros/trabajos"></BtnNavitagionSinister>
     <BtnNavitagionSinister text="Taller" href="/siniestros/taller"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={IconPricingComponent} text="Presupuesto" href="/siniestros/presupuesto"></BtnNavitagionSinister>
     <BtnNavitagionSinister text="Multimedia" href="/siniestros/multimedia"></BtnNavitagionSinister>
