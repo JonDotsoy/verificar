@@ -1,14 +1,11 @@
 import React from 'react';
 import NavBarComponent from '../../components/Navbar/NavBar.component';
 import ContainerComponent from '../../components/Container';
-import Head from 'next/head';
 import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
-import SinisterBudget from '../../components/panels/SinisterBudget.component';
-import SinisterUncheckedBudgetComponent from '../../components/panels/SinisterUncheckedBudget.component';
 import styled from 'styled-components';
-import ResetCSS from '../../components/ResetCSS';
 import NavigationSinisterComponent from '../../components/NavigationSinister.component';
 import BaselineSearchComponent from '../../components/icons/BaselineSearch.component';
+import { TitlePresupuesto } from '../../components/TitlePresupuesto';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -23,22 +20,6 @@ const ContainerTable = styled.div`
     flex-direction: column;
     align-items: flex-end;
     max-width: 1000px;
-  }
-`;
-
-const TitlePresupuesto = styled.div`
-  display: block;
-  text-align: center;
-  margin-bottom: 20px;
-
-  h1 {
-    font-family: "Source Sans Pro", sans-serif;
-    background-color: rgb(236,143,55);
-    border-radius: 100px;
-    padding: 10px 30px;
-    display: inline-block;
-    font-size: 20px;
-    color: rgb(54,71,80);
   }
 `;
 
