@@ -5,6 +5,7 @@ import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.
 import styled from 'styled-components';
 import NavigationSinisterComponent from '../../components/NavigationSinister.component';
 import { TitlePresupuesto } from '../../components/TitlePresupuesto';
+import CarOfHatchbackComponent from '../../components/icons/CarOfHatchback.component';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -36,11 +37,56 @@ const TimeLineCarReparting = styled.div`
   justify-content: center;
   align-items: start;
 
-  .sectiontimeline {
-    min-width: 150px;
-    height: 100%;
+  .sectionend {
     padding: 20px 0px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      --w: 80px;
+      fill: rgb(246, 119, 2);
+      width: var(--w);
+      height: var(--w);
+    }
+
+    .dialog {
+      max-width: 100px;
+      text-align: center;
+      background-color: rgb(148, 148, 147);
+      padding: 10px;
+      border-radius: 5px;
+      color: white;
+    }
+  }
+
+  .sectiontimeline {
+    min-width: 100px;
+    padding: 20px 0px;
+    box-sizing: border-box;
+
+    .photo-car {
+      position: relative;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: rgb(232, 112, 2);
+      img {
+        border-radius: 2px;
+        max-width: 200px;
+      }
+      figcaption {
+        color: white;
+        padding: 10px;
+        background-color: rgb(232, 112, 2);
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        border-radius: 5px;
+        max-width: 150px;
+      }
+    }
 
     .label {
       text-align: center;
@@ -74,9 +120,15 @@ const TimeLineCarReparting = styled.div`
         position: absolute;
         display: block;
         height: 10px;
-        background-color: rgb(54,175,167);
+        background-color: rgb(151, 206, 201);
         width: 100%;
         margin-top: 5px;
+      }
+    }
+
+    &.lineactive .point {
+      &:before {
+        background-color: rgb(54, 175, 167);
       }
     }
 
@@ -85,10 +137,14 @@ const TimeLineCarReparting = styled.div`
         &:after {
           box-shadow: 0 0 0 2px rgb(54,175,167), 0 0 0 8px rgb(232, 114, 1);
         }
+        &:before {
+          background: linear-gradient(to left, rgb(151, 206, 201) 50%, rgb(54, 175, 167) 50%);
+          ;
+        }
       }
     }
 
-    &:first-child {
+    &.first {
       .point {
         &:before {
           width: 50%;
@@ -97,7 +153,7 @@ const TimeLineCarReparting = styled.div`
       }
     }
 
-    &:last-child {
+    &.last {
       .point {
         &:before {
           width: 50%;
@@ -124,17 +180,17 @@ export default () => {
 
         <TimeLineCarReparting>
 
-          <div className="sectiontimeline">
+          <div className="sectiontimeline first lineactive">
             <div className="label">Ingreso</div>
             <div className="point"></div>
             <div className="descpt">5 de Agosto</div>
           </div>
-          <div className="sectiontimeline">
+          <div className="sectiontimeline lineactive">
             <div className="label">XXXXX</div>
             <div className="point"></div>
             <div className="descpt">8 de Agosto</div>
           </div>
-          <div className="sectiontimeline">
+          <div className="sectiontimeline lineactive">
             <div className="label">YYYYY</div>
             <div className="point"></div>
             <div className="descpt">15 de Agosto</div>
@@ -142,17 +198,24 @@ export default () => {
           <div className="sectiontimeline focus">
             <div className="label"></div>
             <div className="point"></div>
-
+            <figure className="photo-car">
+              <img src="https://img.autocosmos.com/noticias/fotos/extralarge/NAZ_42b849e4125c47729c702a4963a158e6.jpg"></img>
+              <figcaption>YYYYYYYYYY XXXXX XXXXX</figcaption>
+            </figure>
           </div>
           <div className="sectiontimeline">
             <div className="label"></div>
             <div className="point"></div>
-
           </div>
-          <div className="sectiontimeline">
+          <div className="sectiontimeline last">
             <div className="label"></div>
             <div className="point"></div>
-
+          </div>
+          <div className="sectionend">
+            <CarOfHatchbackComponent></CarOfHatchbackComponent>
+            <div className="dialog">
+              Entrega estimada 2 de septiembre
+            </div>
           </div>
 
         </TimeLineCarReparting>
