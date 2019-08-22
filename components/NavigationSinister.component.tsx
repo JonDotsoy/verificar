@@ -6,6 +6,7 @@ import Link from 'next/link';
 import IconPricingComponent from './icons/IconPricing.component';
 import CustomerSupportComponent from './icons/CustomerSupport.component';
 import Carmechanic89096Component from './icons/Carmechanic89096.component';
+import GalleryComponent from './icons/Gallery.component';
 
 const ContainerButton = styled.button`
   display: flex;
@@ -83,6 +84,6 @@ export default ({ ...props }) => {
     <BtnNavitagionSinister Icon={CustomerSupportComponent} text="Trabajos" href="/siniestros/trabajos"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={Carmechanic89096Component} text="Taller" href="/siniestros/taller"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={IconPricingComponent} text="Presupuesto" href="/siniestros/presupuesto"></BtnNavitagionSinister>
-    <BtnNavitagionSinister text="Multimedia" href="/siniestros/multimedia"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={GalleryComponent} text="Multimedia" href="/siniestros/multimedia"></BtnNavitagionSinister>
   </ContainerMenuTop>;
 }

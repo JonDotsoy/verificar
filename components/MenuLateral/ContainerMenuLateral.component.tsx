@@ -13,6 +13,7 @@ const Container = styled.div`
   display: inline-block;
   min-width: 260px;
   padding: 0px 0px;
+  min-height: calc( 100vh - 100px );
 `;
 
 export default () =>

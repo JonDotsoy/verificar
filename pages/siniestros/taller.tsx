@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import NavBarComponent from '../../components/Navbar/NavBar.component';
 import ContainerComponent from '../../components/Container';
 import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
@@ -121,7 +121,7 @@ const TallerDetail = styled.div`
 
 `;
 
-const DataRow = ({ Icon, label, value, ...props }: { Icon: any, label: string, value: string }) =>
+const DataRow = ({ Icon, label, value }: { Icon: any, label: string, value: string }) =>
   <div className="datarow">
     <div className="icon">
       <Icon></Icon>
