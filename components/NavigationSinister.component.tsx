@@ -9,6 +9,7 @@ import Carmechanic89096Component from './icons/Carmechanic89096.component';
 import GalleryComponent from './icons/Gallery.component';
 import AlertHandDrawnSymbolComponent from './icons/AlertHandDrawnSymbol.component';
 import InsuranceComponent from './icons/Insurance.component';
+import CarOfHatchbackComponent from './icons/CarOfHatchback.component';
 
 const ContainerButton = styled.button`
   display: flex;
@@ -82,7 +83,7 @@ export default ({ ...props }) => {
   return <ContainerMenuTop {...props}>
     <BtnNavitagionSinister Icon={InsuranceComponent} text="Poliza" href="/siniestros/poliza"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={AlertHandDrawnSymbolComponent} text="Sinistro" href="/siniestros/sinistro"></BtnNavitagionSinister>
-    <BtnNavitagionSinister text="Vehiculo" href="/siniestros/vehiculo"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={CarOfHatchbackComponent} text="Vehiculo" href="/siniestros/vehiculo"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={CustomerSupportComponent} text="Trabajos" href="/siniestros/trabajos"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={Carmechanic89096Component} text="Taller" href="/siniestros/taller"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={IconPricingComponent} text="Presupuesto" href="/siniestros/presupuesto"></BtnNavitagionSinister>
