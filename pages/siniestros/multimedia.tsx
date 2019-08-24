@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactPropTypes, FunctionComponentElement, FunctionComponent, ReactElement, ReactSVGElement } from 'react';
 import NavBarComponent from '../../components/Navbar/NavBar.component';
 import ContainerComponent from '../../components/Container';
 import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
@@ -8,7 +8,9 @@ import { TitlePresupuesto } from '../../components/TitlePresupuesto';
 import BaselineUnfoldMoreComponent from '../../components/icons/BaselineUnfoldMore.component';
 import BaselineUnfoldLessComponent from '../../components/icons/BaselineUnfoldLess.component';
 import BaselineArrowBackIosComponent from '../../components/icons/BaselineArrowBackIos.component';
-import BaselineArrowForwardIosComponent from '../../components/icons/BaselineArrowForwardIos.component';
+import Head from 'next/head';
+import { isArray } from 'util';
+import Link from 'next/link';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -61,10 +63,34 @@ const GalleryBody = styled.div`
   }
 
   .gallery-content {
+    display: flex;
+    width: calc(100vw - 300px);
+    padding: 10px 40px;
+    box-sizing: border-box;
+    align-items: center;
+
     svg {
-      fill: black;
+      --w: 60px;
+      fill: rgb(231, 113, 3);
+      width: var(--w);
+      height: var(--w);
       &.revert {
         transform: rotate(180deg);
+      }
+    }
+
+    .contnet-photos {
+      white-space: nowrap;
+      flex: 1;
+      overflow: auto;
+      max-width: 100%;
+      position: relative;
+      box-sizing: border-box;
+      width: auto;
+
+      img {
+        margin: 0px 10px;
+        height: 150px;
       }
     }
   }
@@ -81,9 +107,12 @@ const HeaderToggle = ({ title = '{title}', color = 'default', typeIcon = 'more' 
     </div>
   </div>
 
-const ContentGallery = () => 
+const ContentGallery: FunctionComponent<{}> = ({ children }) =>
   <div className="gallery-content">
     <BaselineArrowBackIosComponent></BaselineArrowBackIosComponent>
+    <div className="contnet-photos">
+      {children}
+    </div>
     <BaselineArrowBackIosComponent className="revert"></BaselineArrowBackIosComponent>
   </div>
 
@@ -106,8 +135,30 @@ export default () => {
           <HeaderToggle color="default" title="Fotos Inspeccción"></HeaderToggle>
           <HeaderToggle color="orange" title="Fotos Siniestros"></HeaderToggle>
           <HeaderToggle color="default" title="Fotos Ingreso Taller" typeIcon={"less"}></HeaderToggle>
-          <ContentGallery></ContentGallery>
+          <ContentGallery>
+            <img src="https://loremflickr.com/320/240/car?lock=1" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=2" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=3" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=4" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=5" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=6" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=7" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=8" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=9" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=10s" alt="" />
+          </ContentGallery>
           <HeaderToggle color="yellow" title="Fotos Reparación" typeIcon="less"></HeaderToggle>
+
+          <ContentGallery>
+            <img src="https://loremflickr.com/320/240/car?lock=10" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=11" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=12" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=13" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=14" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=15" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=16" alt="" />
+            <img src="https://loremflickr.com/320/240/car?lock=17" alt="" />
+          </ContentGallery>
 
         </GalleryBody>
 
