@@ -9,7 +9,7 @@ import BaselineUnfoldMoreComponent from '../../components/icons/BaselineUnfoldMo
 import BaselineUnfoldLessComponent from '../../components/icons/BaselineUnfoldLess.component';
 import BaselineArrowBackIosComponent from '../../components/icons/BaselineArrowBackIos.component';
 import Head from 'next/head';
-import { isArray } from 'util';
+import { isArray, isObject } from 'util';
 import Link from 'next/link';
 
 const Container = styled.div`
@@ -107,14 +107,37 @@ const HeaderToggle = ({ title = '{title}', color = 'default', typeIcon = 'more' 
     </div>
   </div>
 
-const ContentGallery: FunctionComponent<{}> = ({ children }) =>
-  <div className="gallery-content">
+const filterNodeImg = (e: React.ReactNode) => {
+  const nodes = ([] as React.ReactNode[]).concat(e)
+    .map((node) => {
+      if (React.isValidElement<HTMLImageElement>(node) && node.type === 'img') {
+        return node;
+      }
+    })
+    .filter(Boolean);
+
+  return nodes as React.ReactElement<HTMLImageElement>[];
+}
+
+const ContentGallery: FunctionComponent<{}> = ({ children }) => {
+  const nodes = filterNodeImg(children);
+
+  return <div className="gallery-content">
+    <Head>
+      {
+        nodes.map(node =>
+          <link key={`link-${node.props.src}`} as="image" href={node.props.src} rel="prefetch"></link>
+        )
+      }
+    </Head>
+
     <BaselineArrowBackIosComponent></BaselineArrowBackIosComponent>
     <div className="contnet-photos">
-      {children}
+      {nodes}
     </div>
     <BaselineArrowBackIosComponent className="revert"></BaselineArrowBackIosComponent>
   </div>
+}
 
 export default () => {
   return <>

@@ -28,6 +28,8 @@ export async function run() {
         const styles = sheet.getStyleTags();
 
         const html = `
+        <base href="https://verificar.jondotsoy.now.sh">
+
         <!-- Global dep -->
         ${renderToString(<ResetCSS />)}
 
@@ -36,7 +38,7 @@ export async function run() {
         
         <!-- HTML -->
         ${body}
-      `;
+        `;
 
         const dir = new RegExp('.component.tsx').test(i.partialpath)
           ? path.resolve(`${__dirname}/../html/${path.dirname(i.partialpath)}/${path.basename(i.partialpath, '.component.tsx')}`)
