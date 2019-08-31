@@ -4,7 +4,7 @@ export default () => {
   const router = useRouter();
 
   try {
-    router.push('/inicio');
+    router.push('/login');
   } catch {}
 
   return null;

@@ -1,0 +1,150 @@
+<base href="https://verificar.jondotsoy.now.sh">
+
+<!-- Global dep -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,900&amp;display=swap" rel="stylesheet" />
+<link href="https://unpkg.com/reset.css@2.0.2/reset.css" rel="stylesheet" />
+
+<!-- Styles -->
+<style data-styled data-styled-version="5.0.0-beta.8">
+  .itDNSD {
+    --width-login-container: 400px;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+
+  .itDNSD .block-login {
+    display: block;
+    max-width: var(--width-login-container);
+    margin: 100px auto;
+    position: relative;
+    padding-bottom: 30px;
+  }
+
+  .itDNSD .block-login:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .itDNSD header .banner .brand {
+    height: 92px;
+    background-repeat: no-repeat;
+    background-size: 106px 92px;
+    background-position: center center;
+    background-image: url('/static/logo.png');
+    margin: 30px 0px;
+    position: relative;
+  }
+
+  .itDNSD header .banner .brand h1 {
+    display: none;
+  }
+
+  .itDNSD header .banner .brand:before,
+  .itDNSD header .banner .brand:after {
+    content: '';
+    background-color: black;
+    width: calc(((var(--width-login-container) - 106px) / 2) - 10px);
+    height: 2px;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+  }
+
+  @media (max-width:400px) {
+
+    .itDNSD header .banner .brand:before,
+    .itDNSD header .banner .brand:after {
+      width: calc(((100vw - 106px) / 2) - 10px);
+    }
+  }
+
+  .itDNSD header .banner .brand:after {
+    left: initial;
+    right: 0px;
+  }
+
+  .itDNSD .login-form .field {
+    display: block;
+    background-color: rgb(209, 210, 211);
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  .itDNSD .login-form .field label {
+    display: none;
+  }
+
+  .itDNSD .login-form .field input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .itDNSD .login-form .button-login {
+    margin-bottom: 20px;
+  }
+
+  .itDNSD .login-form .button-login button {
+    background-color: rgb(253, 126, 0);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .itDNSD .login-form .section-logion-option {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    color: rgb(0, 45, 116);
+  }
+
+  .itDNSD .login-form .section-logion-option label {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .itDNSD .login-form .section-logion-option a {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    color: unset;
+  }
+
+  data-styled.g69[id="sc-fzXfPg"] {
+    content: "itDNSD,"
+  }
+</style>
+
+<!-- HTML -->
+<div class="sc-fzXfPg itDNSD">
+  <div class="block-login">
+    <header>
+      <div class="banner">
+        <div class="brand">
+          <h1>Verificar</h1>
+        </div>
+      </div>
+    </header>
+    <section class="login-form">
+      <form action="#" method="post">
+        <div class="field"><label for="username">Usuario</label><input type="text" id="username" name="username" placeholder="Username" /></div>
+        <div class="field"><label for="password">Password</label><input type="password" name="password" id="password" placeholder="******" /></div>
+        <div class="button-login"><button type="submit">Iniciar sesión</button></div>
+        <div class="section-logion-option"><label for="remember"><input type="checkbox" name="remember" id="remember" />Recuerdame</label><a href="#">Olvidaste tu contraseña?</a></div>
+      </form>
+    </section>
+  </div>
+</div>

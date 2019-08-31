@@ -49,10 +49,13 @@
     "webpack-cli": "^3.3.6"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "cd": "^0.3.3",
     "classnames": "^2.2.6",
     "color": "^3.1.2",
     "d3": "^5.9.7",
     "glob": "^7.1.4",
+    "node-sass": "^4.12.0",
     "styled-components": "^5.0.0-beta.8"
   }
 }
