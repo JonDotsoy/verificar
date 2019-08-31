@@ -67,10 +67,28 @@ const LoginStyled = styled.div`
   .login-form {
 
     .field {
+      --decorator-width: 60px;
+
       display: block;
+      position: relative;
       background-color: rgb(209, 210, 211);
       border-radius: 5px;
       margin-bottom: 20px;
+      padding-left: var(--decorator-width);
+
+      &:before {
+        content: '';
+        background-color: white;
+        left: 2px;
+        top: 2px;
+        width: calc(var(--decorator-width) - 4px);
+        height: calc(100% - 4px);
+        border-radius: 4px 0px 0px 4px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 40px;
+      }
 
       label {
         display: none;
@@ -84,6 +102,18 @@ const LoginStyled = styled.div`
         font-size: 20px;
         padding: 15px;
         box-sizing: border-box;
+      }
+
+      &.field-username {
+        &:before {
+          background-image: url('/static/material-icons/outlined-person-24px.svg')
+        }
+      }
+
+      &.field-password {
+        &:before {
+          background-image: url('/static/material-icons/outlined-lock-24px.svg')
+        }
       }
     }
 
@@ -131,11 +161,11 @@ export default () => {
       </header>
       <section className="login-form">
         <form action="#" method="post">
-          <div className="field">
+          <div className="field field-username">
             <label htmlFor="username">Usuario</label>
             <input id="username" type="text" name="username" placeholder="Username" />
           </div>
-          <div className="field">
+          <div className="field field-password">
             <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" placeholder="******" />
           </div>
