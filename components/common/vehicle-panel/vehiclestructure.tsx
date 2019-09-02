@@ -7,6 +7,7 @@ import NavigationSinisterComponent from '../../NavigationSinister.component';
 import { TitlePresupuesto } from '../../TitlePresupuesto';
 import classNames from 'classnames';
 import BaselineArrowBackIosComponent from '../../icons/BaselineArrowBackIos.component';
+import Head from 'next/head';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -142,10 +143,10 @@ const ContentVehiculoDetail = styled.div`
             .img {
               position: absolute;
               width: 100%;
-              left: -100%;
-              transition: left 0.3s;
+              opacity: 0;
+              transition: opacity 0.3s;
               &.actived {
-                left: 0px;
+                opacity: 1;
               }
             }
           }
@@ -200,6 +201,10 @@ export const GalleryComp: FunctionComponent<{ label: string, className?: string 
 
 const comp: FunctionComponent<{}> = ({ children }) => {
   return <>
+    <Head>
+      <script src="/static/libs/gallerycontroll.js"></script>
+    </Head>
+
     <NavBarComponent></NavBarComponent>
 
     <ContainerComponent>

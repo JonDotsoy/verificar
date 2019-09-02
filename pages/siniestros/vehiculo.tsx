@@ -21,6 +21,11 @@ export default () => <Vehiclestructure>
   <div x-sec="gallery">
     <GalleryComp label="Sinisetro">
       <img src="https://loremflickr.com/320/240/car?lock=17"></img>
+      <img src="https://loremflickr.com/320/240/car?lock=18"></img>
+      <img src="https://loremflickr.com/320/240/car?lock=19"></img>
+      <img src="https://loremflickr.com/320/240/car?lock=20"></img>
+      <img src="https://loremflickr.com/320/240/car?lock=21"></img>
+      <img src="https://loremflickr.com/320/240/car?lock=22"></img>
     </GalleryComp>
   </div>
 </Vehiclestructure>
