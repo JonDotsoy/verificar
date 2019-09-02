@@ -74,9 +74,6 @@ const GalleryBody = styled.div`
       fill: rgb(231, 113, 3);
       width: var(--w);
       height: var(--w);
-      &.revert {
-        transform: rotate(180deg);
-      }
     }
 
     .contnet-photos {

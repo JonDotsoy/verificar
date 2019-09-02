@@ -6,6 +6,7 @@ import NavBarComponent from '../../Navbar/NavBar.component';
 import NavigationSinisterComponent from '../../NavigationSinister.component';
 import { TitlePresupuesto } from '../../TitlePresupuesto';
 import classNames from 'classnames';
+import BaselineArrowBackIosComponent from '../../icons/BaselineArrowBackIos.component';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -100,6 +101,55 @@ const ContentVehiculoDetail = styled.div`
           background-repeat: no-repeat;
           background-size: contain;
         }
+
+        .gallery {
+          position: relative;
+          overflow: hidden;
+          height: 300px;
+
+          .btn-control {
+            z-index: 2;
+            --width: 50px;
+            border: none;
+            background: none;
+            position: absolute;
+            top: calc( 50% - (var(--width) / 2) );
+            padding: 0px;
+            width: var(--width);
+            height: var(--width);
+            /* margin-top: calc( -(var(--width) / 2) ); */
+
+            &.direction-back {
+              left: 0px;
+            }
+
+            &.direction-next {
+              right: 0px;
+            }
+
+            & > svg {
+              fill: white;
+              filter: drop-shadow(
+                0px 0px 3px rgba(0, 0, 0, 0.4)
+              );
+              width: var(--width);
+              height: var(--width);
+            }
+          }
+
+          .images {
+            z-index: 1;
+            .img {
+              position: absolute;
+              width: 100%;
+              left: -100%;
+              transition: left 0.3s;
+              &.actived {
+                left: 0px;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -108,16 +158,16 @@ const ContentVehiculoDetail = styled.div`
 const filterDetailElm = (idFind: string, children: React.ReactNode) => {
   const els = ([] as React.ReactNode[]).concat(children);
 
-  return els.find(el => {
+  return els.filter(el => {
     if (React.isValidElement<HTMLDivElement>(el)) {
-      if (el.props.id === idFind) {
+      if ('x-sec' in el.props && el.props['x-sec'] === idFind) {
         return true;
       }
     }
   });
 }
 
-const GalleryComp: FunctionComponent<{ label: string, className?: string }> = ({ label, className, children }) => {
+export const GalleryComp: FunctionComponent<{ label: string, className?: string }> = ({ label, className, children }) => {
   const images = ([] as React.ReactNode[]).concat(children)
     .map(el => {
       if (React.isValidElement(el) && el.type === 'img') {
@@ -126,20 +176,26 @@ const GalleryComp: FunctionComponent<{ label: string, className?: string }> = ({
     })
     .filter(Boolean) as React.ReactElement<HTMLImageElement>[];
 
-  return <div className={classNames('content-images', className)}>
-    <div className="label">{label}</div>
-    <div className="gallery">
-      <button type="button"></button>
-      <button type="button"></button>
-      <div className="images">
-        {images.map((img, i) =>
-          <div key={i} className="img" style={{
-            backgroundImage: `url(${JSON.stringify(img.props.src)})`,
-          }}></div>
-        )}
+  return <>
+    <div className={classNames('content-images', className)}>
+      <div className="label">{label}</div>
+      <div className="gallery">
+        <button type="button" className="btn-control direction-back">
+          <BaselineArrowBackIosComponent></BaselineArrowBackIosComponent>
+        </button>
+        <button type="button" className="btn-control direction-next">
+          <BaselineArrowBackIosComponent className="revert"></BaselineArrowBackIosComponent>
+        </button>
+        <div className="images">
+          {images.map((img, i) =>
+            <div key={i} className={classNames('img', { actived: i === 0 })} style={{
+              backgroundImage: `url(${JSON.stringify(img.props.src)})`,
+            }}></div>
+          )}
+        </div>
       </div>
     </div>
-  </div>
+  </>
 }
 
 const comp: FunctionComponent<{}> = ({ children }) => {
@@ -166,13 +222,7 @@ const comp: FunctionComponent<{}> = ({ children }) => {
 
           <div className="panel images">
 
-            <GalleryComp label="Sinisetro" className="sinisetro">
-              <img src="http://2.bp.blogspot.com/-uhmYS2q92ng/Unvvbwg9-0I/AAAAAAAAAJE/M5wodYPJ3qo/s1600/AUTO.png"></img>
-            </GalleryComp>
-
-            <GalleryComp label="Sinisetro" className="inspect">
-              <img src="https://loremflickr.com/320/240/car?lock=17"></img>
-            </GalleryComp>
+            {filterDetailElm('gallery', children)}
 
           </div>
 
