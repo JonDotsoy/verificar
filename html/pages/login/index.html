@@ -6,12 +6,12 @@
 
 <!-- Styles -->
 <style data-styled data-styled-version="5.0.0-beta.8">
-  .fXpPBf {
+  .bOcYbD {
     --width-login-container: 400px;
     font-family: "Source Sans Pro", sans-serif;
   }
 
-  .fXpPBf .block-login {
+  .bOcYbD .block-login {
     display: block;
     max-width: var(--width-login-container);
     margin: 100px auto;
@@ -19,7 +19,7 @@
     padding-bottom: 30px;
   }
 
-  .fXpPBf .block-login:after {
+  .bOcYbD .block-login:after {
     content: "";
     width: 100%;
     height: 2px;
@@ -28,7 +28,7 @@
     bottom: 0px;
   }
 
-  .fXpPBf header .banner .brand {
+  .bOcYbD header .banner .brand {
     height: 92px;
     background-repeat: no-repeat;
     background-size: 106px 92px;
@@ -38,12 +38,12 @@
     position: relative;
   }
 
-  .fXpPBf header .banner .brand h1 {
+  .bOcYbD header .banner .brand h1 {
     display: none;
   }
 
-  .fXpPBf header .banner .brand:before,
-  .fXpPBf header .banner .brand:after {
+  .bOcYbD header .banner .brand:before,
+  .bOcYbD header .banner .brand:after {
     content: '';
     background-color: black;
     width: calc(((var(--width-login-container) - 106px) / 2) - 10px);
@@ -56,18 +56,18 @@
 
   @media (max-width:400px) {
 
-    .fXpPBf header .banner .brand:before,
-    .fXpPBf header .banner .brand:after {
+    .bOcYbD header .banner .brand:before,
+    .bOcYbD header .banner .brand:after {
       width: calc(((100vw - 106px) / 2) - 10px);
     }
   }
 
-  .fXpPBf header .banner .brand:after {
+  .bOcYbD header .banner .brand:after {
     left: initial;
     right: 0px;
   }
 
-  .fXpPBf .login-form .field {
+  .bOcYbD .login-form .field {
     --decorator-width: 60px;
     display: block;
     position: relative;
@@ -77,7 +77,7 @@
     padding-left: var(--decorator-width);
   }
 
-  .fXpPBf .login-form .field:before {
+  .bOcYbD .login-form .field:before {
     content: '';
     background-color: white;
     left: 2px;
@@ -91,11 +91,11 @@
     background-size: 40px;
   }
 
-  .fXpPBf .login-form .field label {
+  .bOcYbD .login-form .field label {
     display: none;
   }
 
-  .fXpPBf .login-form .field input {
+  .bOcYbD .login-form .field input {
     width: 100%;
     border: none;
     background-color: transparent;
@@ -105,19 +105,19 @@
     box-sizing: border-box;
   }
 
-  .fXpPBf .login-form .field.field-username:before {
+  .bOcYbD .login-form .field.field-username:before {
     background-image: url('/static/material-icons/outlined-person-24px.svg');
   }
 
-  .fXpPBf .login-form .field.field-password:before {
+  .bOcYbD .login-form .field.field-password:before {
     background-image: url('/static/material-icons/outlined-lock-24px.svg');
   }
 
-  .fXpPBf .login-form .button-login {
+  .bOcYbD .login-form .button-login {
     margin-bottom: 20px;
   }
 
-  .fXpPBf .login-form .button-login button {
+  .bOcYbD .login-form .button-login button {
     background-color: rgb(253, 126, 0);
     border: none;
     border-radius: 5px;
@@ -128,7 +128,13 @@
     text-transform: uppercase;
   }
 
-  .fXpPBf .login-form .section-logion-option {
+  .bOcYbD .login-form .failed-block {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #c30a0a;
+  }
+
+  .bOcYbD .login-form .section-logion-option {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -136,25 +142,25 @@
     color: rgb(0, 45, 116);
   }
 
-  .fXpPBf .login-form .section-logion-option label {
+  .bOcYbD .login-form .section-logion-option label {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
   }
 
-  .fXpPBf .login-form .section-logion-option a {
+  .bOcYbD .login-form .section-logion-option a {
     -webkit-text-decoration: none;
     text-decoration: none;
     color: unset;
   }
 
   data-styled.g70[id="sc-fzXfPE"] {
-    content: "fXpPBf,"
+    content: "bOcYbD,"
   }
 </style>
 
 <!-- HTML -->
-<div class="sc-fzXfPE fXpPBf">
+<div class="sc-fzXfPE bOcYbD">
   <div class="block-login">
     <header>
       <div class="banner">
@@ -167,6 +173,7 @@
       <form action="#" method="post">
         <div class="field field-username"><label for="username">Usuario</label><input type="text" id="username" name="username" placeholder="Username" /></div>
         <div class="field field-password"><label for="password">Password</label><input type="password" name="password" id="password" placeholder="******" /></div>
+        <div class="failed-block">El usuario o la contraseña son incorrectas</div>
         <div class="button-login"><button type="submit">Iniciar sesión</button></div>
         <div class="section-logion-option"><label for="remember"><input type="checkbox" name="remember" id="remember" />Recuerdame</label><a href="#">Olvidaste tu contraseña?</a></div>
       </form>
