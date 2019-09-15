@@ -5,6 +5,7 @@ import OutlineSettings from '../icons/OutlineSettings.component';
 import Avatar from './Avatar.component';
 import styled from 'styled-components';
 import NameProfileComponent from './NameProfile.component';
+import Link from 'next/link';
 
 const Container = styled.div`
   display: flex;
@@ -48,7 +49,11 @@ export default () => {
       <SectionRigth>
 
         <ItemMenu>
-          <OutlineSearch></OutlineSearch>
+          <Link href="/siniestros/search">
+            <a>
+              <OutlineSearch></OutlineSearch>
+            </a>
+          </Link>
         </ItemMenu>
         <ItemMenu>
           <OutlineNotifications></OutlineNotifications>

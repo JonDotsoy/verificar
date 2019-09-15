@@ -91,9 +91,7 @@ export default () => {
             <div className="content-search">
 
               <input className="search" type="search" placeholder="Buscar por" />
-              <button className="btnSelect">
-                <
-              </button>
+              <button className="btnSelect">V</button>
               <div className="toggle-list">
                 <div className="item"><button>ID</button></div>
                 <div className="item"><button>Cliente</button></div>
