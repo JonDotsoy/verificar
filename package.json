@@ -56,6 +56,7 @@
     "d3": "^5.9.7",
     "glob": "^7.1.4",
     "node-sass": "^4.12.0",
+    "redux": "^4.0.4",
     "styled-components": "^5.0.0-beta.8"
   }
 }

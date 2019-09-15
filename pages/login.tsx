@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { useChunkState as useObserverState } from '../store';
 
 const widthPanel = 400;
 
@@ -131,6 +132,12 @@ const LoginStyled = styled.div`
       }
     }
 
+    .failed-block {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #c30a0a;
+    }
+
     .section-logion-option {
       display: flex;
 
@@ -150,6 +157,8 @@ const LoginStyled = styled.div`
 `;
 
 export default () => {
+  const loginIsFailed = useObserverState(s => s.actions.login.failed);
+
   return <LoginStyled>
     <div className="block-login">
       <header>
@@ -169,6 +178,9 @@ export default () => {
             <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" placeholder="******" />
           </div>
+          {loginIsFailed && <div className="failed-block"> 
+            El usuario o la contraseña son incorrectas
+          </div>}
           <div className="button-login">
             <Link href="/inicio">
               <button type="submit">Iniciar sesión</button>
