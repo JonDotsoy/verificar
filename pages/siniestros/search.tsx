@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBarComponent from '../../components/Navbar/NavBar.component';
 import ContainerComponent from '../../components/Container';
 import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
 import styled from 'styled-components';
+import ArrowDropDownComponent from '../../components/icons/ArrowDropDown.component';
+import classNames from 'classnames';
+import { S } from '../../utils/S';
 
 const Container = styled.div`
   flex-grow: 1;
   padding-top: 20px;
+  font-family: "Source Sans Pro", sans-serif;
 `;
 
 const ContainerSeaarch = styled.div`
@@ -35,18 +39,33 @@ const ContentSearch = styled.div`
       width: 450px;
       color: rgb(255,236,216);
     }
+
     .btnSelect {
       position: absolute;
       background: none;
       border: none;
-      top: calc(50% - 10px);
+      top: calc(50% - 20px);
       height: 20px;
       color: white;
       right: 10px;
+
+      svg {
+        transition: transform 300ms;
+      }
+
+      svg.revert {
+        transform: rotate(180deg);
+      }
     }
+
     .toggle-list {
       position: absolute;
       z-index: 100;
+      display: none;
+
+      &.visible {
+        display: block;
+      }
 
       .item {
         background-color: rgb(252,163,83);
@@ -75,7 +94,79 @@ const ContentSearch = styled.div`
   }
 `;
 
+const ContentTable = styled.div`
+  border: solid 1px black;
+`;
+
+const TableResultSearch = styled.table`
+  width: 100%;
+  /* border: solid 1px black; */
+
+  td, th {
+    text-align: center;
+    padding: 10px 0px;
+  }
+
+  th svg {
+    fill: black;
+  }
+
+  thead {
+    background-color: rgb(203, 203, 203);
+
+    th {
+      & > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  tbody {
+    color: rgb(88, 92, 93);
+
+    tr {
+      border-bottom: solid 1px rgb(231, 233, 232);
+    }
+
+    td.primary-color {
+      color: rgb(252,163,83);
+    }
+  }
+`;
+
+const dataTable = S({
+  id: Array(10).fill(void 0).map((_, i) => i + 11),
+  cliente: ['Jose', 'Manuel', 'Ignasio', 'Solis'],
+  marca: ['KIA SPORTAGE', 'TOYOTA YARIS', 'TOYOTA YARIS', 'TOYOTA YARIS'],
+  place: ['HJ2352', 'TG5466', 'GHDR21', 'TGSD34'],
+  estado: [...Array(3).fill('DESPACHO'), 'REPARADO'],
+});
+
 export default () => {
+  const [dropDownlSelecctorSeachOpen, setFocusSearch] = useState(false);
+  const [filterByProperty, setFilterByProperty] = useState(undefined as string | undefined);
+
+  function focusInputToSearch() {
+    if (dropDownlSelecctorSeachOpen === false && filterByProperty === undefined) {
+      setFocusSearch(true);
+    }
+  }
+
+  function clickBtnToggle() {
+    setFocusSearch(!dropDownlSelecctorSeachOpen);
+  }
+
+  function clickBtnSelect(key: string) {
+    return () => {
+      setFilterByProperty(key);
+      if (dropDownlSelecctorSeachOpen === true) {
+        setFocusSearch(false);
+      }
+    }
+  }
+
   return <>
     <NavBarComponent></NavBarComponent>
 
@@ -90,17 +181,42 @@ export default () => {
           <ContentSearch>
             <div className="content-search">
 
-              <input className="search" type="search" placeholder="Buscar por" />
-              <button className="btnSelect">V</button>
-              <div className="toggle-list">
-                <div className="item"><button>ID</button></div>
-                <div className="item"><button>Cliente</button></div>
-                <div className="item"><button>Marca</button></div>
-                <div className="item"><button>Placa</button></div>
+              <input className="search" type="text" data-filter-prop={filterByProperty} placeholder={filterByProperty ? `${filterByProperty}:` : "Buscar por"} onFocus={focusInputToSearch} />
+              <button onClick={clickBtnToggle} className="btnSelect"><ArrowDropDownComponent className={classNames({ revert: dropDownlSelecctorSeachOpen })}></ArrowDropDownComponent></button>
+              <div className={classNames("toggle-list", { visible: dropDownlSelecctorSeachOpen })}>
+                <div onClick={clickBtnSelect('ID')} className="item"><button>ID</button></div>
+                <div onClick={clickBtnSelect('Cliente')} className="item"><button>Cliente</button></div>
+                <div onClick={clickBtnSelect('Marca')} className="item"><button>Marca</button></div>
+                <div onClick={clickBtnSelect('Placa')} className="item"><button>Placa</button></div>
               </div>
 
             </div>
           </ContentSearch>
+
+          <ContentTable>
+            <TableResultSearch>
+              <thead>
+                <tr>
+                  <th><span>ID</span></th>
+                  <th><span>Cliente</span></th>
+                  <th><span>Marca</span></th>
+                  <th><span>Placa</span></th>
+                  <th><span>Estado <ArrowDropDownComponent></ArrowDropDownComponent></span></th>
+                </tr>
+              </thead>
+              <tbody>
+                {dataTable.map(d => (
+                  <tr key={d.id}>
+                    <td className="primary-color">{d.id}</td>
+                    <td className="primary-color">{d.cliente}</td>
+                    <td>{d.marca}</td>
+                    <td>{d.place}</td>
+                    <td>{d.estado}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </TableResultSearch>
+          </ContentTable>
 
         </ContainerSeaarch>
 
