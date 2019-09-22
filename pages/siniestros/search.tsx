@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import NavBarComponent from '../../components/Navbar/NavBar.component';
 import ContainerComponent from '../../components/Container';
 import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
@@ -25,13 +25,35 @@ const ContentSearch = styled.div`
   display: flex;
 
   .content-search {
-    display: inline-block;
+    display: inline-flex;
     position: relative;
     margin: auto;
-    
+
+    label {
+      border: none;
+      border-radius: 50px 0px 0px 50px;
+      background-color: rgb(252,163,83);
+      min-width: 50px;
+      justify-self: center;
+      align-self: center;
+      min-height: 50px;
+      text-align: center;
+      color: rgb(255,236,216);
+      font-size: 15px;
+
+      padding: 0px 0px 0px 20px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      &:after {
+        content: ':';
+      }
+    }
+
     input.search {
       border: none;
-      border-radius: 50px;
+      border-radius: 0px 50px 50px 0px;
       background-color: rgb(252,163,83);
       box-sizing: border-box;
       padding: 10px 20px;
@@ -146,7 +168,8 @@ const dataTable = S({
 
 export default () => {
   const [dropDownlSelecctorSeachOpen, setFocusSearch] = useState(false);
-  const [filterByProperty, setFilterByProperty] = useState(undefined as string | undefined);
+  const [filterByProperty, setFilterByProperty] = useState('undefined' as string | undefined);
+  const inputSearch = useRef<HTMLInputElement>(null);
 
   function focusInputToSearch() {
     if (dropDownlSelecctorSeachOpen === false && filterByProperty === undefined) {
@@ -181,7 +204,8 @@ export default () => {
           <ContentSearch>
             <div className="content-search">
 
-              <input className="search" type="text" data-filter-prop={filterByProperty} placeholder={filterByProperty ? `${filterByProperty}:` : "Buscar por"} onFocus={focusInputToSearch} />
+              <label htmlFor={inputSearch.current ? inputSearch.current.id : undefined}><span>{filterByProperty}</span></label>
+              <input ref={inputSearch} className="search" type="text" data-filter-prop={filterByProperty} placeholder={filterByProperty ? `${filterByProperty}:` : "Buscar por"} onFocus={focusInputToSearch} />
               <button onClick={clickBtnToggle} className="btnSelect"><ArrowDropDownComponent className={classNames({ revert: dropDownlSelecctorSeachOpen })}></ArrowDropDownComponent></button>
               <div className={classNames("toggle-list", { visible: dropDownlSelecctorSeachOpen })}>
                 <div onClick={clickBtnSelect('ID')} className="item"><button>ID</button></div>

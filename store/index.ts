@@ -2,10 +2,16 @@ import { createStore, Store } from 'redux';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/dist/client/router';
 import { initialState } from './initialState';
-import { Action } from './Action';
+import { Actions } from './Actions';
 
 type State = typeof initialState;
-const store: Store<State, Action> = createStore((state = initialState) => {
+const store: Store<State, Actions> = createStore((state = initialState, action) => {
+  switch (action.type) {
+    case 'inc': return {
+      ...state,
+      ...action.set,
+    }
+  }
   return state;
 });
 
