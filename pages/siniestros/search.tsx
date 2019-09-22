@@ -29,7 +29,22 @@ const ContentSearch = styled.div`
     position: relative;
     margin: auto;
 
+    &.filter-selected {
+      label {
+        display: inline-flex;
+
+        &:after {
+          content: ':';
+        }
+      }
+
+      input.search {
+        border-radius: 0px 50px 50px 0px;
+      }
+    }
+
     label {
+      display: none;
       border: none;
       border-radius: 50px 0px 0px 50px;
       background-color: rgb(252,163,83);
@@ -42,18 +57,13 @@ const ContentSearch = styled.div`
       font-size: 15px;
 
       padding: 0px 0px 0px 20px;
-      display: inline-flex;
       justify-content: center;
       align-items: center;
-
-      &:after {
-        content: ':';
-      }
     }
 
     input.search {
       border: none;
-      border-radius: 0px 50px 50px 0px;
+      border-radius: 50px 50px 50px 50px;
       background-color: rgb(252,163,83);
       box-sizing: border-box;
       padding: 10px 20px;
@@ -168,7 +178,7 @@ const dataTable = S({
 
 export default () => {
   const [dropDownlSelecctorSeachOpen, setFocusSearch] = useState(false);
-  const [filterByProperty, setFilterByProperty] = useState('undefined' as string | undefined);
+  const [filterByProperty, setFilterByProperty] = useState(undefined as string | undefined);
   const inputSearch = useRef<HTMLInputElement>(null);
 
   function focusInputToSearch() {
@@ -190,6 +200,8 @@ export default () => {
     }
   }
 
+  const placeHolderInputSearch = filterByProperty ? `Buscar por ${filterByProperty}:` : "Buscar por";
+
   return <>
     <NavBarComponent></NavBarComponent>
 
@@ -202,10 +214,10 @@ export default () => {
         <ContainerSeaarch>
 
           <ContentSearch>
-            <div className="content-search">
+            <div className={classNames('content-search', { 'filter-selected': filterByProperty })}>
 
               <label htmlFor={inputSearch.current ? inputSearch.current.id : undefined}><span>{filterByProperty}</span></label>
-              <input ref={inputSearch} className="search" type="text" data-filter-prop={filterByProperty} placeholder={filterByProperty ? `${filterByProperty}:` : "Buscar por"} onFocus={focusInputToSearch} />
+              <input id="input-search" ref={inputSearch} className="search" type="text" data-filter-prop={filterByProperty} placeholder={placeHolderInputSearch} onFocus={focusInputToSearch} />
               <button onClick={clickBtnToggle} className="btnSelect"><ArrowDropDownComponent className={classNames({ revert: dropDownlSelecctorSeachOpen })}></ArrowDropDownComponent></button>
               <div className={classNames("toggle-list", { visible: dropDownlSelecctorSeachOpen })}>
                 <div onClick={clickBtnSelect('ID')} className="item"><button>ID</button></div>
@@ -225,7 +237,7 @@ export default () => {
                   <th><span>Cliente</span></th>
                   <th><span>Marca</span></th>
                   <th><span>Placa</span></th>
-                  <th><span>Estado <ArrowDropDownComponent></ArrowDropDownComponent></span></th>
+                  <th><span>Estado <ArrowDropDownComponent className="Sort"></ArrowDropDownComponent></span></th>
                 </tr>
               </thead>
               <tbody>
