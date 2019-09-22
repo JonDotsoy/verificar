@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, ReactEventHandler } from 'react';
 import NavBarComponent from '../../components/Navbar/NavBar.component';
 import ContainerComponent from '../../components/Container';
 import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import ArrowDropDownComponent from '../../components/icons/ArrowDropDown.component';
 import classNames from 'classnames';
 import { S } from '../../utils/S';
+import { Button } from 'react-native';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -17,6 +18,62 @@ const ContainerSeaarch = styled.div`
   height: 400px;
   max-width: 900px;
   margin: auto;
+
+  .sorter-selected {
+    position: relative;
+
+    button {
+      border: none;
+      background: none;
+      padding: 0px;
+      svg {
+        transition: transform 300ms;
+      }
+    }
+
+    .options-selectable {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0px;
+
+      .option {
+
+        button {
+          color: white;
+          border: none;
+          background-color: initial;
+          font-size: 14px;
+          font-family: "Source Sans Pro", sans-serif;
+          width: 100%;
+          background-color: rgb(218, 138, 65);
+          color: white;
+          padding: 10px 20px;
+          border-radius: 20px;
+          min-width: 100%;
+          box-sizing: border-box;
+          border-bottom: solid 2px rgb(208, 108, 19);
+        }
+
+        &.selected {
+          button {
+            background-color: rgb(252, 229, 101);
+          }
+        }
+      }
+    }
+
+    &.selected {
+      .options-selectable {
+        display: block;
+      }
+      button {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
 `;
 
 const ContentSearch = styled.div`
@@ -180,6 +237,8 @@ export default () => {
   const [dropDownlSelecctorSeachOpen, setFocusSearch] = useState(false);
   const [filterByProperty, setFilterByProperty] = useState(undefined as string | undefined);
   const inputSearch = useRef<HTMLInputElement>(null);
+  const [toggleSortBy, setToggleSortBy] = useState(false);
+  const [sorterBy, setSorterBy] = useState(null as string | null);
 
   function focusInputToSearch() {
     if (dropDownlSelecctorSeachOpen === false && filterByProperty === undefined) {
@@ -197,6 +256,19 @@ export default () => {
       if (dropDownlSelecctorSeachOpen === true) {
         setFocusSearch(false);
       }
+    }
+  }
+
+  function activeSorterSelection(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    event.preventDefault();
+
+    setToggleSortBy(s => !s);
+  }
+
+  function activeSorterElement(b: string) {
+    return (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      setToggleSortBy(false)
+      setSorterBy(b);
     }
   }
 
@@ -237,7 +309,23 @@ export default () => {
                   <th><span>Cliente</span></th>
                   <th><span>Marca</span></th>
                   <th><span>Placa</span></th>
-                  <th><span>Estado <ArrowDropDownComponent className="Sort"></ArrowDropDownComponent></span></th>
+                  <th>
+                    <span className={classNames('sorter-selected', {
+                      selected: toggleSortBy,
+                    })}>
+                      Estado
+                      <button onClick={activeSorterSelection}><ArrowDropDownComponent className="Sort"></ArrowDropDownComponent></button>
+                      <div className="options-selectable">
+                        <div className={classNames("option", { selected: sorterBy === 'Denunciado' })}><button onClick={activeSorterElement('Denunciado')}>Denunciado</button></div>
+                        <div className={classNames("option", { selected: sorterBy === 'Ingresado al taller' })}><button onClick={activeSorterElement('Ingresado al taller')}>Ingresado al taller</button></div>
+                        <div className={classNames("option", { selected: sorterBy === 'Liquidación de Daños' })}><button onClick={activeSorterElement('Liquidación de Daños')}>Liquidación de Daños</button></div>
+                        <div className={classNames("option", { selected: sorterBy === 'Presupuesto Revisado' })}><button onClick={activeSorterElement('Presupuesto Revisado')}>Presupuesto Revisado</button></div>
+                        <div className={classNames("option", { selected: sorterBy === 'En Reparación' })}><button onClick={activeSorterElement('En Reparación')}>En Reparación</button></div>
+                        <div className={classNames("option", { selected: sorterBy === 'Reparado' })}><button onClick={activeSorterElement('Reparado')}>Reparado</button></div>
+                        <div className={classNames("option", { selected: sorterBy === 'Despachado' })}><button onClick={activeSorterElement('Despachado')}>Despachado</button></div>
+                      </div>
+                    </span>
+                  </th>
                 </tr>
               </thead>
               <tbody>
