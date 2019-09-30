@@ -12,7 +12,7 @@ const NameProfile = styled.div`
   align-self: center;
 `;
 
-export default () => <>
-  <NameProfile>Juan<br />Gerente</NameProfile>
+export default ({ name = 'Luis', rol = 'Liquidador' } = {}) => <>
+  <NameProfile>{name}<br />{rol}</NameProfile>
   <BaselineExpandMore></BaselineExpandMore>
 </>

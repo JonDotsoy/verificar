@@ -50,9 +50,9 @@ export default () => {
           <OutlineSettings></OutlineSettings>
         </ItemMenu>
 
-        <NameProfileComponent></NameProfileComponent>
+        <NameProfileComponent name="Ricardo" rol="Jefe Liquidador"></NameProfileComponent>
 
-        <Avatar avatarUri="https://i.pravatar.cc/300?u=1" />
+        <Avatar avatarUri="https://i.pravatar.cc/300?u=2" />
         <Avatar avatarUri="https://icon-library.net/images/smile-icon/smile-icon-6.jpg" />
 
       </SectionRigth>
