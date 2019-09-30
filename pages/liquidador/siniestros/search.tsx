@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useRef, ReactEventHandler } from 'react';
-import NavBarComponent from '../../components/Navbar/NavBar.component';
-import ContainerComponent from '../../components/Container';
-import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
+import React, { useState, useRef } from 'react';
+import NavBarComponent from '../../../components/Navbar/NavBar.component';
+import ContainerComponent from '../../../components/Container';
+import MenuNavComponent from "../../../components/MenuLateral/ContainerMenuLateral.component";
 import styled from 'styled-components';
-import ArrowDropDownComponent from '../../components/icons/ArrowDropDown.component';
+import ArrowDropDownComponent from '../../../components/icons/ArrowDropDown.component';
 import classNames from 'classnames';
-import { S } from '../../utils/S';
-import { Button } from 'react-native';
+import { makeSampleValues } from '../../../utils/S';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -225,7 +224,7 @@ const TableResultSearch = styled.table`
   }
 `;
 
-const dataTable = S({
+const dataTable = makeSampleValues({
   id: Array(10).fill(void 0).map((_, i) => i + 11),
   cliente: ['Jose', 'Manuel', 'Ignasio', 'Solis'],
   marca: ['KIA SPORTAGE', 'TOYOTA YARIS', 'TOYOTA YARIS', 'TOYOTA YARIS'],
@@ -266,7 +265,7 @@ export default () => {
   }
 
   function activeSorterElement(b: string) {
-    return (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    return () => {
       setToggleSortBy(false)
       setSorterBy(b);
     }

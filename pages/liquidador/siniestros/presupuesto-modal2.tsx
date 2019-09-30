@@ -1,11 +1,7 @@
 import React from 'react';
 import Presupuesto from './presupuesto';
-import Modal from '../../components/modal';
-import styled from 'styled-components';
-import ArrowBackComponent from '../../components/icons/ArrowBack.component';
-
-const Content = styled.div`
-`;
+import Modal from '../../../components/modal';
+import ArrowBackComponent from '../../../components/icons/ArrowBack.component';
 
 export default () => <>
   <Presupuesto></Presupuesto>

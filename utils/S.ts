@@ -1,5 +1,5 @@
 
-export const S = <T extends { [p: string]: any[] }>(o: T) => {
+export const makeSampleValues = <T extends { [p: string]: any[] }>(o: T) => {
   const entmap = Object.entries(o);
 
   type t = {

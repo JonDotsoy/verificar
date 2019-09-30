@@ -13,6 +13,11 @@ export default class MyApp extends App {
       <Container>
         <Head>
           <ResetCSS />
+          <style>{`
+            body {
+              font-family: "Source Sans Pro", sans-serif;
+            }
+          `}</style>
           <link rel="preload" href="https://i.pravatar.cc/300?u=1" as="image" />
           <link rel="preload" href="https://icon-library.net/images/smile-icon/smile-icon-6.jpg" as="image" />
         </Head>

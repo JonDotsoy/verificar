@@ -1,11 +1,10 @@
-import { useRouter } from "next/dist/client/router";
+import Link from 'next/link';
 
 export default () => {
-  const router = useRouter();
-
-  try {
-    router.push('/login');
-  } catch {}
-
-  return null;
+  return <div>
+    <ul>
+      <li><Link href="/login?action=/liquidador/inicio"><a>Login Liquidador</a></Link></li>
+      <li><Link href="/login?action=/jefeLiquidador/inicio"><a>Login Jefe Liquidador</a></Link></li>
+    </ul>
+  </div>
 }

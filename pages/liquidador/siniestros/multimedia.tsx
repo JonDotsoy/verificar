@@ -1,16 +1,14 @@
-import React, { ReactPropTypes, FunctionComponentElement, FunctionComponent, ReactElement, ReactSVGElement } from 'react';
-import NavBarComponent from '../../components/Navbar/NavBar.component';
-import ContainerComponent from '../../components/Container';
-import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
+import React, { FunctionComponent } from 'react';
+import NavBarComponent from '../../../components/Navbar/NavBar.component';
+import ContainerComponent from '../../../components/Container';
+import MenuNavComponent from "../../../components/MenuLateral/ContainerMenuLateral.component";
 import styled from 'styled-components';
-import NavigationSinisterComponent from '../../components/NavigationSinister.component';
-import { TitlePresupuesto } from '../../components/TitlePresupuesto';
-import BaselineUnfoldMoreComponent from '../../components/icons/BaselineUnfoldMore.component';
-import BaselineUnfoldLessComponent from '../../components/icons/BaselineUnfoldLess.component';
-import BaselineArrowBackIosComponent from '../../components/icons/BaselineArrowBackIos.component';
+import NavigationSinisterComponent from '../../../components/NavigationSinister.component';
+import { TitlePresupuesto } from '../../../components/TitlePresupuesto';
+import BaselineUnfoldMoreComponent from '../../../components/icons/BaselineUnfoldMore.component';
+import BaselineUnfoldLessComponent from '../../../components/icons/BaselineUnfoldLess.component';
+import BaselineArrowBackIosComponent from '../../../components/icons/BaselineArrowBackIos.component';
 import Head from 'next/head';
-import { isArray, isObject } from 'util';
-import Link from 'next/link';
 
 const Container = styled.div`
   flex-grow: 1;

@@ -1,12 +1,12 @@
 import React from 'react';
-import NavBarComponent from '../components/Navbar/NavBar.component';
-import ContainerComponent from '../components/Container';
-import MenuNavComponent from "../components/MenuLateral/ContainerMenuLateral.component";
+import NavBarComponent from '../../components/Navbar/NavBar.component';
+import ContainerComponent from '../../components/Container';
+import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
 import styled from 'styled-components';
-import NavigationSinisterComponent from '../components/NavigationSinister.component';
-import BaselineSearchComponent from '../components/icons/BaselineSearch.component';
-import { TitlePresupuesto } from '../components/TitlePresupuesto';
-import OutlineSettingsComponent from '../components/icons/OutlineSettings.component';
+import NavigationSinisterComponent from '../../components/NavigationSinister.component';
+import BaselineSearchComponent from '../../components/icons/BaselineSearch.component';
+import { TitlePresupuesto } from '../../components/TitlePresupuesto';
+import OutlineSettingsComponent from '../../components/icons/OutlineSettings.component';
 
 const Container = styled.div`
   flex-grow: 1;

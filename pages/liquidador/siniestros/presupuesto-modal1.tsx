@@ -1,10 +1,6 @@
 import React from 'react';
 import Presupuesto from './presupuesto';
-import Modal from '../../components/modal';
-import styled from 'styled-components';
-
-const Content = styled.div`
-`;
+import Modal from '../../../components/modal';
 
 export default () => <>
   <Presupuesto></Presupuesto>

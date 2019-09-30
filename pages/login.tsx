@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useChunkState as useObserverState } from '../store';
+import { useRouter } from 'next/dist/client/router';
 
 const widthPanel = 400;
 
@@ -158,6 +159,9 @@ const LoginStyled = styled.div`
 
 export default () => {
   const loginIsFailed = useObserverState(s => s.actions.login.failed);
+  const router = useRouter();
+
+  const goAction = router.query.action as string;
 
   return <LoginStyled>
     <div className="block-login">
@@ -182,7 +186,7 @@ export default () => {
             El usuario o la contraseña son incorrectas
           </div>}
           <div className="button-login">
-            <Link href="/inicio">
+            <Link href={goAction || "/liquidador/inicio"}>
               <button type="submit">Iniciar sesión</button>
             </Link>
           </div>

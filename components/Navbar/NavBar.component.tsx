@@ -13,6 +13,7 @@ const Container = styled.div`
   justify-content: space-between;
 
   .notification-content {
+    z-index: 100;
     position: relative;
     border: none;
     background: none;

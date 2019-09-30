@@ -1,17 +1,17 @@
 import React from 'react';
-import NavBarComponent from '../../components/Navbar/NavBar.component';
-import ContainerComponent from '../../components/Container';
-import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateral.component";
+import NavBarComponent from '../../../components/Navbar/NavBar.component';
+import ContainerComponent from '../../../components/Container';
+import MenuNavComponent from "../../../components/MenuLateral/ContainerMenuLateral.component";
 import styled from 'styled-components';
-import NavigationSinisterComponent from '../../components/NavigationSinister.component';
-import { TitlePresupuesto } from '../../components/TitlePresupuesto';
-import BaselineFace24pxComponent from '../../components/icons/BaselineFace24px.component';
-import BaselineStayPrimaryPortrait24pxComponent from '../../components/icons/BaselineStayPrimaryPortrait24px.component';
-import BaselineMailComponent from '../../components/icons/BaselineMail.component';
-import BaselineLocationOnComponent from '../../components/icons/BaselineLocationOn.component';
-import BaselineLocationCityComponent from '../../components/icons/BaselineLocationCity.component';
-import CarOfHatchbackComponent from '../../components/icons/CarOfHatchback.component';
-import FoldedNewspaperComponent from '../../components/icons/FoldedNewspaper.component';
+import NavigationSinisterComponent from '../../../components/NavigationSinister.component';
+import { TitlePresupuesto } from '../../../components/TitlePresupuesto';
+import BaselineFace24pxComponent from '../../../components/icons/BaselineFace24px.component';
+import BaselineStayPrimaryPortrait24pxComponent from '../../../components/icons/BaselineStayPrimaryPortrait24px.component';
+import BaselineMailComponent from '../../../components/icons/BaselineMail.component';
+import BaselineLocationOnComponent from '../../../components/icons/BaselineLocationOn.component';
+import BaselineLocationCityComponent from '../../../components/icons/BaselineLocationCity.component';
+import CarOfHatchbackComponent from '../../../components/icons/CarOfHatchback.component';
+import FoldedNewspaperComponent from '../../../components/icons/FoldedNewspaper.component';
 
 const Container = styled.div`
   flex-grow: 1;
