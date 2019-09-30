@@ -81,12 +81,12 @@ const ContainerMenuTop = styled.div`
 
 export default ({ ...props }) => {
   return <ContainerMenuTop {...props}>
-    <BtnNavitagionSinister Icon={InsuranceComponent} text="Poliza" href="/siniestros/poliza"></BtnNavitagionSinister>
-    <BtnNavitagionSinister Icon={AlertHandDrawnSymbolComponent} text="Sinistro" href="/siniestros/sinistro"></BtnNavitagionSinister>
-    <BtnNavitagionSinister Icon={CarOfHatchbackComponent} text="Vehiculo" href="/siniestros/vehiculo"></BtnNavitagionSinister>
-    <BtnNavitagionSinister Icon={CustomerSupportComponent} text="Trabajos" href="/siniestros/trabajos"></BtnNavitagionSinister>
-    <BtnNavitagionSinister Icon={Carmechanic89096Component} text="Taller" href="/siniestros/taller"></BtnNavitagionSinister>
-    <BtnNavitagionSinister Icon={IconPricingComponent} text="Presupuesto" href="/siniestros/presupuesto"></BtnNavitagionSinister>
-    <BtnNavitagionSinister Icon={GalleryComponent} text="Multimedia" href="/siniestros/multimedia"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={InsuranceComponent} text="Poliza" href="/liquidador/siniestros/poliza"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={AlertHandDrawnSymbolComponent} text="Sinistro" href="/liquidador/siniestros/sinistro"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={CarOfHatchbackComponent} text="Vehiculo" href="/liquidador/siniestros/vehiculo"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={CustomerSupportComponent} text="Trabajos" href="/liquidador/siniestros/trabajos"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={Carmechanic89096Component} text="Taller" href="/liquidador/siniestros/taller"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={IconPricingComponent} text="Presupuesto" href="/liquidador/siniestros/presupuesto"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={GalleryComponent} text="Multimedia" href="/liquidador/siniestros/multimedia"></BtnNavitagionSinister>
   </ContainerMenuTop>;
 }

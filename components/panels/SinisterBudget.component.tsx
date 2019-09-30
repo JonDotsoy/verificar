@@ -137,8 +137,8 @@ export default ({
               </RowTable>
               {defaultDataTable.map(([ide, patente], i) =>
                 <RowTable key={i}>
-                  <CellTable><Link href="/siniestros/presupuesto"><a>{ide}</a></Link></CellTable>
-                  <Patente><Link href="/siniestros/presupuesto"><a>{patente}</a></Link></Patente>
+                  <CellTable><Link href="/liquidador/siniestros/presupuesto"><a>{ide}</a></Link></CellTable>
+                  <Patente><Link href="/liquidador/siniestros/presupuesto"><a>{patente}</a></Link></Patente>
                 </RowTable>
               )}
             </Table>

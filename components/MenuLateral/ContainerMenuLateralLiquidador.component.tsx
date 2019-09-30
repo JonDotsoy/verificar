@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import ItemMenuComponent from "./ItemMenu.component";
+import ItemMenuComponent from "./ItemMenuLiquidador.component";
 import BaselineTimelineCompoent from '../icons/BaselineTimeline.compoent';
 import BaselineTrending from '../icons/BaselineTrending.component';
 import BaselineBuild from '../icons/BaselineBuild.component';
@@ -19,9 +19,9 @@ const Container = styled.div`
 export default () =>
   <Container>
     <ItemMenuComponent Icon={BaselineMenuComponent} title="Menu" />
-    <ItemMenuComponent href="/inicio" Icon={Icons8VelocimetroComponent} title="Inicio" />
-    <ItemMenuComponent href="/siniestros" Icon={BaselineTimelineCompoent} title="Siniestros" />
-    <ItemMenuComponent href="/liquidadores" Icon={BaselineTrending} title="Liquidadores" />
-    <ItemMenuComponent href="/talleres" Icon={BaselineBuild} title="Talleres" />
-    <ItemMenuComponent href="/presupuesto" Icon={BaselineMonetizationOn} title="Presupuesto" />
+    <ItemMenuComponent href="/liquidador/inicio" Icon={Icons8VelocimetroComponent} title="Inicio" />
+    <ItemMenuComponent href="/liquidador/siniestros" Icon={BaselineTimelineCompoent} title="Siniestros" />
+    <ItemMenuComponent href="/liquidador/liquidadores" Icon={BaselineTrending} title="Liquidadores" />
+    <ItemMenuComponent href="/liquidador/talleres" Icon={BaselineBuild} title="Talleres" />
+    <ItemMenuComponent href="/liquidador/presupuesto" Icon={BaselineMonetizationOn} title="Presupuesto" />
   </Container>

@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import ContainerComponent from '../../Container';
-import MenuNavComponent from "../../MenuLateral/ContainerMenuLateral.component";
+import MenuNavComponent from "../../MenuLateral/ContainerMenuLateralLiquidador.component";
 import styled from 'styled-components';
-import NavBarComponent from '../../Navbar/NavBar.component';
+import NavBarComponent from '../../Navbar/NavBarLiquidador.component';
 import NavigationSinisterComponent from '../../NavigationSinister.component';
 import { TitlePresupuesto } from '../../TitlePresupuesto';
 import classNames from 'classnames';
