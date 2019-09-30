@@ -1,7 +1,7 @@
 
-type IncType = {
+type IncAction = {
   type: 'inc';
   set: any;
 };
 
-export type Actions = IncType;
+export type Actions = IncAction;

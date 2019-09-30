@@ -3,17 +3,10 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/dist/client/router';
 import { initialState } from './initialState';
 import { Actions } from './Actions';
+import { reducer } from './reducer';
 
 type State = typeof initialState;
-const store: Store<State, Actions> = createStore((state = initialState, action) => {
-  switch (action.type) {
-    case 'inc': return {
-      ...state,
-      ...action.set,
-    }
-  }
-  return state;
-});
+export const store: Store<State, Actions> = createStore(reducer);
 
 export const useChunkState = <T>(selectChunkState: (state: State) => T) => {
   const [chunkState, setChunkState] = useState<T>(selectChunkState(store.getState()));
@@ -37,6 +30,4 @@ export default () => {
     router.push('/home');
     return null;
   }
-
-  // Component Login
 }
