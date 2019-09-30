@@ -154,7 +154,7 @@ export default () => {
       <SectionRigth>
 
         <ItemMenu>
-          <Link href="/siniestros/search">
+          <Link href="/liquidador/siniestros/search">
             <a>
               <OutlineSearch></OutlineSearch>
             </a>
