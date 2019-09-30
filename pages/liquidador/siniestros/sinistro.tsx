@@ -1,5 +1,5 @@
 import React from 'react';
-import Vehiclestructure, { GalleryComp } from "../../../components/common/vehicle-panel/vehiclestructure";
+import Vehiclestructure, { GalleryComp } from "../../../libs/components/common/vehicle-panel/vehiclestructure";
 
 export default () => <Vehiclestructure>
   <div x-sec="title">Siniestro JF7H20</div>

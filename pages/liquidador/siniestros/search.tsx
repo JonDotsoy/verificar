@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
-import NavBarComponent from '../../../components/Navbar/NavBarLiquidador.component';
-import ContainerComponent from '../../../components/Container';
-import MenuNavComponent from "../../../components/MenuLateral/ContainerMenuLateralLiquidador.component";
+import NavBarComponent from '../../../libs/components/Navbar/NavBarLiquidador.component';
+import ContainerComponent from '../../../libs/components/Container';
+import MenuNavComponent from "../../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
 import styled from 'styled-components';
-import ArrowDropDownComponent from '../../../components/icons/ArrowDropDown.component';
+import ArrowDropDownComponent from '../../../libs/components/icons/ArrowDropDown.component';
 import classNames from 'classnames';
-import { makeSampleValues } from '../../../utils/S';
+import { makeSampleValues } from '../../../libs/S';
 
 const Container = styled.div`
   flex-grow: 1;

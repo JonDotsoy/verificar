@@ -1,7 +1,7 @@
 import React from 'react';
-import NavBarComponent from '../../components/Navbar/NavBarLiquidador.component';
-import ContainerComponent from '../../components/Container';
-import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateralLiquidador.component";
+import NavBarComponent from '../../libs/components/Navbar/NavBarLiquidador.component';
+import ContainerComponent from '../../libs/components/Container';
+import MenuNavComponent from "../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
 import styled from 'styled-components';
 
 const Container = styled.div`

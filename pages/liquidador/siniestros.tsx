@@ -1,9 +1,9 @@
 import React from 'react';
-import NavBarComponent from '../../components/Navbar/NavBarLiquidador.component';
-import ContainerComponent from '../../components/Container';
-import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateralLiquidador.component";
-import SinisterBudget from '../../components/panels/SinisterBudget.component';
-import SinisterUncheckedBudgetComponent from '../../components/panels/SinisterUncheckedBudget.component';
+import NavBarComponent from '../../libs/components/Navbar/NavBarLiquidador.component';
+import ContainerComponent from '../../libs/components/Container';
+import MenuNavComponent from "../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
+import SinisterBudget from '../../libs/components/panels/SinisterBudget.component';
+import SinisterUncheckedBudgetComponent from '../../libs/components/panels/SinisterUncheckedBudget.component';
 import styled from 'styled-components';
 
 const Container = styled.div`

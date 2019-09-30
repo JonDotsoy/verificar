@@ -1,13 +1,13 @@
 import React from 'react';
-import NavBarComponent from '../../components/Navbar/NavBarLiquidador.component';
-import ContainerComponent from '../../components/Container';
-import MenuNavComponent from "../../components/MenuLateral/ContainerMenuLateralLiquidador.component";
+import NavBarComponent from '../../libs/components/Navbar/NavBarLiquidador.component';
+import ContainerComponent from '../../libs/components/Container';
+import MenuNavComponent from "../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
 import styled from 'styled-components';
-import MetricReparationsComponent from '../../components/panels/MetricReparations.component';
-import CarPerZoneComponent from '../../components/panels/CarPerZone.component';
-import SummaryGarageComponent from '../../components/panels/SummaryGarage.component';
-import MetricsCarComponent from '../../components/panels/MetricsCar.component';
-import ContainerBody from '../../components/ContainerBody';
+import MetricReparationsComponent from '../../libs/components/panels/MetricReparations.component';
+import CarPerZoneComponent from '../../libs/components/panels/CarPerZone.component';
+import SummaryGarageComponent from '../../libs/components/panels/SummaryGarage.component';
+import MetricsCarComponent from '../../libs/components/panels/MetricsCar.component';
+import ContainerBody from '../../libs/components/ContainerBody';
 
 const ItemBox = styled.div`
   flex: 1;

@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBarComponent from '../../../components/Navbar/NavBarLiquidador.component';
-import ContainerComponent from '../../../components/Container';
-import MenuNavComponent from "../../../components/MenuLateral/ContainerMenuLateralLiquidador.component";
+import NavBarComponent from '../../../libs/components/Navbar/NavBarLiquidador.component';
+import ContainerComponent from '../../../libs/components/Container';
+import MenuNavComponent from "../../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
 import styled from 'styled-components';
-import NavigationSinisterComponent from '../../../components/NavigationSinister.component';
-import { TitlePresupuesto } from '../../../components/TitlePresupuesto';
+import NavigationSinisterComponent from '../../../libs/components/NavigationSinister.component';
+import { TitlePresupuesto } from '../../../libs/components/TitlePresupuesto';
 
 const Container = styled.div`
   flex-grow: 1;

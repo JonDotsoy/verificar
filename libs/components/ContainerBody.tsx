@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { declareRemplace } from '../utils/renameClassNames';
+import { declareRemplace } from '../renameClassNames';
 
 const Box = styled.div`
   margin: 20px auto;

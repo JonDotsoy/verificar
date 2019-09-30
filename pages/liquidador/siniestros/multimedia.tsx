@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import NavBarComponent from '../../../components/Navbar/NavBarLiquidador.component';
-import ContainerComponent from '../../../components/Container';
-import MenuNavComponent from "../../../components/MenuLateral/ContainerMenuLateralLiquidador.component";
+import NavBarComponent from '../../../libs/components/Navbar/NavBarLiquidador.component';
+import ContainerComponent from '../../../libs/components/Container';
+import MenuNavComponent from "../../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
 import styled from 'styled-components';
-import NavigationSinisterComponent from '../../../components/NavigationSinister.component';
-import { TitlePresupuesto } from '../../../components/TitlePresupuesto';
-import BaselineUnfoldMoreComponent from '../../../components/icons/BaselineUnfoldMore.component';
-import BaselineUnfoldLessComponent from '../../../components/icons/BaselineUnfoldLess.component';
-import BaselineArrowBackIosComponent from '../../../components/icons/BaselineArrowBackIos.component';
+import NavigationSinisterComponent from '../../../libs/components/NavigationSinister.component';
+import { TitlePresupuesto } from '../../../libs/components/TitlePresupuesto';
+import BaselineUnfoldMoreComponent from '../../../libs/components/icons/BaselineUnfoldMore.component';
+import BaselineUnfoldLessComponent from '../../../libs/components/icons/BaselineUnfoldLess.component';
+import BaselineArrowBackIosComponent from '../../../libs/components/icons/BaselineArrowBackIos.component';
 import Head from 'next/head';
 
 const Container = styled.div`

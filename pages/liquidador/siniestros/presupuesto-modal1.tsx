@@ -1,6 +1,6 @@
 import React from 'react';
 import Presupuesto from './presupuesto';
-import Modal from '../../../components/modal';
+import Modal from '../../../libs/components/modal';
 
 export default () => <>
   <Presupuesto></Presupuesto>
