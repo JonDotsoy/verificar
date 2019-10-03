@@ -8,14 +8,14 @@ import { reducer } from './reducer';
 type State = typeof initialState;
 export const store: Store<State, Actions> = createStore(reducer);
 
-export const useChunkState = <T>(selectChunkState: (state: State) => T) => {
-  const [chunkState, setChunkState] = useState<T>(selectChunkState(store.getState()));
+export const useChunkState = <T>(path: (state: State) => T) => {
+  const [chunkState, setChunkState] = useState<T>(path(store.getState()));
 
   useEffect(() => store.subscribe(() => {
-    const chunkStateCurrent = selectChunkState(store.getState());
+    const chunkStateCurrent = path(store.getState());
 
     if (chunkStateCurrent !== chunkState) {
-      setChunkState(chunkStateCurrent);
+      process.nextTick(() => setChunkState(chunkStateCurrent));
     }
   }), []);
 
