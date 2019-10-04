@@ -1,17 +1,22 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
+
+type ModalProps = PropsWithChildren<{
+  backgroundColor?: string;
+}>;
 
 const ModalContainer = styled.div`
   position: fixed;
   top: 0px;
   left: 0px;
-  background-color: rgba(130, 130, 130, 0.94);
+  background-color: ${(props: ModalProps) => props.backgroundColor ? props.backgroundColor : `rgba(130, 130, 130, 0.94)`};
   width: 100vw;
   height: 100vh;
   z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 
   .block-content {
     padding: 20px;
@@ -85,7 +90,7 @@ const ModalContainer = styled.div`
   }
 `;
 
-const Modal: FunctionComponent = ({ children }) => <ModalContainer>
+const Modal: FunctionComponent<ModalProps> = ({ children, ...props }: ModalProps) => <ModalContainer {...props}>
   <div className="block-content">
     {children}
   </div>
