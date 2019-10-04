@@ -235,7 +235,7 @@ const BlockPendingTask = styled.div({
 });
 
 export default () => {
-  const [modalDetal, setModalDetail] = useState(true);
+  const [modalDetal, setModalDetail] = useState(false);
 
   return <>
     {
