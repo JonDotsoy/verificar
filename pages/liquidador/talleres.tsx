@@ -8,8 +8,6 @@ import SearchIcon from "../../libs/components/icons/BaselineSearch.component"
 import CarIcon from "../../libs/components/icons/CarOfHatchback.component"
 import WarningIcon from "../../libs//components/icons/AlertHandDrawnSymbol.component"
 
-
-
 export default () => {
   return <>
     <NavBarComponent></NavBarComponent>
@@ -248,5 +246,3 @@ const tItemsTaller = [
     tiempoEntrega: 18
   }
 ]
-
-
