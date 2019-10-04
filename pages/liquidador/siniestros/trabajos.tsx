@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBarComponent from '../../../libs/components/Navbar/NavBarLiquidador.component';
 import ContainerComponent from '../../../libs/components/Container';
 import MenuNavComponent from "../../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import NavigationSinisterComponent from '../../../libs/components/NavigationSinister.component';
 import { TitlePresupuesto } from '../../../libs/components/TitlePresupuesto';
 import CarOfHatchbackComponent from '../../../libs/components/icons/CarOfHatchback.component';
+import Modal from '../../../libs/components/modal';
+import CloseIcon from '../../../libs/components/icons/CloseIcon';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -164,8 +166,114 @@ const TimeLineCarReparting = styled.div`
   }
 `;
 
+const BlockPendingTask = styled.div({
+  backgroundColor: `rgb(234, 113, 0)`,
+  padding: '30px 20px',
+  position: 'relative',
+  boxShadow: Array(4)
+    .fill(0)
+    .map((_, i) => `0px ${(i + 1) * 2}px ${(i + 1) * 2}px rgba(0, 0, 0, ${(((i + 1) * 4) / 100)})`)
+    .join(', '),
+  '.btn-close': {
+    backgroundColor: 'transparent',
+    border: 'none',
+    padding: 0,
+    margin: 0,
+    right: 10,
+    top: 10,
+    position: 'absolute',
+    '> svg': {
+      '--w': 20,
+      width: 'var(--w)',
+      height: 'var(--w)',
+    },
+  },
+  '.grid-content': {
+    display: 'grid',
+    gridTemplateColumns: 'auto 1fr 1fr',
+    color: 'white',
+    '.row': {
+      display: 'contents',
+      "&:last-child": {
+        marginBottom: 0,
+      },
+      '&.ghead > div': {
+        paddingBottom: 20,
+      },
+      '&.dt': {
+        '> div': {
+          backgroundColor: 'rgb(237,148,68)',
+          padding: '10px 20px',
+          marginBottom: 20,
+          "&:first-child": {
+            borderTopLeftRadius: 30,
+            borderBottomLeftRadius: 30,
+          },
+          "&:last-child": {
+            borderTopRightRadius: 30,
+            borderBottomRightRadius: 30,
+          }
+        },
+      },
+      '&.control': {
+        '> div': {
+          gridColumnStart: 1,
+          gridColumnEnd: 4,
+        },
+        justifyItems: 'start',
+        'button': {
+          backgroundColor: 'rgb(237,148,68)',
+          border: 'none',
+          color: 'rgb(255, 255, 255)',
+          padding: '10px 40px',
+          borderRadius: 30,
+          fontSize: '0.9rem',
+        }
+      },
+    },
+  },
+});
+
 export default () => {
+  const [modalDetal, setModalDetail] = useState(true);
+
   return <>
+    {
+      modalDetal &&
+      <Modal backgroundColor="transparent">
+        <BlockPendingTask>
+          <button className="btn-close" type="button" onClick={() => setModalDetail(false)}><CloseIcon /></button>
+          <div className="grid-content">
+            <div className="row ghead">
+              <div>Descripción</div>
+              <div>R/C</div>
+              <div>HRS</div>
+            </div>
+            <div className="row dt">
+              <div>Puerta derecha</div>
+              <div>Rep</div>
+              <div>6</div>
+            </div>
+            <div className="row dt">
+              <div>Foco Delantero</div>
+              <div>Cambio</div>
+              <div>6</div>
+            </div>
+            <div className="row dt">
+              <div>Parabrisa</div>
+              <div>Cambio</div>
+              <div>6</div>
+            </div>
+            <div className="row control">
+              <div>
+                <button type="button" onClick={() => setModalDetail(false)}>Volver</button>
+              </div>
+            </div>
+          </div>
+        </BlockPendingTask>
+      </Modal>
+    }
+
     <NavBarComponent></NavBarComponent>
 
     <ContainerComponent>
@@ -222,7 +330,7 @@ export default () => {
 
 
         <ButtonShowDetaill>
-          <button>Ver Pendientes</button>
+          <button type="button" onClick={() => setModalDetail(true)}>Ver Pendientes</button>
         </ButtonShowDetaill>
 
 
