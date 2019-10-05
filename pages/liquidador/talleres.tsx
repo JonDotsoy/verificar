@@ -130,11 +130,15 @@ const TalleresItems = styled.div`
    
  }
  & .t_items_taller{
-  
+  transition:all .3s;
+  cursor:pointer;
   display:grid;
   grid-template-columns:repeat(5, 1fr);
   padding:1rem 0;
   border-bottom:1px solid rgba(0,0,0,.3);
+  &:hover{
+    background:rgba(0,0,0,.05);
+  }
   & .t_item_taller{
     display:flex;
     justify-content:center;
