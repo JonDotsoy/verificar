@@ -2,6 +2,7 @@ import React, { FunctionComponent, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 type ModalProps = PropsWithChildren<{
+  className?: string;
   backgroundColor?: string;
 }>;
 

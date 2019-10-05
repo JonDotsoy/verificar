@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBarComponent from '../../libs/components/Navbar/NavBarLiquidador.component';
 import ContainerComponent from '../../libs/components/Container';
 import MenuNavComponent from "../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
@@ -7,6 +7,8 @@ import NavigationSinisterComponent from '../../libs/components/NavigationSiniste
 import BaselineSearchComponent from '../../libs/components/icons/BaselineSearch.component';
 import { TitlePresupuesto } from '../../libs/components/TitlePresupuesto';
 import OutlineSettingsComponent from '../../libs/components/icons/OutlineSettings.component';
+import PresupuestoModalBtnActionables from './siniestros/presupuesto-modal-btn-actionables';
+import PresupuestoModalInfoWarn from './siniestros/presupuesto-modal-info-warn';
 
 const Container = styled.div`
   flex-grow: 1;
@@ -264,8 +266,32 @@ const ImageTaller = styled.div`
   }
 `;
 
+const use = (defaultModalSet: null | 'btn-actionables' | 'info-warn' = null) => {
+  const [modalSelected, setModalSelected] = useState(defaultModalSet);
+
+  const Modal = (() => {
+    switch (modalSelected) {
+      case 'btn-actionables': return PresupuestoModalBtnActionables;
+      case 'info-warn': return PresupuestoModalInfoWarn;
+    }
+
+    return null;
+  })();
+
+  return {
+    Modal,
+    modalSelected,
+    setModalSelected,
+  };
+}
+
+
 export default () => {
+  const { Modal, setModalSelected } = use('info-warn');
+
   return <>
+    {Modal && <Modal onSave={() => setModalSelected(null)} onBack={() => setModalSelected(null)} onClick={() => setModalSelected('info-warn')} />}
+
     <NavBarComponent></NavBarComponent>
 
     <ContainerComponent>
@@ -292,7 +318,7 @@ export default () => {
               <div className="item-head">Valor P/Pintura</div>
 
               <div className="wrapRow">
-                <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
+                <div className="row itemm-accctionable"><button onClick={() => setModalSelected('btn-actionables')}><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
                 <div className="row">Espejo ext eléctrico derecho</div>
                 <div className="row">Cambio</div>
                 <div className="row">1,5</div>
@@ -303,7 +329,7 @@ export default () => {
               </div>
 
               <div className="wrapRow">
-                <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
+                <div className="row itemm-accctionable"><button onClick={() => setModalSelected('btn-actionables')}><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
                 <div className="row">Espejo ext eléctrico derecho</div>
                 <div className="row">Cambio</div>
                 <div className="row">1,5</div>
@@ -314,7 +340,7 @@ export default () => {
               </div>
 
               <div className="wrapRow">
-                <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
+                <div className="row itemm-accctionable"><button onClick={() => setModalSelected('btn-actionables')}><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
                 <div className="row">Espejo ext eléctrico derecho</div>
                 <div className="row">Cambio</div>
                 <div className="row">1,5</div>
@@ -325,7 +351,7 @@ export default () => {
               </div>
 
               <div className="wrapRow">
-                <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
+                <div className="row itemm-accctionable"><button onClick={() => setModalSelected('btn-actionables')}><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
                 <div className="row">Espejo ext eléctrico derecho</div>
                 <div className="row">Cambio</div>
                 <div className="row">1,5</div>
