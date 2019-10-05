@@ -287,7 +287,7 @@ const use = (defaultModalSet: null | 'btn-actionables' | 'info-warn' = null) => 
 
 
 export default () => {
-  const { Modal, setModalSelected } = use('info-warn');
+  const { Modal, setModalSelected } = use(null);
 
   return <>
     {Modal && <Modal onSave={() => setModalSelected(null)} onBack={() => setModalSelected(null)} onClick={() => setModalSelected('info-warn')} />}
