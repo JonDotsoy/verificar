@@ -8,6 +8,8 @@ import SearchIcon from "../../libs/components/icons/BaselineSearch.component"
 import CarIcon from "../../libs/components/icons/CarOfHatchback.component"
 import WarningIcon from "../../libs//components/icons/AlertHandDrawnSymbol.component"
 
+
+
 export default () => {
   return <>
     <NavBarComponent></NavBarComponent>
@@ -128,11 +130,15 @@ const TalleresItems = styled.div`
    
  }
  & .t_items_taller{
-  
+  transition:all .3s;
+  cursor:pointer;
   display:grid;
   grid-template-columns:repeat(5, 1fr);
   padding:1rem 0;
   border-bottom:1px solid rgba(0,0,0,.3);
+  &:hover{
+    background:rgba(0,0,0,.05);
+  }
   & .t_item_taller{
     display:flex;
     justify-content:center;
@@ -246,3 +252,4 @@ const tItemsTaller = [
     tiempoEntrega: 18
   }
 ]
+
