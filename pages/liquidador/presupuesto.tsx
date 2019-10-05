@@ -8,6 +8,9 @@ import BaselineSearchComponent from '../../libs/components/icons/BaselineSearch.
 import { TitlePresupuesto } from '../../libs/components/TitlePresupuesto';
 import OutlineSettingsComponent from '../../libs/components/icons/OutlineSettings.component';
 
+import PresupuestoList from "./presupuesto/List";
+
+
 const Container = styled.div`
   flex-grow: 1;
 `;
@@ -265,141 +268,150 @@ const ImageTaller = styled.div`
 `;
 
 export default () => {
+
   return <>
     <NavBarComponent></NavBarComponent>
-
+  
     <ContainerComponent>
 
       <MenuNavComponent></MenuNavComponent>
 
-      <Container>
+  {  
+    false ?
+    <Container>
 
-        <NavigationSinisterComponent></NavigationSinisterComponent>
+    <NavigationSinisterComponent></NavigationSinisterComponent>
 
-        <TitlePresupuesto><h1>544/TOYOTA HILUX /PV-HR-45/ROJO</h1></TitlePresupuesto>
+    <TitlePresupuesto><h1>544/TOYOTA HILUX /PV-HR-45/ROJO</h1></TitlePresupuesto>
 
-        <ContainerTable>
-          <div>
-            <TableDetallesPesupuesto2>
+    <ContainerTable>
+      <div>
+        <TableDetallesPesupuesto2>
 
-              <div className="item-head">Código REP</div>
-              <div className="item-head">Descripción Respuestos</div>
-              <div className="item-head">R/C</div>
-              <div className="item-head">HRS</div>
-              <div className="item-head">Pieza Pintada</div>
-              <div className="item-head">Cantidad</div>
-              <div className="item-head">Valor HRS</div>
-              <div className="item-head">Valor P/Pintura</div>
+          <div className="item-head">Código REP</div>
+          <div className="item-head">Descripción Respuestos</div>
+          <div className="item-head">R/C</div>
+          <div className="item-head">HRS</div>
+          <div className="item-head">Pieza Pintada</div>
+          <div className="item-head">Cantidad</div>
+          <div className="item-head">Valor HRS</div>
+          <div className="item-head">Valor P/Pintura</div>
 
-              <div className="wrapRow">
-                <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
-                <div className="row">Espejo ext eléctrico derecho</div>
-                <div className="row">Cambio</div>
-                <div className="row">1,5</div>
-                <div className="row">0,3</div>
-                <div className="row">1</div>
-                <div className="row">$8.250</div>
-                <div className="row">$8.250</div>
-              </div>
-
-              <div className="wrapRow">
-                <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
-                <div className="row">Espejo ext eléctrico derecho</div>
-                <div className="row">Cambio</div>
-                <div className="row">1,5</div>
-                <div className="row">0,3</div>
-                <div className="row">1</div>
-                <div className="row">$8.250</div>
-                <div className="row">$8.250</div>
-              </div>
-
-              <div className="wrapRow">
-                <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
-                <div className="row">Espejo ext eléctrico derecho</div>
-                <div className="row">Cambio</div>
-                <div className="row">1,5</div>
-                <div className="row">0,3</div>
-                <div className="row">1</div>
-                <div className="row">$8.250</div>
-                <div className="row">$8.250</div>
-              </div>
-
-              <div className="wrapRow">
-                <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
-                <div className="row">Espejo ext eléctrico derecho</div>
-                <div className="row">Cambio</div>
-                <div className="row">1,5</div>
-                <div className="row">0,3</div>
-                <div className="row">1</div>
-                <div className="row">$8.250</div>
-                <div className="row">$8.250</div>
-              </div>
-
-            </TableDetallesPesupuesto2>
-            <TableResumenPresupuesto>
-              <tbody>
-                <tr>
-                  <td>Total mano de obra</td>
-                  <td>$38.350</td>
-                </tr>
-                <tr>
-                  <td>Total pintura</td>
-                  <td>$44.000</td>
-                </tr>
-                <tr>
-                  <td>Sub totales</td>
-                  <td>$82.000</td>
-                </tr>
-                <tr>
-                  <td>IVA</td>
-                  <td>$15.500</td>
-                </tr>
-                <tr className="total">
-                  <td>Total:</td>
-                  <td className="result">$97.997</td>
-                </tr>
-              </tbody>
-            </TableResumenPresupuesto>
-
-            <TableStadoPresupuesto>
-              <thead>
-                <tr>
-                  <th>Estado</th>
-                  <th>Comentarios</th>
-                  <th>Taller</th>
-                  <th>Encargado de Presupuesto</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <ButtonSearch>
-                      <BaselineSearchComponent></BaselineSearchComponent>
-                      <label>En revisión</label>
-                    </ButtonSearch>
-                  </td>
-                  <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque unde provident, iusto minima obcaecati officia ducimus! Error hic saepe totam vel dolores, eveniet quos beatae ipsam similique veritatis magnam nemo?</td>
-                  <td>
-                    <ImageTaller>
-                      <img src="https://via.placeholder.com/150" alt="" />
-                      <h3>Pro Tuerca</h3>
-                    </ImageTaller>
-                  </td>
-                  <td>
-                    <AvatarProfile>
-                      <img src="https://i.pravatar.cc/300?u=2" alt="" />
-                      <h3>José Paredes</h3>
-                    </AvatarProfile>
-                  </td>
-                </tr>
-              </tbody>
-            </TableStadoPresupuesto>
-
+          <div className="wrapRow">
+            <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
+            <div className="row">Espejo ext eléctrico derecho</div>
+            <div className="row">Cambio</div>
+            <div className="row">1,5</div>
+            <div className="row">0,3</div>
+            <div className="row">1</div>
+            <div className="row">$8.250</div>
+            <div className="row">$8.250</div>
           </div>
-        </ContainerTable>
 
-      </Container>
+          <div className="wrapRow">
+            <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
+            <div className="row">Espejo ext eléctrico derecho</div>
+            <div className="row">Cambio</div>
+            <div className="row">1,5</div>
+            <div className="row">0,3</div>
+            <div className="row">1</div>
+            <div className="row">$8.250</div>
+            <div className="row">$8.250</div>
+          </div>
 
+          <div className="wrapRow">
+            <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
+            <div className="row">Espejo ext eléctrico derecho</div>
+            <div className="row">Cambio</div>
+            <div className="row">1,5</div>
+            <div className="row">0,3</div>
+            <div className="row">1</div>
+            <div className="row">$8.250</div>
+            <div className="row">$8.250</div>
+          </div>
+
+          <div className="wrapRow">
+            <div className="row itemm-accctionable"><button><OutlineSettingsComponent></OutlineSettingsComponent></button><span className="val">2234</span></div>
+            <div className="row">Espejo ext eléctrico derecho</div>
+            <div className="row">Cambio</div>
+            <div className="row">1,5</div>
+            <div className="row">0,3</div>
+            <div className="row">1</div>
+            <div className="row">$8.250</div>
+            <div className="row">$8.250</div>
+          </div>
+
+        </TableDetallesPesupuesto2>
+        <TableResumenPresupuesto>
+          <tbody>
+            <tr>
+              <td>Total mano de obra</td>
+              <td>$38.350</td>
+            </tr>
+            <tr>
+              <td>Total pintura</td>
+              <td>$44.000</td>
+            </tr>
+            <tr>
+              <td>Sub totales</td>
+              <td>$82.000</td>
+            </tr>
+            <tr>
+              <td>IVA</td>
+              <td>$15.500</td>
+            </tr>
+            <tr className="total">
+              <td>Total:</td>
+              <td className="result">$97.997</td>
+            </tr>
+          </tbody>
+        </TableResumenPresupuesto>
+
+        <TableStadoPresupuesto>
+          <thead>
+            <tr>
+              <th>Estado</th>
+              <th>Comentarios</th>
+              <th>Taller</th>
+              <th>Encargado de Presupuesto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ButtonSearch>
+                  <BaselineSearchComponent></BaselineSearchComponent>
+                  <label>En revisión</label>
+                </ButtonSearch>
+              </td>
+              <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque unde provident, iusto minima obcaecati officia ducimus! Error hic saepe totam vel dolores, eveniet quos beatae ipsam similique veritatis magnam nemo?</td>
+              <td>
+                <ImageTaller>
+                  <img src="https://via.placeholder.com/150" alt="" />
+                  <h3>Pro Tuerca</h3>
+                </ImageTaller>
+              </td>
+              <td>
+                <AvatarProfile>
+                  <img src="https://i.pravatar.cc/300?u=2" alt="" />
+                  <h3>José Paredes</h3>
+                </AvatarProfile>
+              </td>
+            </tr>
+          </tbody>
+        </TableStadoPresupuesto>
+
+      </div>
+    </ContainerTable>
+
+  </Container>
+
+    :
+    <PresupuestoList  />
+  }
+     
     </ContainerComponent>
+  }
+  
   </>
 }
