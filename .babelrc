@@ -1,0 +1,16 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "displayName": true,
+        "minify": false,
+        "transpileTemplateLiterals": true,
+        "pure": true
+      }
+    ]
+  ]
+}

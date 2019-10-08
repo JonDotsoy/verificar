@@ -1,0 +1,62 @@
+{
+  "name": "verificar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "release": "now",
+    "compile": "node compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/verificar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonDotsoy/verificar/issues"
+  },
+  "homepage": "https://github.com/JonDotsoy/verificar#readme",
+  "devDependencies": {
+    "@types/classnames": "^2.2.9",
+    "@types/color": "^3.0.0",
+    "@types/d3": "^5.7.2",
+    "@types/glob": "^7.1.1",
+    "@types/node": "^12.6.8",
+    "@types/pretty": "^2.0.0",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.5",
+    "@types/styled-components": "^4.1.18",
+    "@types/webpack": "^4.32.1",
+    "babel-plugin-styled-components": "^1.10.6",
+    "beautify": "0.0.8",
+    "next": "^9.0.2",
+    "next-server": "^9.0.2",
+    "pretty": "^2.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "cd": "^0.3.3",
+    "classnames": "^2.2.6",
+    "color": "^3.1.2",
+    "d3": "^5.9.7",
+    "glob": "^7.1.4",
+    "node-sass": "^4.12.0",
+    "redux": "^4.0.4",
+    "styled-components": "^5.0.0-beta.8"
+  }
+}
