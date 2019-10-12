@@ -75,6 +75,7 @@ export default ({
     <PanelRBody>
 
       <Row style={{
+        alignItems: 'center'
       }}>
         <Col>
           <div>
