@@ -3,7 +3,10 @@ import NavBarComponent from '../../libs/components/Navbar/NavBarLiquidador.compo
 import ContainerComponent from '../../libs/components/Container';
 import MenuNavComponent from "../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
 
-import Liquidadores from "./liquidadoresContent";
+/********* jefe   ************/
+import JefeView from "../jefeLiquidador/siniestrosViews/list";
+/********* jefe   ************/
+
 
 export default () => {
   return <>
@@ -11,7 +14,12 @@ export default () => {
 
     <ContainerComponent>
       <MenuNavComponent></MenuNavComponent>
-      <Liquidadores />
+      {
+        /********* jefe   ************/
+          <JefeView />
+        /********* jefe   ************/
+      }
+      
     </ContainerComponent>
   </>;
 }
