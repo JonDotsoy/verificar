@@ -12,7 +12,6 @@ export default () => {
       <ContainerMenuLateralLiquidador></ContainerMenuLateralLiquidador>
 
       <ContainerBody>
-
       </ContainerBody>
 
     </Container>
