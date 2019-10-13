@@ -52,11 +52,12 @@ const Content = styled.div`
 
 const Menu = ({
   btnActived = undefined as undefined | 'revisados' | 'sin_revisar' | 'rechazados',
+  onActived = (panel: 'revisados' | 'sin_revisar' | 'rechazados') => { },
 }) => {
   return <div className="menu-taller">
-    <Btn className={classNames({ actived: btnActived === 'revisados' }, "bg-orange")}>Revisados</Btn>
-    <Btn className={classNames({ actived: btnActived === 'sin_revisar' }, "bg-orange-light")}>Sin revisar</Btn>
-    <Btn className={classNames({ actived: btnActived === 'rechazados' }, "bg-yellow")}>Rechazados</Btn>
+    <Btn onClick={() => onActived('revisados')} className={classNames({ actived: btnActived === 'revisados' }, "bg-orange")}>Revisados</Btn>
+    <Btn onClick={() => onActived('sin_revisar')} className={classNames({ actived: btnActived === 'sin_revisar' }, "bg-orange-light")}>Sin revisar</Btn>
+    <Btn onClick={() => onActived('rechazados')} className={classNames({ actived: btnActived === 'rechazados' }, "bg-yellow")}>Rechazados</Btn>
   </div>
 }
 
@@ -91,7 +92,7 @@ const GridRechazados = () => {
 }
 
 export default () => {
-  const [asd] = useState('revisados' as 'revisados' | 'sin_revisar' | 'rechazados');
+  const [panelSelected, setPanelSelected] = useState('revisados' as 'revisados' | 'sin_revisar' | 'rechazados');
 
   return <>
     <NavBarLiquidadorComponent></NavBarLiquidadorComponent>
@@ -106,11 +107,11 @@ export default () => {
 
           <TitlePresupuesto><h1>Taller Protuerca</h1></TitlePresupuesto>
 
-          <Menu btnActived={asd} />
+          <Menu btnActived={panelSelected} onActived={(panel) => setPanelSelected(panel)} />
 
-          {asd === 'revisados' ? <GridRevisados /> : null}
-          {asd === 'sin_revisar' ? <GridSinRevisar /> : null}
-          {asd === 'rechazados' ? <GridRechazados /> : null}
+          {panelSelected === 'revisados' ? <GridRevisados /> : null}
+          {panelSelected === 'sin_revisar' ? <GridSinRevisar /> : null}
+          {panelSelected === 'rechazados' ? <GridRechazados /> : null}
 
         </Content>
 
