@@ -4,7 +4,7 @@ import ContainerMenuLateralLiquidadorComponent from "../../../../libs/components
 import styled from "styled-components";
 import { TitlePresupuesto } from "../../../../libs/components/TitlePresupuesto";
 import Btn from "../../../../libs/components/Btn";
-import { MenuTaller } from "./_MenuTaller";
+import { MenuTaller } from "../../../../libs/components/MenuTaller";
 import classNames from 'classnames';
 import { useState } from "react";
 import DoneComponent from "../../../../libs/components/icons/Done.component";

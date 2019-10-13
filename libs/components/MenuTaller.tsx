@@ -1,8 +1,8 @@
 import React from 'react';
-import { ContainerMenuTop, BtnNavitagionSinister } from "../../../../libs/components/NavigationSinister.component";
-import AlertHandDrawnSymbolComponent from "../../../../libs/components/icons/AlertHandDrawnSymbol.component";
-import Carmechanic89096Component from "../../../../libs/components/icons/Carmechanic89096.component";
-import IconPricingComponent from "../../../../libs/components/icons/IconPricing.component";
+import { ContainerMenuTop, BtnNavitagionSinister } from "./NavigationSinister.component";
+import AlertHandDrawnSymbolComponent from "./icons/AlertHandDrawnSymbol.component";
+import Carmechanic89096Component from "./icons/Carmechanic89096.component";
+import IconPricingComponent from "./icons/IconPricing.component";
 
 export const MenuTaller = ({
   className = undefined as string | undefined,
