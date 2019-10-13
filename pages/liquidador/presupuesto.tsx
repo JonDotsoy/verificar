@@ -268,6 +268,10 @@ const ImageTaller = styled.div`
 `;
 
 export default () => {
+  const [detailRender,setDetailRender] = useState(false);
+  const goDetails = () =>{
+     setDetailRender(true)
+  }
   return <>
     <NavBarComponent></NavBarComponent>
   
@@ -276,7 +280,7 @@ export default () => {
       <MenuNavComponent></MenuNavComponent>
 
   {  
-    false ?
+    detailRender ?
     <Container>
 
     <NavigationSinisterComponent></NavigationSinisterComponent>
@@ -406,7 +410,7 @@ export default () => {
   </Container>
 
     :
-    <PresupuestoList  />
+    <PresupuestoList goDetails={goDetails} />
   }
      
     </ContainerComponent>
