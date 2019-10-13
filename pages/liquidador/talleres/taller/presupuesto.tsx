@@ -6,8 +6,10 @@ import { TitlePresupuesto } from "../../../../libs/components/TitlePresupuesto";
 import Btn from "../../../../libs/components/Btn";
 import { MenuTaller } from "../../../../libs/components/MenuTaller";
 import classNames from 'classnames';
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import DoneComponent from "../../../../libs/components/icons/Done.component";
+import CloseIcon from "../../../../libs/components/icons/CloseIcon";
+import OutlineSearchComponent from "../../../../libs/components/icons/OutlineSearch.component";
 
 const Content = styled.div`
   .menu-taller {
@@ -31,19 +33,41 @@ const Content = styled.div`
         justify-content: center;
         align-items: center;
         .icon svg {
-          fill: rgb(250, 127, 1);
+          fill: black;
           width: 80px;
           height: 80px;
         }
         .value {
           text-align: center;
-          color: rgb(250, 127, 1);
+          color: black;
           .dt {
             font-size: 40px;
           }
           .label {
             text-transform: uppercase;
           }
+        }
+      }
+    }
+
+    &.panel-revisados {
+      & > .grid-body > .header-sign {
+        .icon svg {
+          fill: rgb(250, 127, 1);
+        }
+        .value {
+          color: rgb(250, 127, 1);
+        }
+      }
+    }
+
+    &.panel-sin-revisar, &.panel-rechazados {
+      & > .grid-body > .header-sign {
+        .icon svg {
+          fill: rgb(209, 8, 7);
+        }
+        .value {
+          color: rgb(209, 8, 7);
         }
       }
     }
@@ -61,8 +85,11 @@ const Menu = ({
   </div>
 }
 
-const GridContent = ({ children }: React.PropsWithChildren<{}>) => {
-  return <div className="grid-content">
+const GridContent = ({
+  className = undefined as string | undefined,
+  children = undefined as ReactNode | undefined,
+}) => {
+  return <div className={classNames(className, "grid-content")}>
     <div className="grid-body">
       {children}
     </div>
@@ -70,25 +97,45 @@ const GridContent = ({ children }: React.PropsWithChildren<{}>) => {
 }
 
 const GridRevisados = () => {
-  return <GridContent>
+  return <GridContent className="panel-revisados">
     <div className="header-sign">
       <div className="icon">
         <DoneComponent></DoneComponent>
       </div>
       <div className="value">
         <div className="dt">4</div>
-        <div className="label">revisados</div>
+        <div className="label">Revisados</div>
       </div>
     </div>
   </GridContent>;
 }
 
 const GridSinRevisar = () => {
-  return <GridContent></GridContent>;
+  return <GridContent className="panel-sin-revisar">
+    <div className="header-sign">
+      <div className="icon">
+        <OutlineSearchComponent></OutlineSearchComponent>
+      </div>
+      <div className="value">
+        <div className="dt">4</div>
+        <div className="label">Sin revisar</div>
+      </div>
+    </div>
+  </GridContent>;
 }
 
 const GridRechazados = () => {
-  return <GridContent></GridContent>;
+  return <GridContent className="panel-rechazados">
+    <div className="header-sign">
+      <div className="icon">
+        <CloseIcon></CloseIcon>
+      </div>
+      <div className="value">
+        <div className="dt">4</div>
+        <div className="label">Rechazados</div>
+      </div>
+    </div>
+  </GridContent>;
 }
 
 export default () => {
