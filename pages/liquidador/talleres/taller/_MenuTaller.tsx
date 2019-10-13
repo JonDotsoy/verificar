@@ -1,3 +1,4 @@
+import React from 'react';
 import { ContainerMenuTop, BtnNavitagionSinister } from "../../../../libs/components/NavigationSinister.component";
 import AlertHandDrawnSymbolComponent from "../../../../libs/components/icons/AlertHandDrawnSymbol.component";
 import Carmechanic89096Component from "../../../../libs/components/icons/Carmechanic89096.component";
