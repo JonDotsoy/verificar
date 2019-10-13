@@ -47,7 +47,7 @@ const ContainerButtonIcon = styled.div`
   }
 `;
 
-const BtnNavitagionSinister = ({ Icon = () => null, text = '{text}', href = '{href}', ...props }: {
+export const BtnNavitagionSinister = ({ Icon = () => null, text = '{text}', href = '{href}', ...props }: {
   Icon?: FunctionComponent<any>,
   text?: string,
   href?: string,
@@ -66,7 +66,7 @@ const BtnNavitagionSinister = ({ Icon = () => null, text = '{text}', href = '{hr
   </Link>
 }
 
-const ContainerMenuTop = styled.div`
+export const ContainerMenuTop = styled.div`
   display: flex;
   padding: 20px;
   justify-content: center;
