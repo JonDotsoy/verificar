@@ -7,6 +7,7 @@ import Btn from "../../../../libs/components/Btn";
 import { MenuTaller } from "./_MenuTaller";
 import classNames from 'classnames';
 import { useState } from "react";
+import DoneComponent from "../../../../libs/components/icons/Done.component";
 
 const Content = styled.div`
   .menu-taller {
@@ -24,7 +25,27 @@ const Content = styled.div`
 
     & > .grid-body {
       background-color: white;
-      padding: 20px 0px;
+
+      & > .header-sign {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon svg {
+          fill: rgb(250, 127, 1);
+          width: 80px;
+          height: 80px;
+        }
+        .value {
+          text-align: center;
+          color: rgb(250, 127, 1);
+          .dt {
+            font-size: 40px;
+          }
+          .label {
+            text-transform: uppercase;
+          }
+        }
+      }
     }
   }
 `;
@@ -39,7 +60,7 @@ const Menu = ({
   </div>
 }
 
-const GridContent = ({ children }:React.PropsWithChildren<{}>) => {
+const GridContent = ({ children }: React.PropsWithChildren<{}>) => {
   return <div className="grid-content">
     <div className="grid-body">
       {children}
@@ -51,7 +72,11 @@ const GridRevisados = () => {
   return <GridContent>
     <div className="header-sign">
       <div className="icon">
-        
+        <DoneComponent></DoneComponent>
+      </div>
+      <div className="value">
+        <div className="dt">4</div>
+        <div className="label">revisados</div>
       </div>
     </div>
   </GridContent>;
