@@ -26,7 +26,8 @@ export default () => {
 }
 
 const LContainer = styled.div`
-  width:80%;
+  width:90%;
+  float:right;
   margin: 25px auto;
   @media(max-width:750px){
     width:100%;
