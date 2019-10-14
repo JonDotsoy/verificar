@@ -2,7 +2,7 @@ import React from 'react';
 import NavBarComponent from '../../libs/components/Navbar/NavBarLiquidador.component';
 import ContainerComponent from '../../libs/components/Container';
 import MenuNavComponent from "../../libs/components/MenuLateral/ContainerMenuLateralLiquidador.component";
-
+import Link from 'next/link';
 import styled from "styled-components";
 import SearchIcon from "../../libs/components/icons/BaselineSearch.component"
 import CarIcon from "../../libs/components/icons/CarOfHatchback.component"
@@ -46,7 +46,11 @@ export default () => {
               tItemsTaller.map((taller, index) =>
                 <div key={index} className="t_items_taller">
                   <div className="t_item_taller">
-                    <h3 className="taller_name">{taller.taller}</h3>
+                    <Link href="/liquidador/talleres/taller/taller">
+                      <a>
+                        <h3 className="taller_name">{taller.taller}</h3>
+                      </a>
+                    </Link>
                   </div>
                   <div className="t_item_taller">
                     <span className="taller_estado">
@@ -62,17 +66,17 @@ export default () => {
                     {taller.ingresados}
                   </div>
                   <div className="t_item_taller">
-                  <div className="taller_warning_icon">
+                    <div className="taller_warning_icon">
                       <WarningIcon />
                     </div>
-                    
+
                     {taller.atrasados}
                   </div>
                   <div className="t_item_taller">
                     <span className="taller_entrega">
-                     {taller.tiempoEntrega} dias
+                      {taller.tiempoEntrega} dias
                     </span>
-                    
+
                   </div>
                 </div>
               )
@@ -144,6 +148,9 @@ const TalleresItems = styled.div`
     justify-content:center;
     flex-direction:column;
     align-items:center;
+    a {
+      text-decoration: none;
+    }
   }
   & .taller_name{
     text-transform:uppercase;
