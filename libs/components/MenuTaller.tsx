@@ -8,7 +8,7 @@ export const MenuTaller = ({
   className = undefined as string | undefined,
 }) => {
   return <ContainerMenuTop className={className}>
-    <BtnNavitagionSinister Icon={AlertHandDrawnSymbolComponent} text="Sinistro" href="/liquidador/talleres/taller/sinistro"></BtnNavitagionSinister>
+    <BtnNavitagionSinister Icon={AlertHandDrawnSymbolComponent} text="Siniestro" href="/liquidador/talleres/taller/siniestro"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={Carmechanic89096Component} text="Taller" href="/liquidador/talleres/taller/taller"></BtnNavitagionSinister>
     <BtnNavitagionSinister Icon={IconPricingComponent} text="Presupuesto" href="/liquidador/talleres/taller/presupuesto"></BtnNavitagionSinister>
   </ContainerMenuTop>;
