@@ -50,7 +50,7 @@ const Content = styled.div`
       }
     }
 
-    &.panel-revisados {
+    &.panel-atrasados {
       & > .grid-body > .header-sign {
         .icon svg {
           fill: rgb(250, 127, 1);
@@ -61,7 +61,7 @@ const Content = styled.div`
       }
     }
 
-    &.panel-sin-revisar, &.panel-rechazados {
+    &.panel-sin-ppto, &.panel-pendientes {
       & > .grid-body > .header-sign {
         .icon svg {
           fill: rgb(209, 8, 7);
@@ -114,20 +114,20 @@ const TableData = styled.div`
     .d-vehicle, .d-placa {
       text-transform: uppercase;
     }
-    .d-fecha {
+    .d-fecha, .d-dias {
       color: rgb(209, 8, 7);
     }
   }
 `;
 
 const Menu = ({
-  btnActived = undefined as undefined | 'revisados' | 'sin_revisar' | 'rechazados',
-  onActived = (panel: 'revisados' | 'sin_revisar' | 'rechazados') => { },
+  btnActived = undefined as undefined | 'atrasados' | 'sin_ppto' | 'pendientes',
+  onActived = (panel: 'atrasados' | 'sin_ppto' | 'pendientes') => { },
 }) => {
   return <div className="menu-taller">
-    <Btn onClick={() => onActived('revisados')} className={classNames({ actived: btnActived === 'revisados' }, "bg-orange")}>Revisados</Btn>
-    <Btn onClick={() => onActived('sin_revisar')} className={classNames({ actived: btnActived === 'sin_revisar' }, "bg-orange-light")}>Sin revisar</Btn>
-    <Btn onClick={() => onActived('rechazados')} className={classNames({ actived: btnActived === 'rechazados' }, "bg-yellow")}>Rechazados</Btn>
+    <Btn onClick={() => onActived('atrasados')} className={classNames({ actived: btnActived === 'atrasados' }, "bg-orange")}>Atrasados</Btn>
+    <Btn onClick={() => onActived('sin_ppto')} className={classNames({ actived: btnActived === 'sin_ppto' }, "bg-orange-light")}>Sin PPTO</Btn>
+    <Btn onClick={() => onActived('pendientes')} className={classNames({ actived: btnActived === 'pendientes' }, "bg-yellow")}>Pendientes</Btn>
   </div>
 }
 
@@ -142,43 +142,42 @@ const GridContent = ({
   </div>
 }
 
-const GridRevisados = () => {
-  return <GridContent className="panel-revisados">
+const GridAtrasados = () => {
+  return <GridContent className="panel-atrasados">
     <div className="header-sign">
       <div className="icon">
         <DoneComponent></DoneComponent>
       </div>
       <div className="value">
         <div className="dt">4</div>
-        <div className="label">Revisados</div>
+        <div className="label">Atrasados</div>
       </div>
     </div>
 
-    <TableData className="header" templateColumns={6}>
+    <TableData className="header" templateColumns={5}>
       <div className="t-header">
         <div className="cel d-n">N</div>
         <div className="cel d-client">Cliente</div>
         <div className="cel d-vehicle">Vehiculo</div>
-        <div className="cel d-monto">Monto</div>
         <div className="cel d-placa">Placa</div>
-        <div className="cel d-fecha">Fecha</div>
+        <div className="cel d-dias">Dias de atraso</div>
       </div>
     </TableData>
-    <TableData templateColumns={6}>
-      {Array(40).fill(0).map(generatorSampleRowVehicleAprov)}
+    <TableData templateColumns={5}>
+      {Array(40).fill(0).map(generatorSampleRowSiniestro)}
     </TableData>
   </GridContent>;
 }
 
-const GridSinRevisar = () => {
-  return <GridContent className="panel-sin-revisar">
+const GridSinPPTO = () => {
+  return <GridContent className="panel-sin-ppto">
     <div className="header-sign">
       <div className="icon">
         <OutlineSearchComponent></OutlineSearchComponent>
       </div>
       <div className="value">
         <div className="dt">4</div>
-        <div className="label">Sin revisar</div>
+        <div className="label">Sin PPTO</div>
       </div>
     </div>
 
@@ -188,24 +187,24 @@ const GridSinRevisar = () => {
         <div className="cel d-client">Cliente</div>
         <div className="cel d-vehicle">Vehiculo</div>
         <div className="cel d-placa">Placa</div>
-        <div className="cel d-fecha">Fecha</div>
+        <div className="cel d-dias">Dias de atraso</div>
       </div>
     </TableData>
     <TableData templateColumns={5}>
-      {Array(40).fill(0).map(generatorSampleRowVehicle)}
+      {Array(40).fill(0).map(generatorSampleRowSiniestro)}
     </TableData>
   </GridContent>;
 }
 
-const GridRechazados = () => {
-  return <GridContent className="panel-rechazados">
+const GridPendientes = () => {
+  return <GridContent className="panel-pendientes">
     <div className="header-sign">
       <div className="icon">
         <CloseIcon></CloseIcon>
       </div>
       <div className="value">
         <div className="dt">4</div>
-        <div className="label">Rechazados</div>
+        <div className="label">Pendientes</div>
       </div>
     </div>
 
@@ -215,17 +214,17 @@ const GridRechazados = () => {
         <div className="cel d-client">Cliente</div>
         <div className="cel d-vehicle">Vehiculo</div>
         <div className="cel d-placa">Placa</div>
-        <div className="cel d-fecha">Fecha</div>
+        <div className="cel d-dias">Dias de atraso</div>
       </div>
     </TableData>
     <TableData templateColumns={5}>
-      {Array(40).fill(0).map(generatorSampleRowVehicle)}
+      {Array(40).fill(0).map(generatorSampleRowSiniestro)}
     </TableData>
   </GridContent>;
 }
 
 export default () => {
-  const [panelSelected, setPanelSelected] = useState('revisados' as 'revisados' | 'sin_revisar' | 'rechazados');
+  const [panelSelected, setPanelSelected] = useState('pendientes' as 'atrasados' | 'sin_ppto' | 'pendientes');
 
   return <>
     <NavBarLiquidadorComponent></NavBarLiquidadorComponent>
@@ -238,13 +237,13 @@ export default () => {
         <Content>
           <MenuTaller></MenuTaller>
 
-          <TitlePresupuesto><h1>Taller Protuerca</h1></TitlePresupuesto>
+          <TitlePresupuesto><h1>Buscar</h1></TitlePresupuesto>
 
           <Menu btnActived={panelSelected} onActived={(panel) => setPanelSelected(panel)} />
 
-          {panelSelected === 'revisados' ? <GridRevisados /> : null}
-          {panelSelected === 'sin_revisar' ? <GridSinRevisar /> : null}
-          {panelSelected === 'rechazados' ? <GridRechazados /> : null}
+          {panelSelected === 'atrasados' ? <GridAtrasados /> : null}
+          {panelSelected === 'sin_ppto' ? <GridSinPPTO /> : null}
+          {panelSelected === 'pendientes' ? <GridPendientes /> : null}
 
         </Content>
 
@@ -254,13 +253,13 @@ export default () => {
   </>;
 }
 
-function generatorSampleRowVehicle(_: any, i: number) {
+function generatorSampleRowSiniestro(_: any, i: number) {
   return <div key={i} className="t-row">
     <div className="cel d-n">121</div>
     <div className="cel d-client">Jose Antonio</div>
     <div className="cel d-vehicle">Kia</div>
     <div className="cel d-placa">HJGX12</div>
-    <div className="cel d-fecha">25 / 10 / 2019</div>
+    <div className="cel d-fecha">4</div>
   </div>;
 }
 
