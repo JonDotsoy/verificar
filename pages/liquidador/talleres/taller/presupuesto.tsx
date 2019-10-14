@@ -74,6 +74,52 @@ const Content = styled.div`
   }
 `;
 
+type TableDataOpts = {
+  templateColumns?: number;
+}
+
+const TableData = styled.div`
+  display: grid;
+  grid-template-columns: repeat(${({ templateColumns = 5 }: TableDataOpts) => templateColumns}, 1fr);
+
+  max-height: 500px;
+  overflow: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  &.header {
+    background: rgb(203, 203, 203);
+    .cel {
+      text-transform: uppercase;
+    }
+  }
+
+  .t-header, .t-row {
+    display: contents;
+    .cel {
+      text-align: center;
+    }
+  }
+  .t-row {
+    .cel {
+      padding-top: 20px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: solid 1px #bfbfbf;
+    }
+    .d-n, .d-client, .d-monto {
+      color: rgb(251, 156, 6);
+    }
+    .d-vehicle, .d-placa {
+      text-transform: uppercase;
+    }
+    .d-fecha {
+      color: rgb(209, 8, 7);
+    }
+  }
+`;
+
 const Menu = ({
   btnActived = undefined as undefined | 'revisados' | 'sin_revisar' | 'rechazados',
   onActived = (panel: 'revisados' | 'sin_revisar' | 'rechazados') => { },
@@ -107,6 +153,20 @@ const GridRevisados = () => {
         <div className="label">Revisados</div>
       </div>
     </div>
+
+    <TableData className="header" templateColumns={6}>
+      <div className="t-header">
+        <div className="cel d-n">N</div>
+        <div className="cel d-client">Cliente</div>
+        <div className="cel d-vehicle">Vehiculo</div>
+        <div className="cel d-monto">Monto</div>
+        <div className="cel d-placa">Placa</div>
+        <div className="cel d-fecha">Fecha</div>
+      </div>
+    </TableData>
+    <TableData templateColumns={6}>
+      {Array(40).fill(0).map(generatorSampleRowVehicleAprov)}
+    </TableData>
   </GridContent>;
 }
 
@@ -121,6 +181,19 @@ const GridSinRevisar = () => {
         <div className="label">Sin revisar</div>
       </div>
     </div>
+
+    <TableData className="header" templateColumns={5}>
+      <div className="t-header">
+        <div className="cel d-n">N</div>
+        <div className="cel d-client">Cliente</div>
+        <div className="cel d-vehicle">Vehiculo</div>
+        <div className="cel d-placa">Placa</div>
+        <div className="cel d-fecha">Fecha</div>
+      </div>
+    </TableData>
+    <TableData templateColumns={5}>
+      {Array(40).fill(0).map(generatorSampleRowVehicle)}
+    </TableData>
   </GridContent>;
 }
 
@@ -135,6 +208,19 @@ const GridRechazados = () => {
         <div className="label">Rechazados</div>
       </div>
     </div>
+
+    <TableData className="header" templateColumns={5}>
+      <div className="t-header">
+        <div className="cel d-n">N</div>
+        <div className="cel d-client">Cliente</div>
+        <div className="cel d-vehicle">Vehiculo</div>
+        <div className="cel d-placa">Placa</div>
+        <div className="cel d-fecha">Fecha</div>
+      </div>
+    </TableData>
+    <TableData templateColumns={5}>
+      {Array(40).fill(0).map(generatorSampleRowVehicle)}
+    </TableData>
   </GridContent>;
 }
 
@@ -168,4 +254,24 @@ export default () => {
   </>;
 }
 
+function generatorSampleRowVehicle(_: any, i: number) {
+  return <div key={i} className="t-row">
+    <div className="cel d-n">121</div>
+    <div className="cel d-client">Jose Antonio</div>
+    <div className="cel d-vehicle">Kia</div>
+    <div className="cel d-placa">HJGX12</div>
+    <div className="cel d-fecha">25 / 10 / 2019</div>
+  </div>;
+}
+
+function generatorSampleRowVehicleAprov(_: any, i: number) {
+  return <div key={i} className="t-row">
+    <div className="cel d-n">121</div>
+    <div className="cel d-client">Jose Antonio</div>
+    <div className="cel d-vehicle">Kia</div>
+    <div className="cel d-placa">HJGX12</div>
+    <div className="cel d-monto">$200.000</div>
+    <div className="cel d-fecha">25 / 10 / 2019</div>
+  </div>;
+}
 
