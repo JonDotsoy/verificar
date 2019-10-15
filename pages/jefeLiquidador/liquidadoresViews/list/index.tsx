@@ -5,7 +5,12 @@ import LiquidadoresHeader from "./liquidadoresHeader";
 import LiquidadoresList from "./liquidadoresList";
 import LDetail from "./liquidadorDetail";
 
-export default () => {
+
+
+
+export default ({
+    showSiniestroLiquidador=()=>{},
+}) => {
     const [renderList, setRenderList] = useState(true)
     return (
         <>
@@ -13,7 +18,10 @@ export default () => {
                 renderList ?
                     <LContainer>
                         <LiquidadoresHeader />
-                        <LiquidadoresList />
+                        <LiquidadoresList 
+                            showSiniestroLiquidador={showSiniestroLiquidador}
+                    
+                        />
                     </LContainer>
                     :
                     <LDetail />
@@ -24,7 +32,7 @@ export default () => {
 }
 
 const LContainer = styled.div`
-  width:80%;
+  width:90%;
   margin: 25px auto;
   @media(max-width:750px){
     width:100%;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 
-export default () => {
+export default ({showSiniestroLiquidador=()=>{}}) => {
   return (
     <LiquidadoresList>
       <div className="t_items_header">
@@ -20,7 +20,7 @@ export default () => {
         <div className="t_items_info">
           {
             lItems.map((item, index) =>
-              <div key={index} className="t_items_taller">
+              <div key={index} onClick={()=>showSiniestroLiquidador()}  className="t_items_taller">
                 <div className="t_item_taller">
                   <div className="item_avatar">
                     <img className="item_avatar" src={item.avatar} alt={item.liquidador} />
