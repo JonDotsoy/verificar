@@ -7,7 +7,15 @@ export default () => {
         <LContainer>
             <Nav />
             <InfoContainer>
-
+                <div className="left">
+                    <h3 className="title">perfil liquidador</h3>
+                    <div className="avatar">
+                        <img src={info.avatar} alt={info.name} />
+                    </div>
+                    <div className="info_container">
+                        <div className="info"></div>    
+                    </div>
+                </div>  
             </InfoContainer>
         </LContainer>
 
@@ -40,7 +48,7 @@ const info = {
         txt: "muy bueno",
         icon: ""
     },
-    avatar: "",
+    avatar: "https://i.ibb.co/ZY42zr4/user-photo.jpg",
     sCerrados: 125,
     sActuales: 50,
     pSinRevisar: 5,

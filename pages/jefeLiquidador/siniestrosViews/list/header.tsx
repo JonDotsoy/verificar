@@ -37,7 +37,7 @@ const SelectList = styled.div`
     
     select{
         height: 40px;
-        border:1px solid rgba(255,255,255,.3);
+        border:1px solid rgba(235,120,14,.9);
         background:transparent;
         width:100%;
         font-size:16px;
@@ -49,7 +49,15 @@ const SelectList = styled.div`
         &:focus{
           outline: none;
         }
-        
+        option{
+          
+          color:white;
+          background:rgba(235,120,14,.7);
+          border-bottom:rgba(255,255,255,.8);
+          border-radius:15px;
+          font-weight:bold;
+          text-transform:uppercase;
+        }
     }
 `;
 
@@ -71,6 +79,7 @@ const InputSearch = styled.div`
         text-transform:uppercase;
         &:focus{
           outline: none;
+          
         }
       }
      .input_form::placeholder{

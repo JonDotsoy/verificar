@@ -5,7 +5,7 @@ import List from "./list";
 import AsignarSiniestro from "./asignarSiniestro";
 
 export default () => {
-    const [goAsignarS, setGoAsignarS] = useState(true);
+    const [goAsignarS, setGoAsignarS] = useState(false);
     const showSetGoAsignarS = () =>  setGoAsignarS(true);
     const hideSetGoAsignarS = () =>  setGoAsignarS(false);
 
@@ -26,7 +26,8 @@ export default () => {
 }
 
 const LContainer = styled.div`
-  width:80%;
+  width:90%;
+  float:right;
   margin: 25px auto;
   @media(max-width:750px){
     width:100%;
