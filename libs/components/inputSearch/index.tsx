@@ -4,13 +4,14 @@ import SearchIcon from "../icons/BaselineSearch.component";
 
 interface InputProps {
     stylesInput?: object,
-    placeholder?: string
+    placeholder?: string,
+    stylesContainer?:object
 }
 
 
-export default ({ stylesInput, placeholder }: InputProps) => {
+export default ({ stylesInput, placeholder,stylesContainer }: InputProps) => {
     return (
-        <InputSearch>
+        <InputSearch style={stylesContainer}>
             <input style={stylesInput}
                 className="talleres_input_form"
                 name="search_taller"
@@ -39,7 +40,7 @@ const InputSearch = styled.div`
         height: 100%;
         border:none;
         background:transparent;
-        width:85%;
+        width:100%;
         font-size:16px;
         font-weight:bold;
         color:rgba(255,255,255,.8);

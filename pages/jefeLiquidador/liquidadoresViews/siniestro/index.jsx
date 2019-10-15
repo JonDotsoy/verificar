@@ -3,23 +3,29 @@ import styled from "styled-components";
 import Nav from "../nav";
 import SearchIcon from "../../../../libs/components/icons/BaselineSearch.component";
 import List from "./list";
+import InputS from "../../../../libs/components/inputSearch";
 
-export default () => {
-    return (
-        <SContainer>
-            <Nav />
-            <InputSearch >
-                <input className="talleres_input_form" name="search_taller" type="text" placeholder="BUSCAR presupuesto" />
-                <div className="talleres_search_icon">
-                    <SearchIcon />
-                </div>
-            </InputSearch >
-            <TitleList>
-                <h2 className="title">Siniestros Asociados</h2>
-            </TitleList>
-            <List />
-        </SContainer>
-    )
+export default ({
+  listLiquidadores = () => { },
+  showPresupuestoLiquidador = () => { }
+}) => {
+  return (
+    <SContainer>
+      <Nav
+        listLiquidadores={listLiquidadores}
+        showPresupuestoLiquidador={showPresupuestoLiquidador}
+      />
+      <InputS
+        stylesContainer={{ background: "#EB780E" }}
+        placeholder={"buscar siniestro"}
+        stylesInput={{ textAlign: "center" }}
+      />
+      <TitleList>
+        <h2 className="title">Siniestros Asociados</h2>
+      </TitleList>
+      <List />
+    </SContainer>
+  )
 }
 
 

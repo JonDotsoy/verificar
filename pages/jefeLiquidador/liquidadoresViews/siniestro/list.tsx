@@ -20,7 +20,7 @@ export default () => {
                     <div className="t_items_info">
                         {
                             itemsPresupuesto.map((item, index) =>
-                                <div key={index} className="t_items">
+                                <div  key={index} className="t_items">
                                     <div className="t_item id">
                                         {item.id}
                                     </div>

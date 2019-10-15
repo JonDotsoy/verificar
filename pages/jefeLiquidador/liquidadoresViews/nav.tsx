@@ -5,18 +5,34 @@ import WarningIcon from "../../../libs/components/icons/AlertHandDrawnSymbol.com
 import PresuIcon from "../../../libs/components/icons/FoldedNewspaper.component";
 import UserIcon from "../../../libs/components/icons/BaselineFace24px.component";
 
-export default () => {
+export default ({
+    listLiquidadores = () => { },
+    showPresupuestoLiquidador = () => { },
+    showSiniestroLiquidador = () => { }
+}) => {
+    const conditionRender = (section: string) => {
+        switch (section) {
+            case links[0].txt:
+                return listLiquidadores()
+            case links[1].txt:
+                return showSiniestroLiquidador()
+            case links[2].txt:
+                return showPresupuestoLiquidador()
+            default:
+                return null;
+        }
+    }
     return (
         <LiquidadoresNav>
             {
-                links.map((item,index)=>
-                    <a className="link" href={item.url} key={index}>
+                links.map((item, index) =>
+                    <a className="link" key={index} onClick={() => conditionRender(item.txt)}>
                         <div className="link_icon">
                             {item.icon}
                         </div>
                         <span>
-                            { item.txt }
-                        </span>   
+                            {item.txt}
+                        </span>
                     </a>
                 )
             }
@@ -43,6 +59,7 @@ const LiquidadoresNav = styled.div`
         font-weight:bold;
         font-size:12px;
         border-radius:10px;
+        cursor:pointer;
     }
     .link_icon{
         svg{
@@ -53,18 +70,21 @@ const LiquidadoresNav = styled.div`
 
 const links = [
     {
-        url:"#!",
-        icon:<UserIcon />,
-        txt:"liquidador"
+        url: "#!",
+        icon: <UserIcon />,
+        txt: "liquidador",
+
     },
     {
-        url:"#!",
-        icon:<WarningIcon />,
-        txt:"siniestro"
+        url: "#!",
+        icon: <WarningIcon />,
+        txt: "siniestro",
+
     },
     {
-        url:"#!",
-        icon:<PresuIcon />,
-        txt:"presupuesto"
+        url: "#!",
+        icon: <PresuIcon />,
+        txt: "presupuesto",
+
     }
 ]

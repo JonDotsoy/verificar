@@ -4,7 +4,7 @@ import Container from '../../libs/components/Container';
 import NavBarJefeLiquidador from '../../libs/components/Navbar/NavBarJefeLiquidador';
 import ContainerMenuLateralJefeLiquidadorComponent from '../../libs/components/MenuLateral/ContainerMenuLateralJefeLiquidador.component';
 
-import LiquidadoresList from "./liquidadoresViews/list";
+import LiquidadoresViews from "./liquidadoresViews";
 import styled from "styled-components";
 
 export default () => {
@@ -16,7 +16,7 @@ export default () => {
 
 
       <BoxMain>
-        <LiquidadoresList />
+        <LiquidadoresViews />
       </BoxMain>
 
     </Container>
