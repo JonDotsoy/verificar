@@ -1,10 +1,10 @@
 import React from "react";
 
 import styled from "styled-components";
-import SearchIcon from "../../../libs/components/icons/BaselineSearch.component"
-import CarIcon from "../../../libs/components/icons/CarOfHatchback.component"
+import CarIcon from "../../../libs/components/icons/CarOfHatchback.component";
 import PriceIcon from "../../../libs/components/icons/BaselineMonetizationOn.component";
-
+import InputS from "../../../libs/components/inputSearch";
+import ViewHeaderBox from "../../../libs/components/viewHeaderBox";
 
 
 
@@ -13,15 +13,9 @@ export default ({ goDetails = () => { } }) => {
 
   return (
     <PContainer>
-      <PHeader>
-        <h2 className="talleres_title">presupuestos asignados</h2>
-        <InputSearch >
-          <input className="talleres_input_form" name="search_taller" type="text" placeholder="BUSCAR POR" />
-          <div className="talleres_search_icon">
-            <SearchIcon />
-          </div>
-        </InputSearch >
-      </PHeader>
+      <ViewHeaderBox title="presupuestos asignados">
+        <InputS />
+      </ViewHeaderBox>
       <PItems>
         <div className="t_items_header">
           <div className="t_items_titles">
@@ -219,47 +213,7 @@ const PItems = styled.div`
  }
 `;
 
-const PHeader = styled.div`
-  background:#EB780E;
-  color:rgba(255,255,255,.7);
-  padding:2rem 1rem 3rem 1rem;
-   .talleres_title{
-    text-transform:uppercase;
-    text-align:center;
-    font-size:25px;
-  }
-`;
 
-const InputSearch = styled.div`
-    margin:30px auto 0 auto;
-    max-width:400px;
-    background:rgba(255,255,255,.3);
-    padding:12px 20px;
-    border-radius:20px;
-    position:relative;
-    .talleres_input_form{
-        height: 100%;
-        border:none;
-        background:transparent;
-        width:85%;
-        font-size:16px;
-        font-weight:bold;
-        color:rgba(255,255,255,.8);
-        text-transform:uppercase;
-        &:focus{
-          outline: none;
-        }
-      }
-     .talleres_input_form::placeholder{
-        color:rgba(255,255,255,.7);
-    }
-    .talleres_search_icon{
-        position:absolute;
-        top:50%;
-        transform:translateY(-50%);
-        right:10px;
-     }
-`;
 
 const tItemsTitle = [
   "id",
