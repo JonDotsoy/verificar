@@ -8,7 +8,6 @@ import Carmechanic89096Component from "../../../../libs/components/icons/Carmech
 import IconPricingComponent from "../../../../libs/components/icons/IconPricing.component";
 import { TitlePresupuesto } from "../../../../libs/components/TitlePresupuesto";
 import TallerDetail from "../../../../libs/components/TallerDetail";
-import { MenuTaller } from "../../../../libs/components/MenuTaller";
 
 const Content = styled.div({});
 
@@ -22,7 +21,11 @@ export default () => {
 
       <div style={{ width: '100%' }}>
         <Content>
-          <MenuTaller></MenuTaller>
+          <ContainerMenuTop className="">
+            <BtnNavitagionSinister Icon={AlertHandDrawnSymbolComponent} text="Sinistro" href="/liquidador/talleres/taller/sinistro"></BtnNavitagionSinister>
+            <BtnNavitagionSinister Icon={Carmechanic89096Component} text="Taller" href="/liquidador/talleres/taller/taller"></BtnNavitagionSinister>
+            <BtnNavitagionSinister Icon={IconPricingComponent} text="Presupuesto" href="/liquidador/talleres/taller/presupuesto"></BtnNavitagionSinister>
+          </ContainerMenuTop>
 
           <TitlePresupuesto><h1>Taller Protuerca</h1></TitlePresupuesto>
 
