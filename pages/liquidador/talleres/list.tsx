@@ -32,8 +32,8 @@ export default ({ goDetails = () => { } }) => {
             tItemsTaller.map((taller, index) =>
               <div key={index} className="t_items_taller">
                 <div className="t_item_taller">
-                  <Link href="/liquidador/talleres/taller/taller.tsx">
-                    <a>
+                  <Link href="/liquidador/talleres/taller/taller">
+                    <a style={{ textDecoration: 'none' }}>
                       <h3 className="taller_name">{taller.taller}</h3>
                     </a>
                   </Link>
