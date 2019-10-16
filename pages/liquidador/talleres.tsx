@@ -19,13 +19,7 @@ export default () => {
     <ContainerComponent>
       <MenuNavComponent></MenuNavComponent>
 
-      {
-        detailRender ?
-          <TallerDetail />
-          :
-         <List goDetails={goDetails} />
-
-      }
+      <List />
 
     </ContainerComponent>
   </>;

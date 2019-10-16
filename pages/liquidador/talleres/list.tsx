@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import Link from 'next/link';
 
 
 import CarIcon from "../../../libs/components/icons/CarOfHatchback.component";
@@ -29,9 +30,13 @@ export default ({ goDetails = () => { } }) => {
           <div className="t_items_info">
           {
             tItemsTaller.map((taller, index) =>
-              <div onClick={() => goDetails()} key={index} className="t_items_taller">
+              <div key={index} className="t_items_taller">
                 <div className="t_item_taller">
-                  <h3 className="taller_name">{taller.taller}</h3>
+                  <Link href="/liquidador/talleres/taller/taller.tsx">
+                    <a>
+                      <h3 className="taller_name">{taller.taller}</h3>
+                    </a>
+                  </Link>
                 </div>
                 <div className="t_item_taller">
                   <span className="taller_estado">
