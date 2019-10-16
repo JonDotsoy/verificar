@@ -8,7 +8,7 @@ import LiquidadorDetail from "./liquidadorDetail";
 import Nav from "./nav";
 
 export default () => {
-    const [mainSection, setMainSection] = useState(false);
+    const [mainSection, setMainSection] = useState(true);
     const [sectionView, setSectionView] = useState("liquidadorDetail");
 
     const hideMainSection = () => setMainSection(false);
