@@ -1,33 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styled from "styled-components";
 import LiquidadoresHeader from "./liquidadoresHeader";
 import LiquidadoresList from "./liquidadoresList";
-import LDetail from "./liquidadorDetail";
+
 
 
 
 
 export default ({
-    showSiniestroLiquidador=()=>{},
+    showSiniestroLiquidador = () => { },
 }) => {
-    const [renderList, setRenderList] = useState(true)
     return (
-        <>
-            {
-                renderList ?
-                    <LContainer>
-                        <LiquidadoresHeader />
-                        <LiquidadoresList 
-                            showSiniestroLiquidador={showSiniestroLiquidador}
-                    
-                        />
-                    </LContainer>
-                    :
-                    <LDetail />
-            }
+        <LContainer>
+            <LiquidadoresHeader />
+            <LiquidadoresList
+                showSiniestroLiquidador={showSiniestroLiquidador}
 
-        </>
+            />
+        </LContainer>
     )
 }
 
