@@ -9,13 +9,13 @@ import LiquidadoresList from "./liquidadoresList";
 
 
 export default ({
-    showSiniestroLiquidador = () => { },
+    hideMainSection = () => { },
 }) => {
     return (
         <LContainer>
             <LiquidadoresHeader />
             <LiquidadoresList
-                showSiniestroLiquidador={showSiniestroLiquidador}
+                hideMainSection={hideMainSection}
 
             />
         </LContainer>

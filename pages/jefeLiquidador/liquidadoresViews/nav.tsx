@@ -6,14 +6,14 @@ import PresuIcon from "../../../libs/components/icons/FoldedNewspaper.component"
 import UserIcon from "../../../libs/components/icons/BaselineFace24px.component";
 
 export default ({
-    listLiquidadores = () => { },
+    showListLiquidadores = () => { },
     showPresupuestoLiquidador = () => { },
     showSiniestroLiquidador = () => { }
 }) => {
     const conditionRender = (section: string) => {
         switch (section) {
             case links[0].txt:
-                return listLiquidadores()
+                return showListLiquidadores()
             case links[1].txt:
                 return showSiniestroLiquidador()
             case links[2].txt:

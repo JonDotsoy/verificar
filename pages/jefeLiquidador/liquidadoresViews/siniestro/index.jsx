@@ -1,19 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Nav from "../nav";
 import List from "./list";
 import InputS from "../../../../libs/components/inputSearch";
 
-export default ({
-  listLiquidadores = () => { },
-  showPresupuestoLiquidador = () => { }
-}) => {
+export default () => {
   return (
-    <SContainer>
-      <Nav
-        listLiquidadores={listLiquidadores}
-        showPresupuestoLiquidador={showPresupuestoLiquidador}
-      />
+    <>
+      
       <InputS
         stylesContainer={{ background: "#EB780E" }}
         placeholder={"buscar siniestro"}
@@ -23,18 +16,10 @@ export default ({
         <h2 className="title">Siniestros Asociados</h2>
       </TitleList>
       <List />
-    </SContainer>
+    </>
   )
 }
 
-
-const SContainer = styled.div`
-  width:80%;
-  margin: 25px auto;
-  @media (max-width: 768px) {
-    width:100%;
-  }
-`;
 
 
 
