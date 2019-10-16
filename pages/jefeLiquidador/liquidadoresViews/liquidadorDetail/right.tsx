@@ -6,12 +6,13 @@ import EmailIcon from "../../../../libs/components/icons/BaselineMail.component"
 import PhoneIcon from "../../../../libs/components/icons/BaselineStayPrimaryPortrait24px.component";
 import RelojIcon from "../../../../libs/components/icons/Icons8Velocimetro.component";
 import MuyBuenoIcon from "../../../../libs/components/icons/BaselineFace24px.component";
+import EditIcon from "../../../../libs/components/icons/BaselineBuild.component";
 
 export default () => {
-    const handleIconSatisfaccion = (text:string) => {
+    const handleIconSatisfaccion = (text: string) => {
         switch (text) {
             case "Muy bueno":
-               return <MuyBuenoIcon />
+                return <MuyBuenoIcon />
             default:
                 return ""
         }
@@ -28,11 +29,17 @@ export default () => {
                     <div className="icon"><EmailIcon /></div>
                     <div className="tipo">correo:</div>
                     <div className="valor">{info.correo}</div>
+                    <div className="edit">
+                        <EditIcon />
+                    </div>
                 </li>
                 <li className="fila">
                     <div className="icon"><PhoneIcon /></div>
                     <div className="tipo">teléfono:</div>
                     <div className="valor">{info.telefono}</div>
+                    <div className="edit">
+                        <EditIcon />
+                    </div>
                 </li>
             </ul>
             <ul className="tiempo_p">
@@ -52,7 +59,7 @@ export default () => {
                         {info.satisfaccion}
                     </div>
                     <div className="icon">
-                     { handleIconSatisfaccion(info.satisfaccion)}
+                        {handleIconSatisfaccion(info.satisfaccion)}
                     </div>
                 </li>
             </ul>
@@ -104,6 +111,7 @@ const Right = styled.div`
             display:flex;
             align-items:center;
             height:60px;
+            position:relative;
             .icon{
                 width:10%;
                 svg{
@@ -122,6 +130,32 @@ const Right = styled.div`
                 width:65%;
                 text-align:left;
                 font-size:20px;
+            }
+            .edit{
+                position:absolute;
+                z-index:1;
+                top:50%;
+                right:1rem;
+                transform:translateY(-50%);
+                overflow:hidden;
+                border-radius:50%;
+                width:20px;
+                height:20px;
+                cursor:pointer;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                border:1px solid black;
+                transition:all linear .3s;
+                opacity:.8;
+                &:hover{
+                    opacity:1; 
+                    transform:scale(1.1) translateY(-50%);
+                }
+                svg{
+                    fill:black;
+                    width:15px;
+                }
             }
         }
     }
@@ -146,14 +180,14 @@ const Right = styled.div`
             display:flex;
             cursor:pointer;
             transition:.3s;
+            opacity:.8;
             svg{
                 width:25px;
                 fill:black; 
             }
             &:hover{
-                 border-color:#CB6000;
-                 width:30px;
-                 height:30px;
+                transform:scale(1.1);
+                opacity:1;
             }
         }
         .next{

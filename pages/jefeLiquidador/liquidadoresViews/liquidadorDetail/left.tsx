@@ -1,13 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-
+import EditIcon from "../../../../libs/components/icons/BaselineBuild.component";
 
 export default () => {
     return (
          <Left>
               <h3 className="title">perfil liquidador</h3>
                 <div className="avatar">
+                    <div className="box">
                     <img src={info.avatar} alt={info.name} />
+                    </div>
+                    
+                    <div className="edit">
+                        <EditIcon />
+                    </div>
                 </div>
                 <div className="info_container">
                     <div className="info">
@@ -64,16 +70,44 @@ background:#CB6000;
     text-transform:uppercase; 
 }
 .avatar{
-    overflow:hidden;
-    border-radius:50%;
-    border:5px solid white;
     width:180px;
     margin:10px auto 0 auto;
     filter: grayscale(100%);
     transition:.3s;
+    position:relative;
+    .box{
+        border:5px solid white;
+        width:100%;
+        overflow:hidden;
+        border-radius:50%;
+    }
     img{
         display:block;
         width:100%;
+    }
+    .edit{
+        position:absolute;
+        z-index:1;
+        bottom:5px;
+        right:-5px;
+        overflow:hidden;
+        border-radius:50%;
+        width:20px;
+        height:20px;
+        cursor:pointer;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        border:1px solid white;
+        transition:all linear .3s;
+        opacity:.8;
+        &:hover{
+            opacity:1; 
+            transform:scale(1.1);
+        }
+        svg{
+            width:15px;
+        }
     }
 }
 .info_container{
