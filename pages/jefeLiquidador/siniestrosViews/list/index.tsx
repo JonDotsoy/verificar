@@ -4,20 +4,25 @@ import SHeader from "./header";
 import List from "./list";
 import AsignarSiniestro from "./asignarSiniestro";
 
-export default () => {
+
+interface PropsComp{
+    handleMainSection(condition:boolean): any;
+}
+
+export default ({handleMainSection}:PropsComp) => {
     const [goAsignarS, setGoAsignarS] = useState(false);
-    const showSetGoAsignarS = () =>  setGoAsignarS(true);
-    const hideSetGoAsignarS = () =>  setGoAsignarS(false);
+    const handleSetGoAsignarS = (condition:boolean) =>  setGoAsignarS(condition);
+
 
     return (
         <LContainer>
             {
                 goAsignarS ?
-                    <AsignarSiniestro hideSetGoAsignarS={hideSetGoAsignarS} />
+                    <AsignarSiniestro handleSetGoAsignarS={handleSetGoAsignarS} />
                     :
                     <>
                         <SHeader />
-                        <List showSetGoAsignarS={showSetGoAsignarS} />
+                        <List handleMainSection={handleMainSection} handleSetGoAsignarS={handleSetGoAsignarS} />
                     </>
             }
 
