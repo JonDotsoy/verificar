@@ -7,7 +7,7 @@ import Taller from "./taller";
 import Siniestro from "./siniestro";
 
 export default () => {
-  const [mainSection, setMainSection] = useState(false);
+  const [mainSection, setMainSection] = useState(true);
   const [section, setSection] = useState("liquidador");
   const handleMainSection = (condition: boolean) => setMainSection(condition);
   const handleSection = (sectionName: string) => setSection(sectionName);
