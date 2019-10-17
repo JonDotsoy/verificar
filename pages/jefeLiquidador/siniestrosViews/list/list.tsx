@@ -4,7 +4,13 @@ import LiquidadorIcon from "../../../../libs/components/icons/BaselineFace24px.c
 import CarIcon from "../../../../libs/components/icons/CarOfHatchback.component";
 import DespachadoIcon from "../../../../libs/components/icons/BaselineTimeline.compoent";
 
-export default ({showSetGoAsignarS = () =>{} }) => {
+
+interface PropsComp{
+  handleMainSection(condition:boolean): any;
+  handleSetGoAsignarS(condition:boolean):any;
+}
+
+export default ({handleSetGoAsignarS,handleMainSection}:PropsComp) => {
   return (
     <MainContainer>
       <ItemsHeader>
@@ -30,16 +36,16 @@ export default ({showSetGoAsignarS = () =>{} }) => {
                   <div className="item liquidador">
                     {
                       item.liquidador ?
-                        <>
+                        <div onClick={()=>handleMainSection(false)} className="name_container">
                           <div className="icon">
                             <LiquidadorIcon />
                           </div>
                           <div className="name_liquidador">
                             {item.liquidador}
                           </div>
-                        </>
+                        </div>
                         :
-                        <button onClick={()=>showSetGoAsignarS()} type="button">
+                        <button onClick={()=>handleSetGoAsignarS(true)} type="button">
                           agregar liquidador
                         </button>
                     }
@@ -113,7 +119,6 @@ const Items = styled.div`
  }
   .items{
   transition:all .3s;
-  
   display:grid;
   grid-template-columns:repeat(6, 1fr);
   padding:1rem 0;
@@ -137,6 +142,18 @@ const Items = styled.div`
     font-size:20px;
     text-transform:capitalize;
     font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    &:hover{
+      transform:scale(1.03);
+    }
+    .name_container{
+      height:100%;
+      display:flex;
+      justify-content:center;
+      flex-direction:column;
+      align-items:center;
+    }
     .icon{
       width:30px;
       svg{

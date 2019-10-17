@@ -1,34 +1,26 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-import WarningIcon from "../../../libs/components/icons/AlertHandDrawnSymbol.component";
-import PresuIcon from "../../../libs/components/icons/FoldedNewspaper.component";
+import SiniestroIcon from "../../../libs/components/icons/AlertHandDrawnSymbol.component";
+import TrabajoIcon from "../../../libs/components/icons/CustomerSupport.component";
 import UserIcon from "../../../libs/components/icons/BaselineFace24px.component";
+import PolizaIcon from "../../../libs/components/icons/Insurance.component";
+import VehiculoIcon from "../../../libs/components/icons/CarOfHatchback.component";
+import TallerIcon from "../../../libs/components/icons/Carmechanic89096.component";
+import PresupuestoIcon from "../../../libs/components/icons/FoldedNewspaper.component";
+import MultimediaIcon from "../../../libs/components/icons/Gallery.component";
 
-export default ({
-    showListLiquidadores = () => { },
-    showPresupuestoLiquidador = () => { },
-    showSiniestroLiquidador = () => { }
-}) => {
-    
+interface PropsComp {
+    handleSection(sectionName: string): any;
+}
+
+
+export default ({ handleSection }: PropsComp) => {
+
     useEffect(() => {
         initBorder();
         toggleStylesBtns();
     }, []);
-
-    const conditionRender = (section: string) => {
-        switch (section) {
-            case links[0].txt:
-                return showListLiquidadores()
-            case links[1].txt:
-                return showSiniestroLiquidador()
-            case links[2].txt:
-                return showPresupuestoLiquidador()
-            default:
-                return null;
-        }
-    }
-
 
     const toggleStylesBtns = () => {
         const links = document.getElementsByClassName("link");
@@ -50,11 +42,13 @@ export default ({
         const link:any = document.getElementsByClassName("link")[0];
         link.style.border = "3px solid black";
     }
+
+
     return (
         <LiquidadoresNav>
             {
                 links.map((item, index) =>
-                    <a className="link" key={index} onClick={() => conditionRender(item.txt)}>
+                    <a onClick={() => handleSection(item.txt)} className="link" key={index}>
                         <div className="link_icon">
                             {item.icon}
                         </div>
@@ -69,8 +63,8 @@ export default ({
 }
 
 const LiquidadoresNav = styled.div`
-   margin:10px auto 15px auto;
-   max-width:350px;
+   margin:0 auto 15px auto;
+   max-width:800px;
    display:flex;
    justify-content:space-between;
     .link{
@@ -99,21 +93,43 @@ const LiquidadoresNav = styled.div`
 
 const links = [
     {
-        url: "#!",
         icon: <UserIcon />,
         txt: "liquidador",
 
     },
     {
-        url: "#!",
-        icon: <WarningIcon />,
+        icon: <PolizaIcon />,
+        txt: "poliza",
+
+    },
+    {
+        icon: <SiniestroIcon />,
         txt: "siniestro",
 
     },
     {
-        url: "#!",
-        icon: <PresuIcon />,
+        icon: <VehiculoIcon />,
+        txt: "vehículos",
+
+    },
+    {
+        icon: <TrabajoIcon />,
+        txt: "trabajos",
+
+    },
+    {
+        icon: <TallerIcon />,
+        txt: "taller",
+
+    },
+    {
+        icon: <PresupuestoIcon />,
         txt: "presupuesto",
+
+    },
+    {
+        icon: <MultimediaIcon />,
+        txt: "multimedia",
 
     }
 ]

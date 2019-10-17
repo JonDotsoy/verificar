@@ -2,7 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import SearchIcon from "../../../../../libs/components/icons/BaselineSearch.component";
 
-export default ({ hideSetGoAsignarS = () => { } }) => {
+
+
+interface PropsComp{
+    handleSetGoAsignarS(condition:boolean): any;
+}
+
+export default ({ handleSetGoAsignarS  }:PropsComp) => {
     return (
         <>
             <Header>
@@ -30,7 +36,7 @@ export default ({ hideSetGoAsignarS = () => { } }) => {
                     <div className="items_info">
                         {
                             lItems.map((item, index) =>
-                                <div onClick={()=>hideSetGoAsignarS()} key={index} className="items">
+                                <div onClick={()=>handleSetGoAsignarS(false)} key={index} className="items">
                                     <div className="item">
                                         <div className="item_avatar">
                                             <img className="item_avatar" src={item.avatar} alt={item.liquidador} />

@@ -4,7 +4,7 @@ import Container from '../../libs/components/Container';
 import NavBarJefeLiquidador from '../../libs/components/Navbar/NavBarJefeLiquidador';
 import ContainerMenuLateralJefeLiquidadorComponent from '../../libs/components/MenuLateral/ContainerMenuLateralJefeLiquidador.component';
 
-import SiniestroList from "./siniestrosViews/list";
+import SiniestroView from "./siniestrosViews";
 import styled from "styled-components";
 
 export default () => {
@@ -14,26 +14,19 @@ export default () => {
     <Container>
       <ContainerMenuLateralJefeLiquidadorComponent></ContainerMenuLateralJefeLiquidadorComponent>
 
-         
-         
-        <BoxMain>
-         <SiniestroList />
-        </BoxMain>
-      
-      
-        
+
+
+  
+        <SiniestroView />
+  
+
+
     </Container>
   </>;
 }
 
 
 
-
-const BoxMain = styled.div`
-  width:100%;
-  display:flex;
-  justify-content:flex-end;
-`;
 
 
 //  <ContainerBody></ContainerBody>
