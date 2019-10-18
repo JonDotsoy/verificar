@@ -20,7 +20,6 @@ export default () => {
   )
 }
 
-
 const Btn = styled.div`
   font-size:13px;
   font-weight:600;
