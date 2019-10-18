@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import SearchIcon from "../../../../../libs/components/icons/BaselineSearch.component";
 import Router from 'next/router';
 import LayoutViews from "../../../../../libs/components/layoutViews";
+import Search from "../../../../../libs/components/inputSearch";
 
 export default () => {
     const addLiquidador = () => {
@@ -13,12 +13,7 @@ export default () => {
             <DirectionCenter>
                 <Header>
                     <h2 className="title">asignar siniestro {siniestroName} a:</h2>
-                    <InputSearch >
-                        <input className="input_form" name="search" type="text" placeholder="BUSCAR liquidador" />
-                        <div className="search_icon">
-                            <SearchIcon />
-                        </div>
-                    </InputSearch >
+                    <Search />
                 </Header>
                 <LiquidadoresList>
                     <div className="items_header">
