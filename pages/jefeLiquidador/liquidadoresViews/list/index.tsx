@@ -8,16 +8,11 @@ import LiquidadoresList from "./liquidadoresList";
 
 
 
-export default ({
-    hideMainSection = () => { },
-}) => {
+export default () => {
     return (
         <LContainer>
             <LiquidadoresHeader />
-            <LiquidadoresList
-                hideMainSection={hideMainSection}
-
-            />
+            <LiquidadoresList />            
         </LContainer>
     )
 }
@@ -25,6 +20,7 @@ export default ({
 const LContainer = styled.div`
   width:90%;
   margin: 25px auto;
+  position:relative;
   @media(max-width:750px){
     width:100%;
 }
