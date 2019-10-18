@@ -5,7 +5,7 @@ import NavBarJefeLiquidador from '../../libs/components/Navbar/NavBarJefeLiquida
 import ContainerMenuLateralJefeLiquidadorComponent from '../../libs/components/MenuLateral/ContainerMenuLateralJefeLiquidador.component';
 
 import LiquidadoresViews from "./liquidadoresViews";
-import styled from "styled-components";
+
 
 export default () => {
   return <>
@@ -15,18 +15,14 @@ export default () => {
       <ContainerMenuLateralJefeLiquidadorComponent></ContainerMenuLateralJefeLiquidadorComponent>
 
 
-      <BoxMain>
+      
         <LiquidadoresViews />
-      </BoxMain>
+    
 
     </Container>
   </>;
 }
 
-const BoxMain = styled.div`
-  width:100%;
-  display:flex;
-  justify-content:flex-end;
-`;
+
 
 // <ContainerBody></ContainerBody>

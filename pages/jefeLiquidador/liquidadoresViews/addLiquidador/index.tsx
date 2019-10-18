@@ -1,5 +1,7 @@
 import React from "react";
+import Router from 'next/router';
 import styled from "styled-components";
+import LayoutViews from "../../../../libs/components/layoutViews";
 import NameIcon from "../../../../libs/components/icons/BaselineFace24px.component";
 import EmailIcon from "../../../../libs/components/icons/BaselineMail.component";
 import PhoneIcon from "../../../../libs/components/icons/BaselineStayPrimaryPortrait24px.component";
@@ -9,65 +11,67 @@ import DirectionIcon from "../../../../libs/components/icons/BaselineLocationOn.
 
 export default () => {
     return (
-        <AddLContainer>
-            <AddLTitle>
-                <h2>Agregar liquidador</h2>
-            </AddLTitle>
-            <AddLBody>
-                <form className="form">
-                    <div className="form_group">
-                        <div className="input_icon">
-                            <NameIcon />
+        <LayoutViews user="jefe">
+            <AddLContainer>
+                <AddLTitle>
+                    <h2>Agregar liquidador</h2>
+                </AddLTitle>
+                <AddLBody>
+                    <form className="form">
+                        <div className="form_group">
+                            <div className="input_icon">
+                                <NameIcon />
+                            </div>
+                            <div className="form_input">
+                                <input type="text" placeholder="nombre" required />
+                            </div>
                         </div>
-                        <div className="form_input">
-                            <input type="text" placeholder="nombre" required />
+                        <div className="form_group">
+                            <div className="input_icon">
+                                <EmailIcon />
+                            </div>
+                            <div className="form_input">
+                                <input type="email" placeholder="e-mail" required />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form_group">
-                        <div className="input_icon">
-                            <EmailIcon />
+                        <div className="form_group">
+                            <div className="input_icon">
+                                <PhoneIcon />
+                            </div>
+                            <div className="form_input">
+                                <input type="tel" placeholder="celular" required />
+                            </div>
                         </div>
-                        <div className="form_input">
-                            <input type="email" placeholder="e-mail" required />
+                        <div className="form_group">
+                            <div className="input_icon">
+                                <DirectionIcon />
+                            </div>
+                            <div className="form_input">
+                                <input type="tel" placeholder="domicilio" required />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form_group">
-                        <div className="input_icon">
-                            <PhoneIcon />
-                        </div>
-                        <div className="form_input">
-                            <input type="tel" placeholder="celular" required />
-                        </div>
-                    </div>
-                    <div className="form_group">
-                        <div className="input_icon">
-                            <DirectionIcon />
-                        </div>
-                        <div className="form_input">
-                            <input type="tel" placeholder="domicilio" required />
-                        </div>
-                    </div>
-                    <div className="btns_in_ex">
-                        <button type="button">
-                            <img className="icon" src="https://i.ibb.co/2PYkvfv/parado.png" alt="interno" />
-                            interno
+                        <div className="btns_in_ex">
+                            <button type="button">
+                                <img className="icon" src="https://i.ibb.co/2PYkvfv/parado.png" alt="interno" />
+                                interno
                         </button>
-                        <button type="button">
-                            <img className="icon" src="https://i.ibb.co/nR8cNSt/run.png" alt="externo" />
-                            externo
+                            <button type="button">
+                                <img className="icon" src="https://i.ibb.co/nR8cNSt/run.png" alt="externo" />
+                                externo
                         </button>
-                    </div>
-                    <div className="btns_bot">
-                        <button type="submit">
-                            enviar
+                        </div>
+                        <div className="btns_bot">
+                            <button type="submit">
+                                enviar
                         </button>
-                        <button type="button">
-                            cancelar
+                            <button onClick={()=>Router.back()} type="button">
+                                cancelar
                         </button>
-                    </div>
-                </form>
-            </AddLBody>
-        </AddLContainer>
+                        </div>
+                    </form>
+                </AddLBody>
+            </AddLContainer>
+        </LayoutViews>
     )
 }
 
@@ -187,7 +191,7 @@ const AddLBody = styled.div`
 const AddLContainer = styled.div`
   width:700px;
   position:relative;
-  margin: 100px auto 25px auto;
+  margin: 80px auto 25px auto;
   @media (max-width: 750px) {
     width:100%;
     margin-top:30px;

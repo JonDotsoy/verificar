@@ -28,6 +28,7 @@ const Header = styled.div`
   background:#EB780E;
   color:rgba(255,255,255,.7);
   padding:2rem 1rem 3rem 1rem;
+  position:relative;
    .title{
     text-transform:uppercase;
     text-align:center;

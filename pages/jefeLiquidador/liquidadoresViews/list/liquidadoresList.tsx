@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import Router from 'next/router';
 
-
-export default ({hideMainSection=()=>{}}) => {
+export default () => {
+  const goPerfilLiquidador = () => {
+    Router.push('/jefeLiquidador/liquidadoresViews/liquidadorDetail');
+  }
   return (
     <LiquidadoresList>
       <div className="t_items_header">
@@ -20,7 +23,7 @@ export default ({hideMainSection=()=>{}}) => {
         <div className="t_items_info">
           {
             lItems.map((item, index) =>
-              <div key={index} onClick={()=>hideMainSection()}  className="t_items_taller">
+              <div key={index} onClick={()=>goPerfilLiquidador()}  className="t_items_taller">
                 <div className="t_item_taller">
                   <div className="item_avatar">
                     <img className="item_avatar" src={item.avatar} alt={item.liquidador} />
