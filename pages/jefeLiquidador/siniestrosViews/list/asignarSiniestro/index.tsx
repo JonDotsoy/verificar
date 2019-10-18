@@ -1,75 +1,82 @@
 import React from "react";
 import styled from "styled-components";
 import SearchIcon from "../../../../../libs/components/icons/BaselineSearch.component";
+import Router from 'next/router';
+import LayoutViews from "../../../../../libs/components/layoutViews";
 
-
-
-interface PropsComp{
-    handleSetGoAsignarS(condition:boolean): any;
-}
-
-export default ({ handleSetGoAsignarS  }:PropsComp) => {
+export default () => {
+    const addLiquidador = () => {
+        Router.push('/jefeLiquidador/siniestros');
+    }
     return (
-        <>
-            <Header>
-                <h2 className="title">asignar siniestro {siniestroName} a:</h2>
-                <InputSearch >
-                    <input className="input_form" name="search" type="text" placeholder="BUSCAR liquidador" />
-                    <div className="search_icon">
-                        <SearchIcon />
+        <LayoutViews user="jefe">
+            <DirectionCenter>
+                <Header>
+                    <h2 className="title">asignar siniestro {siniestroName} a:</h2>
+                    <InputSearch >
+                        <input className="input_form" name="search" type="text" placeholder="BUSCAR liquidador" />
+                        <div className="search_icon">
+                            <SearchIcon />
+                        </div>
+                    </InputSearch >
+                </Header>
+                <LiquidadoresList>
+                    <div className="items_header">
+                        <div className="items_titles">
+                            {
+                                lItemsTitle.map((item, index) =>
+                                    <div key={index} className="items_title">
+                                        <h4>{item}</h4>
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
-                </InputSearch >
-            </Header>
-            <LiquidadoresList>
-                <div className="items_header">
-                    <div className="items_titles">
-                        {
-                            lItemsTitle.map((item, index) =>
-                                <div key={index} className="items_title">
-                                    <h4>{item}</h4>
-                                </div>
-                            )
-                        }
-                    </div>
-                </div>
-                <div className="items_container">
-                    <div className="items_info">
-                        {
-                            lItems.map((item, index) =>
-                                <div onClick={()=>handleSetGoAsignarS(false)} key={index} className="items">
-                                    <div className="item">
-                                        <div className="item_avatar">
-                                            <img className="item_avatar" src={item.avatar} alt={item.liquidador} />
+                    <div className="items_container">
+                        <div className="items_info">
+                            {
+                                lItems.map((item, index) =>
+                                    <div onClick={() => addLiquidador()} key={index} className="items">
+                                        <div className="item">
+                                            <div className="item_avatar">
+                                                <img className="item_avatar" src={item.avatar} alt={item.liquidador} />
+                                            </div>
+                                        </div>
+                                        <div className="item">
+                                            <h3 className="name">{item.liquidador}</h3>
+                                        </div>
+                                        <div className="item email">
+                                            {item.email}
+                                        </div>
+                                        <div className="item phone">
+                                            +{item.phone}
+                                        </div>
+                                        <div className="item siniestros">
+
+                                            {item.siniestros}
+                                        </div>
+                                        <div className="item tipo">
+                                            {item.tipo}
                                         </div>
                                     </div>
-                                    <div className="item">
-                                        <h3 className="name">{item.liquidador}</h3>
-                                    </div>
-                                    <div className="item email">
-                                        {item.email}
-                                    </div>
-                                    <div className="item phone">
-                                        +{item.phone}
-                                    </div>
-                                    <div className="item siniestros">
-
-                                        {item.siniestros}
-                                    </div>
-                                    <div className="item tipo">
-                                        {item.tipo}
-                                    </div>
-                                </div>
-                            )
-                        }
+                                )
+                            }
 
 
+                        </div>
                     </div>
-                </div>
-            </LiquidadoresList>
-        </>
+                </LiquidadoresList>
+            </DirectionCenter>
+        </LayoutViews>
     )
 }
-
+const DirectionCenter = styled.div`
+    width:90%;
+    margin:25px auto;
+    @media(max-width:780px){
+      width:100%;
+    }
+`;
 
 const LiquidadoresList = styled.div`
 min-width:775px;

@@ -1,14 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import InputS from "../../../../libs/components/inputSearch";
+//import InputS from "../../../../libs/components/inputSearch";
 import ViewHeaderBox from "../../../../libs/components/viewHeaderBox";
+import SearchSelect from "./search";
 
 export default () => {
   return (
     <ViewHeaderBox>
 
-      <InputS />
-      <SelectList>
+      <SearchSelect />
+     
+    </ViewHeaderBox>
+  )
+}
+
+
+/*
+<InputS />
+ <SelectList>
         <select defaultValue={selectOptions[0]}>
           {
             selectOptions.map((option,index) => 
@@ -17,12 +26,7 @@ export default () => {
           }
         </select>
       </SelectList>
-    </ViewHeaderBox>
-  )
-}
-
-
-
+*/
 const SelectList = styled.div`
     margin:0 auto 0 auto;
     max-width:400px;
