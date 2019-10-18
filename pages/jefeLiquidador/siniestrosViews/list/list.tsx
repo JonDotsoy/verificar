@@ -1,16 +1,20 @@
 import React from "react";
+import Router from 'next/router';
 import styled from "styled-components";
 import LiquidadorIcon from "../../../../libs/components/icons/BaselineFace24px.component";
 import CarIcon from "../../../../libs/components/icons/CarOfHatchback.component";
 import DespachadoIcon from "../../../../libs/components/icons/BaselineTimeline.compoent";
 
 
-interface PropsComp{
-  handleMainSection(condition:boolean): any;
-  handleSetGoAsignarS(condition:boolean):any;
-}
 
-export default ({handleSetGoAsignarS,handleMainSection}:PropsComp) => {
+
+export default () => {
+  const goAddLiquidador = () => {
+    Router.push('/jefeLiquidador/siniestrosViews/list/asignarSiniestro');
+  }
+  const goLiquidador = () => {
+    Router.push('/jefeLiquidador/siniestrosViews/perfilLiquidador');
+  }
   return (
     <MainContainer>
       <ItemsHeader>
@@ -36,7 +40,7 @@ export default ({handleSetGoAsignarS,handleMainSection}:PropsComp) => {
                   <div className="item liquidador">
                     {
                       item.liquidador ?
-                        <div onClick={()=>handleMainSection(false)} className="name_container">
+                        <div onClick={() => goLiquidador()} className="name_container">
                           <div className="icon">
                             <LiquidadorIcon />
                           </div>
@@ -45,7 +49,7 @@ export default ({handleSetGoAsignarS,handleMainSection}:PropsComp) => {
                           </div>
                         </div>
                         :
-                        <button onClick={()=>handleSetGoAsignarS(true)} type="button">
+                        <button onClick={() => goAddLiquidador()} type="button">
                           agregar liquidador
                         </button>
                     }

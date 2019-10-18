@@ -1,31 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import SHeader from "./header";
 import List from "./list";
-import AsignarSiniestro from "./asignarSiniestro";
 
 
-interface PropsComp{
-    handleMainSection(condition:boolean): any;
-}
 
-export default ({handleMainSection}:PropsComp) => {
-    const [goAsignarS, setGoAsignarS] = useState(false);
-    const handleSetGoAsignarS = (condition:boolean) =>  setGoAsignarS(condition);
-
+export default () => {
 
     return (
         <LContainer>
-            {
-                goAsignarS ?
-                    <AsignarSiniestro handleSetGoAsignarS={handleSetGoAsignarS} />
-                    :
-                    <>
-                        <SHeader />
-                        <List handleMainSection={handleMainSection} handleSetGoAsignarS={handleSetGoAsignarS} />
-                    </>
-            }
-
+            <SHeader />
+            <List />
         </LContainer>
     )
 }
