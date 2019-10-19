@@ -3,6 +3,8 @@ import styled from "styled-components";
 import SearchIcon from "../icons/BaselineSearch.component";
 
 interface InputProps {
+    value?:string;
+    handleOnChange?(val?:any):void;
     stylesInput?: object,
     placeholder?: string,
     stylesContainer?:object

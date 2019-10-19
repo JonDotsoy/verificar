@@ -3,12 +3,13 @@ import styled from "styled-components";
 import List from "./list";
 import InputS from "../../../../libs/components/inputSearch";
 import LayoutViews from "../../../../libs/components/layoutViews";
-import Nav from "../nav";
+import NavViews from "../../../../libs/components/navViews";
+import navData from "../navData";
 
 export default () => {
   return (
     <LayoutViews user="jefe">
-      <Nav />
+       <NavViews data={navData} classCss={"max-width:350px;margin:10px auto 15px auto;"} />
       <InputS
         stylesContainer={{ background: "#EB780E" }}
         placeholder={"buscar siniestro"}

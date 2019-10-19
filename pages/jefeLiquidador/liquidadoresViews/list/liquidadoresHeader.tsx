@@ -15,7 +15,7 @@ export default () => {
           <AddIcon />
           agregar
         </Btn>
-      <InputS />
+      <InputS handleOnChange={()=>null} />
     </ViewHeaderBox>
   )
 }

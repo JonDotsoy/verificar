@@ -4,7 +4,7 @@ import Router from 'next/router';
 
 export default () => {
   const goPerfilLiquidador = () => {
-    Router.push('/jefeLiquidador/liquidadoresViews/liquidadorDetail');
+    Router.push('/jefeLiquidador/liquidadoresViews/perfilLiquidador');
   }
   return (
     <LiquidadoresList>
