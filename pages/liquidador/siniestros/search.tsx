@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import ArrowDropDownComponent from '../../../libs/components/icons/ArrowDropDown.component';
 import classNames from 'classnames';
 import { makeSampleValues } from '../../../libs/S';
+import SearchSelect from "../../../libs/components/inputSelect";
 
 const Container = styled.div`
   flex-grow: 1;
@@ -284,21 +285,7 @@ export default () => {
 
         <ContainerSeaarch>
 
-          <ContentSearch>
-            <div className={classNames('content-search', { 'filter-selected': filterByProperty })}>
-
-              <label htmlFor={inputSearch.current ? inputSearch.current.id : undefined}><span>{filterByProperty}</span></label>
-              <input id="input-search" ref={inputSearch} className="search" type="text" data-filter-prop={filterByProperty} placeholder={placeHolderInputSearch} onFocus={focusInputToSearch} />
-              <button onClick={clickBtnToggle} className="btnSelect"><ArrowDropDownComponent className={classNames({ revert: dropDownlSelecctorSeachOpen })}></ArrowDropDownComponent></button>
-              <div className={classNames("toggle-list", { visible: dropDownlSelecctorSeachOpen })}>
-                <div onClick={clickBtnSelect('ID')} className="item"><button>ID</button></div>
-                <div onClick={clickBtnSelect('Cliente')} className="item"><button>Cliente</button></div>
-                <div onClick={clickBtnSelect('Marca')} className="item"><button>Marca</button></div>
-                <div onClick={clickBtnSelect('Placa')} className="item"><button>Placa</button></div>
-              </div>
-
-            </div>
-          </ContentSearch>
+            <SearchSelect  handleOnChange={()=>null} />
 
           <ContentTable>
             <TableResultSearch>

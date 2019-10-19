@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Ui from "./ui";
 import LayoutViews from "../../../../libs/components/layoutViews";
-import Nav from "../nav";
+import NavViews from "../../../../libs/components/navViews";
+import navData from "../navData";
 
 export default () => {
     return (
         <LayoutViews user="jefe">
             <DirectionCenter>
-                <Nav />
+                <NavViews data={navData} />
                 <Ui />
             </DirectionCenter>
         </LayoutViews>

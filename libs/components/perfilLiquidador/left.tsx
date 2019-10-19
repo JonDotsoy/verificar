@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import EditIcon from "../../../../libs/components/icons/BaselineBuild.component";
+import EditIcon from "../icons/BaselineBuild.component";
 
-export default () => {
+interface PropsComp {
+    info:any;
+}
+
+
+export default ({info}:PropsComp) => {
     return (
         <Left>
             <h3 className="title">perfil liquidador</h3>
@@ -137,12 +142,3 @@ background:#CB6000;
 }
 
 `;
-
-const info = {
-    name: "juan jose araneda",
-    avatar: "https://i.ibb.co/ZY42zr4/user-photo.jpg",
-    sCerrados: 125,
-    sActuales: 50,
-    pSinRevisar: 5,
-    pEnReparacion: 44
-}

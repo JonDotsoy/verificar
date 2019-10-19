@@ -1,14 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import BackIcon from "../../../../libs/components/icons/ArrowBack.component";
-import NextIcon from "../../../../libs/components/icons/ArrowBack.component";
-import EmailIcon from "../../../../libs/components/icons/BaselineMail.component";
-import PhoneIcon from "../../../../libs/components/icons/BaselineStayPrimaryPortrait24px.component";
-import RelojIcon from "../../../../libs/components/icons/Icons8Velocimetro.component";
-import MuyBuenoIcon from "../../../../libs/components/icons/BaselineFace24px.component";
-import EditIcon from "../../../../libs/components/icons/BaselineBuild.component";
+import BackIcon from "../icons/ArrowBack.component";
+import NextIcon from "../icons/ArrowBack.component";
+import EmailIcon from "../icons/BaselineMail.component";
+import PhoneIcon from "../icons/BaselineStayPrimaryPortrait24px.component";
+import RelojIcon from "../icons/Icons8Velocimetro.component";
+import MuyBuenoIcon from "../icons/BaselineFace24px.component";
+import EditIcon from "../icons/BaselineBuild.component";
 
-export default () => {
+
+
+interface PropsComp {
+    info:any;
+}
+
+
+
+
+export default ({info}:PropsComp) => {
     const handleIconSatisfaccion = (text: string) => {
         switch (text) {
             case "Muy bueno":
@@ -199,10 +208,3 @@ const Right = styled.div`
 `;
 
 
-const info = {
-    name: "juan jose araneda",
-    correo: "juanjose.a@seguros.cl",
-    telefono: "56 9 9740999",
-    tiempoPPrp: 5,
-    satisfaccion: "Muy bueno"
-}
