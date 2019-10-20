@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import Container from '../Container';
+import NavBarLiquidador from '../Navbar/NavBarLiquidador.component';
 import NavBarJefeLiquidador from '../Navbar/NavBarJefeLiquidador';
 import ContainerMenuLateralJefeLiquidadorComponent from '../MenuLateral/ContainerMenuLateralJefeLiquidador.component';
 import MenuNavComponent from "../MenuLateral/ContainerMenuLateralLiquidador.component";
@@ -9,28 +10,43 @@ import MenuNavComponent from "../MenuLateral/ContainerMenuLateralLiquidador.comp
 interface PropsComp {
     user?: string;
     children?: any;
-    
+
 }
 
 export default ({ user, children }: PropsComp) => {
-    const renderNav = () => {
+    const renderMenu = () => {
         if (user && user === "jefe") {
-            return <ContainerMenuLateralJefeLiquidadorComponent />;
+            return (<>
+                <NavBarJefeLiquidador></NavBarJefeLiquidador>
+                <Container>
+                    <ContainerMenuLateralJefeLiquidadorComponent />
+                    <ContainerChildren>
+                        {children}
+                    </ContainerChildren>
+
+                </Container>
+
+            </>
+            );
         } else {
-            return <MenuNavComponent />;
+            return (
+                <>
+                    <NavBarLiquidador></NavBarLiquidador>
+                    <Container>
+                        <MenuNavComponent />
+                        <ContainerChildren>
+                            {children}
+                        </ContainerChildren>
+                    </Container>
+                </>
+            );
         }
     }
-    return <>
-        <NavBarJefeLiquidador></NavBarJefeLiquidador>
 
-        <Container>
-            {renderNav()}
-            <ContainerChildren>
-                {children}
-            </ContainerChildren>
-
-        </Container>
-    </>;
+    return renderMenu();
+        
+        
+    
 }
 
 const ContainerChildren = styled.div`
