@@ -1,9 +1,7 @@
 
-import WarningIcon from "../../../libs/components/icons/AlertHandDrawnSymbol.component";
-import PresuIcon from "../../../libs/components/icons/FoldedNewspaper.component";
-import UserIcon from "../../../libs/components/icons/BaselineFace24px.component";
-
-
+import WarningIcon from "./components/icons/AlertHandDrawnSymbol.component";
+import PresuIcon from "./components/icons/FoldedNewspaper.component";
+import UserIcon from "./components/icons/BaselineFace24px.component";
 
 export default [
     {

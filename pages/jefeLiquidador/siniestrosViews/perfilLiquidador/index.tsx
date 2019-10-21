@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import LayoutViews from "../../../../libs/components/layoutViews";
 import NavViews from "../../../../libs/components/navViews";
-import navData from "../navData";
+import navData from "../../../../libs/jefeLiquidadorSiniestrosViewsNavData";
 import PerfilLiquidador from "../../../../libs/components/perfilLiquidador";
 
 export default () => {

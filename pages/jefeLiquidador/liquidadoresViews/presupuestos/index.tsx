@@ -4,7 +4,7 @@ import styled from "styled-components";
 import List from "./list";
 import InputS from "../../../../libs/components/inputSearch";
 import NavViews from "../../../../libs/components/navViews";
-import navData from "../navData";
+import navData from "../../../../libs/jefeLiquidadorLiquidadoresViewsNavData";
 
 export default () => {
   return (

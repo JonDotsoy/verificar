@@ -1,12 +1,12 @@
 
-import SiniestroIcon from "../../../libs/components/icons/AlertHandDrawnSymbol.component";
-import TrabajoIcon from "../../../libs/components/icons/CustomerSupport.component";
-import UserIcon from "../../../libs/components/icons/BaselineFace24px.component";
-import PolizaIcon from "../../../libs/components/icons/Insurance.component";
-import VehiculoIcon from "../../../libs/components/icons/CarOfHatchback.component";
-import TallerIcon from "../../../libs/components/icons/Carmechanic89096.component";
-import PresupuestoIcon from "../../../libs/components/icons/FoldedNewspaper.component";
-import MultimediaIcon from "../../../libs/components/icons/Gallery.component";
+import SiniestroIcon from "./components/icons/AlertHandDrawnSymbol.component";
+import TrabajoIcon from "./components/icons/CustomerSupport.component";
+import UserIcon from "./components/icons/BaselineFace24px.component";
+import PolizaIcon from "./components/icons/Insurance.component";
+import VehiculoIcon from "./components/icons/CarOfHatchback.component";
+import TallerIcon from "./components/icons/Carmechanic89096.component";
+import PresupuestoIcon from "./components/icons/FoldedNewspaper.component";
+import MultimediaIcon from "./components/icons/Gallery.component";
 
 
 

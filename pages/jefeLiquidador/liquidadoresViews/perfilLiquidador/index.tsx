@@ -1,7 +1,7 @@
 import React from "react";
 import LayoutViews from "../../../../libs/components/layoutViews";
 import NavViews from "../../../../libs/components/navViews";
-import navData from "../navData";
+import navData from "../../../../libs/jefeLiquidadorLiquidadoresViewsNavData";
 import PerfilLiquidador from "../../../../libs/components/perfilLiquidador";
 
 export default () => {

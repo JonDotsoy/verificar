@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Ui from "./ui";
 import LayoutViews from "../../../../libs/components/layoutViews";
 import NavViews from "../../../../libs/components/navViews";
-import navData from "../navData";
+import navData from "../../../../libs/jefeLiquidadorSiniestrosViewsNavData";
 
 export default () => {
     return (
