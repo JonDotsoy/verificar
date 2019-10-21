@@ -5,14 +5,11 @@ import CarIcon from "../../../libs/components/icons/CarOfHatchback.component";
 import PriceIcon from "../../../libs/components/icons/BaselineMonetizationOn.component";
 import InputS from "../../../libs/components/inputSearch";
 import ViewHeaderBox from "../../../libs/components/viewHeaderBox";
-
+import Link from 'next/link';
 
 
 
 export default () => {
-  const goPresupuesto = () => {
-    Router.push('/liquidador/presupuestoView/presupuesto');
-  }
   return (
     <PContainer>
       <ViewHeaderBox title="presupuestos asignados">
@@ -34,46 +31,48 @@ export default () => {
           <div className="t_items_info">
             {
               tItemsPresupuesto.map((item, index) =>
-                <div onClick={() => goPresupuesto()} key={index} className="t_items">
-                  <div className="t_item">
-                    <h3 className="taller_name light_font">{item.id}</h3>
-                  </div>
-                  <div className="t_item">
-                    <span className="taller_entrega">
-                      {item.fecha}
-                    </span>
-                  </div>
-                  <div className="t_item">
-                    <h3 className="taller_name">{item.taller}</h3>
-                  </div>
-                  <div className="t_item">
-                    <div className="taller_car_icon">
-                      <CarIcon />
+                <Link key={index} href="/liquidador/siniestros/presupuesto">
+                  <a className="t_items">
+                    <div className="t_item">
+                      <h3 className="taller_name light_font">{item.id}</h3>
                     </div>
-                    <span className="taller_entrega light_font">
-                      {item.vehiculo}
-                    </span>
-
-                  </div>
-                  <div className="t_item">
-                    <span className="taller_entrega">
-                      {item.deducible}
-                    </span>
-                  </div>
-                  <div className="t_item">
-                    <div className="taller_warning_icon">
-                      <PriceIcon />
+                    <div className="t_item">
+                      <span className="taller_entrega">
+                        {item.fecha}
+                      </span>
                     </div>
-                    <span className="item_monto">
-                      {item.monto}
-                    </span>
-                  </div>
-                  <div className="t_item taller_entrega">
+                    <div className="t_item">
+                      <h3 className="taller_name">{item.taller}</h3>
+                    </div>
+                    <div className="t_item">
+                      <div className="taller_car_icon">
+                        <CarIcon />
+                      </div>
+                      <span className="taller_entrega light_font">
+                        {item.vehiculo}
+                      </span>
 
-                    {item.estado}
+                    </div>
+                    <div className="t_item">
+                      <span className="taller_entrega">
+                        {item.deducible}
+                      </span>
+                    </div>
+                    <div className="t_item">
+                      <div className="taller_warning_icon">
+                        <PriceIcon />
+                      </div>
+                      <span className="item_monto">
+                        {item.monto}
+                      </span>
+                    </div>
+                    <div className="t_item taller_entrega">
 
-                  </div>
-                </div>
+                      {item.estado}
+
+                    </div>
+                  </a>
+                </Link>
               )
             }
 
@@ -162,6 +161,7 @@ const PItems = styled.div`
  }
   .t_items{
   transition:all .3s;
+  text-decoration: none;
   display:grid;
   grid-template-columns:repeat(7, 1fr);
   padding:1rem 0;
