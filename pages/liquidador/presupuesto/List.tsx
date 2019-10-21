@@ -1,5 +1,5 @@
 import React from "react";
-import Router from 'next/router';
+
 import styled from "styled-components";
 import CarIcon from "../../../libs/components/icons/CarOfHatchback.component";
 import PriceIcon from "../../../libs/components/icons/BaselineMonetizationOn.component";
@@ -9,10 +9,8 @@ import ViewHeaderBox from "../../../libs/components/viewHeaderBox";
 
 
 
-export default () => {
-  const goPresupuesto = () => {
-    Router.push('/liquidador/presupuestoView/presupuesto');
-  }
+export default ({ goDetails = () => { } }) => {
+
   return (
     <PContainer>
       <ViewHeaderBox title="presupuestos asignados">
@@ -34,7 +32,7 @@ export default () => {
           <div className="t_items_info">
             {
               tItemsPresupuesto.map((item, index) =>
-                <div onClick={() => goPresupuesto()} key={index} className="t_items">
+                <div onClick={() => goDetails()} key={index} className="t_items">
                   <div className="t_item">
                     <h3 className="taller_name light_font">{item.id}</h3>
                   </div>
@@ -69,9 +67,9 @@ export default () => {
                     </span>
                   </div>
                   <div className="t_item taller_entrega">
-
-                    {item.estado}
-
+                   
+                      {item.estado}
+                    
                   </div>
                 </div>
               )
@@ -90,7 +88,7 @@ export default () => {
 
 
 const PContainer = styled.div`
-  width:95%;
+  width:80%;
   margin: 25px auto;
   @media(max-width:750px){
     width:100%;
