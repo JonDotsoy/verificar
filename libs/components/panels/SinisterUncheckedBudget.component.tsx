@@ -54,7 +54,7 @@ export default ({
     <PanelRBody>
 
       <Row>
-        <Col>
+        <Col style={{ flex: 1 }}>
 
           <BarGraphComponent></BarGraphComponent>
 
