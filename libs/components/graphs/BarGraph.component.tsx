@@ -46,22 +46,18 @@ const sampleData = [
   {
     dia: 11,
     presupuesto: 8,
-    presupuestoColor: 'red',
   },
   {
     dia: 12,
     presupuesto: 7,
-    presupuestoColor: 'red',
   },
   {
     dia: 13,
     presupuesto: 6,
-    presupuestoColor: 'red',
   },
   {
     dia: 14,
     presupuesto: 5,
-    presupuestoColor: 'red',
   },
 ];
 
@@ -90,6 +86,8 @@ export default () => {
         legendPosition: 'middle',
         legendOffset: 32
       }}
+      colors={d => d.data.dia > 9 ? 'grey' : 'orange'}
+      padding={.4}
     />
   </Style>;
 }
