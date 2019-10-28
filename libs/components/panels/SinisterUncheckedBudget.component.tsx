@@ -20,7 +20,7 @@ const ContentTable = styled.div`
 
 const ContentTitle = styled.div`
   min-width: 200px;
-  background-color: rgb(248, 0, 7);
+  background-color: grey;
   color: white;
   text-transform: uppercase;
   border: solid 1px black;

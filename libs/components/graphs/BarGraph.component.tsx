@@ -86,7 +86,7 @@ export default () => {
         legendPosition: 'middle',
         legendOffset: 32
       }}
-      colors={d => d.data.dia > 9 ? 'grey' : 'orange'}
+      colors={d => d.data.dia > 9 ? 'grey' : 'rgb(254, 154, 1)'}
       padding={.4}
     />
   </Style>;

@@ -35,13 +35,14 @@ const ContentTable = styled.div`
 
 const ContentTitle = styled.div`
   min-width: 200px;
-  background-color: rgb(34,255,6);
+  background-color: rgb(254, 154, 1);
   text-transform: uppercase;
   border: solid 1px black;
   font-weight: 600;
   text-align: center;
   padding: 5px;
   margin-bottom: 2px;
+  color: white;
 `;
 
 const Table = styled(GridTable)`
@@ -71,7 +72,7 @@ export default ({
   ...props
 }) =>
   <PanelRContainer {...props}>
-    <PanelRHeader title={'Presupuesto'}></PanelRHeader>
+    <PanelRHeader style={{ backgroundColor: 'rgb(254, 154, 1)' }} title={'Presupuesto'}></PanelRHeader>
     <PanelRBody>
 
       <Row style={{

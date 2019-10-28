@@ -38,7 +38,11 @@ const PanelRHeaderStyled = styled.div`
   }
 `;
 
-export const PanelRHeader = ({ title = '[title]', ...props }: { title: string }) => <PanelRHeaderStyled {...props}>
+type InferProps<T, A = any> = T extends (props: infer A) => any ? A : any;
+
+type PropsPanelRHeaderStyled = InferProps<typeof PanelRHeaderStyled>;
+
+export const PanelRHeader = ({ title = '[title]', ...props }: PropsPanelRHeaderStyled & { title: string }) => <PanelRHeaderStyled {...props}>
   <h1>{title}</h1>
 </PanelRHeaderStyled>;
 
