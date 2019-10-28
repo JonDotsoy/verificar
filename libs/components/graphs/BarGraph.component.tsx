@@ -62,7 +62,7 @@ const sampleData = [
 ];
 
 const Style = styled.div`
-  height: 400px;
+  height: 300px;
 `;
 
 export default () => {
