@@ -4,6 +4,7 @@ import { Row, Col, GridTable, RowTable, CellTable } from '../grid';
 import styled from 'styled-components';
 import PieGraphComponent from '../graphs/PieGraph.component';
 import Link from 'next/link';
+import { ResponsivePie, PieDatum } from '@nivo/pie';
 
 const BtnFilter = styled.button`
   text-transform: uppercase;
@@ -16,7 +17,7 @@ const BtnFilter = styled.button`
   margin-bottom: 10px;
   
   &.actived {
-    background-color: rgb(165,197,88);
+    background-color: rgb(254, 154, 1);
   }
 `;
 
@@ -68,6 +69,40 @@ const ColorView = styled.div`
   background-color: ${({ color = 'rgb(252,255,13)' }) => color};
 `;
 
+const sampleDataPie = [
+  {
+    label: 'Rechazados',
+    bg: 'rgb(116, 111, 112)',
+    value: 2,
+  },
+  {
+    label: 'Sin Revisar',
+    bg: 'rgb(190,190,190)',
+    value: 7,
+  },
+  {
+    label: 'Aprovados P',
+    bg: 'rgb(254,187,6)',
+    value: 26,
+  },
+  {
+    label: 'Aprovados',
+    bg: 'rgb(251,138,8)',
+    value: 42,
+  },
+].map((d, i, dts) => ({
+  ...d,
+  id: `${d.label} ${d.value} Vehiculos ${((d.value / dts.reduce((a, b) => a + b.value, 0)) * 100).toFixed(0)}%`,
+}));
+
+const StyleBoxPie = styled.div`
+  svg {
+    text {
+      font-size: 14px !important;
+    }
+  }
+`;
+
 export default ({
   ...props
 }) =>
@@ -94,34 +129,43 @@ export default ({
 
           <Row style={{ minWidth: 460 }}>
             <Col>
-
-              <PieGraphComponent></PieGraphComponent>
-            </Col>
-
-            <Col>
-              <GridTable style={{ minWidth: "300px" }} showHead={false}>
-                <RowTable></RowTable>
-                <RowTable>
-                  <CellTable><ColorView color="rgb(252,255,13)"></ColorView></CellTable>
-                  <CellTable>Rechazados</CellTable>
-                  <CellTable>2 vehiculos 10%</CellTable>
-                </RowTable>
-                <RowTable>
-                  <CellTable><ColorView color="rgb(34,255,6)"></ColorView></CellTable>
-                  <CellTable>Sin Revisar</CellTable>
-                  <CellTable>7 vehiculos 22%</CellTable>
-                </RowTable>
-                <RowTable>
-                  <CellTable><ColorView color="rgb(176,176,176)"></ColorView></CellTable>
-                  <CellTable>Aprobados P</CellTable>
-                  <CellTable>26 vehiculos 33%</CellTable>
-                </RowTable>
-                <RowTable>
-                  <CellTable><ColorView color="rgb(251,0,6)"></ColorView></CellTable>
-                  <CellTable>Aprobados</CellTable>
-                  <CellTable>42 vehiculos 35%</CellTable>
-                </RowTable>
-              </GridTable>
+              <StyleBoxPie style={{ position: 'relative', width: 380, height: 150 }}>
+                <ResponsivePie
+                  data={sampleDataPie}
+                  sortByValue={false}
+                  innerRadius={0.7}
+                  enableRadialLabels={false}
+                  enableSlicesLabels={false}
+                  margin={{ right: 230, top: 0, bottom: 0, left: 0 }}
+                  legends={[
+                    {
+                      anchor: 'right',
+                      direction: 'column',
+                      itemHeight: 20,
+                      itemWidth: -10,
+                    },
+                  ]}
+                  colors={d => d.bg as string}
+                />
+                <div style={{
+                  position: 'absolute',
+                  display: 'flex',
+                  zIndex: 1,
+                  left: 0,
+                  top: 0,
+                  width: 150,
+                  height: 150,
+                  justifyItems: 'center',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                  justifyContent: 'center',
+                  flexDirection: 'column',
+                }}>
+                  <div>Presupuestos</div>
+                  <div>{sampleDataPie.reduce((a, b) => a + b.value, 0)} Vehiculos</div>
+                </div>
+              </StyleBoxPie>
+              {/* <PieGraphComponent></PieGraphComponent> */}
             </Col>
 
           </Row>

@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "@nivo/bar": "^0.59.2",
+    "@nivo/pie": "^0.59.1",
     "@zeit/next-sass": "^1.0.1",
     "cd": "^0.3.3",
     "classnames": "^2.2.6",
