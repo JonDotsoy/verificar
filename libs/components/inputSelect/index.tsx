@@ -6,9 +6,10 @@ import ArrowDropDownComponent from '../icons/ArrowDropDown.component';
 interface PropsComp {
   handleOnChange?(val?: any): void;
   value?: string;
+  options: string[];
 }
 
-export default ({ handleOnChange, value }: PropsComp) => {
+export default ({ options }: PropsComp) => {
   const [dropDownlSelecctorSeachOpen, setFocusSearch] = useState(false);
   const [filterByProperty, setFilterByProperty] = useState(undefined as string | undefined);
   const inputSearch = useRef<HTMLInputElement>(null);
@@ -39,10 +40,16 @@ export default ({ handleOnChange, value }: PropsComp) => {
         <input id="input-search" ref={inputSearch} className="search" type="text" data-filter-prop={filterByProperty} placeholder={placeHolderInputSearch} onFocus={focusInputToSearch} />
         <button onClick={clickBtnToggle} className="btnSelect"><ArrowDropDownComponent className={classNames({ revert: dropDownlSelecctorSeachOpen })}></ArrowDropDownComponent></button>
         <div className={classNames("toggle-list", { visible: dropDownlSelecctorSeachOpen })}>
-          <div onClick={clickBtnSelect('ID')} className="item"><button>ID</button></div>
-          <div onClick={clickBtnSelect('Cliente')} className="item"><button>Liquidador</button></div>
-          <div onClick={clickBtnSelect('Marca')} className="item"><button>Marca</button></div>
-          <div onClick={clickBtnSelect('Placa')} className="item"><button>Placa</button></div>
+          {
+            options.map((item, index) =>
+              <div key={index} onClick={clickBtnSelect(item)} className="item">
+                <button>
+                  {item}
+                </button>
+              </div>
+
+            )
+          }
         </div>
 
       </div>
@@ -50,6 +57,8 @@ export default ({ handleOnChange, value }: PropsComp) => {
 
   )
 }
+
+
 
 
 const ContentSearch = styled.div`
@@ -158,3 +167,10 @@ const ContentSearch = styled.div`
     }
   }
 `;
+
+/*
+<div onClick={clickBtnSelect('ID')} className="item"><button>ID</button></div>
+          <div onClick={clickBtnSelect('Cliente')} className="item"><button>Liquidador</button></div>
+          <div onClick={clickBtnSelect('Marca')} className="item"><button>Marca</button></div>
+          <div onClick={clickBtnSelect('Placa')} className="item"><button>Placa</button></div>
+          */
