@@ -285,7 +285,7 @@ export default () => {
 
         <ContainerSeaarch>
 
-            <SearchSelect  handleOnChange={()=>null} />
+            <SearchSelect  options={options} />
 
           <ContentTable>
             <TableResultSearch>
@@ -335,3 +335,11 @@ export default () => {
     </ContainerComponent>
   </>;
 }
+
+
+const options = [
+  "ID",
+  "Cliente",
+  "Marca",
+  "Placa"
+]
