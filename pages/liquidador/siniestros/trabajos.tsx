@@ -93,6 +93,8 @@ const TimeLineCarReparting = styled.div`
     .label {
       text-align: center;
       margin-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
       height: 20px;
       color: rgb(232, 114, 1);
     }
@@ -294,12 +296,12 @@ export default () => {
             <div className="descpt">5 de Agosto</div>
           </div>
           <div className="sectiontimeline lineactive">
-            <div className="label">XXXXX</div>
+            <div className="label">LIQUIDACIÓN DE DAÑOS</div>
             <div className="point"></div>
             <div className="descpt">8 de Agosto</div>
           </div>
           <div className="sectiontimeline lineactive">
-            <div className="label">YYYYY</div>
+            <div className="label">PRESUPUESTO REVISADO</div>
             <div className="point"></div>
             <div className="descpt">15 de Agosto</div>
           </div>
@@ -308,7 +310,7 @@ export default () => {
             <div className="point"></div>
             <figure className="photo-car">
               <img src="https://img.autocosmos.com/noticias/fotos/extralarge/NAZ_42b849e4125c47729c702a4963a158e6.jpg"></img>
-              <figcaption>YYYYYYYYYY XXXXX XXXXX</figcaption>
+              <figcaption>EN REPARACIÓN</figcaption>
             </figure>
           </div>
           <div className="sectiontimeline">
