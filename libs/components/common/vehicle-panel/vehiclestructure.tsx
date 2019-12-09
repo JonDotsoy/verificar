@@ -168,7 +168,7 @@ const filterDetailElm = (idFind: string, children: React.ReactNode) => {
   });
 }
 
-export const GalleryComp: FunctionComponent<{ label: string, className?: string }> = ({ label, className, children }) => {
+export const GalleryComp: FunctionComponent<{ indicator?: boolean, label: string, className?: string }> = ({ indicator = true, label, className, children }) => {
   const images = ([] as React.ReactNode[]).concat(children)
     .map(el => {
       if (React.isValidElement(el) && el.type === 'img') {
@@ -181,18 +181,23 @@ export const GalleryComp: FunctionComponent<{ label: string, className?: string 
     <div className={classNames('content-images', className)}>
       <div className="label">{label}</div>
       <div className="gallery">
-        <button type="button" className="btn-control direction-back">
-          <BaselineArrowBackIosComponent></BaselineArrowBackIosComponent>
-        </button>
-        <button type="button" className="btn-control direction-next">
-          <BaselineArrowBackIosComponent className="revert"></BaselineArrowBackIosComponent>
-        </button>
+        {indicator &&
+          <button type="button" className="btn-control direction-back">
+            <BaselineArrowBackIosComponent></BaselineArrowBackIosComponent>
+          </button>
+        }
+        {indicator &&
+          <button type="button" className="btn-control direction-next">
+            <BaselineArrowBackIosComponent className="revert"></BaselineArrowBackIosComponent>
+          </button>
+        }
         <div className="images">
           {images.map((img, i) =>
             <div key={i} className={classNames('img', { actived: i === 0 })} style={{
               backgroundImage: `url(${JSON.stringify(img.props.src)})`,
             }}></div>
           )}
+          {images.length === 0 && children}
         </div>
       </div>
     </div>

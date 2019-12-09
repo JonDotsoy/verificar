@@ -1,5 +1,6 @@
 import React from 'react';
 import Vehiclestructure, { GalleryComp } from "../../../libs/components/common/vehicle-panel/vehiclestructure";
+import { VehicleDamageIndiator } from '../../../libs/components/VehicleDamageIndiator';
 
 export default () => <Vehiclestructure>
   <div x-sec="title">Siniestro JF7H20</div>
@@ -19,8 +20,8 @@ export default () => <Vehiclestructure>
   </div>
 
   <div x-sec="gallery">
-    <GalleryComp label="Siniestro">
-      <img src="http://2.bp.blogspot.com/-uhmYS2q92ng/Unvvbwg9-0I/AAAAAAAAAJE/M5wodYPJ3qo/s1600/AUTO.png" />
+    <GalleryComp label="Siniestros" indicator={false}>
+      <VehicleDamageIndiator></VehicleDamageIndiator>
     </GalleryComp>
   </div>
   <div x-sec="gallery">

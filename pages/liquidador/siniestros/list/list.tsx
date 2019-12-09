@@ -33,7 +33,7 @@ export default () => {
               items.map((item, index) =>
                 <div key={index} className="items">
                   <div className="item id">
-                    {item.id}
+                    <a href="/liquidador/siniestros/presupuesto">{item.id}</a>
                   </div>
 
                   <div className="item cliente">
@@ -122,6 +122,10 @@ const Items = styled.div`
     font-weight:bold;
     color:#EB780E;
     font-size:20px;
+    a {
+      color:#EB780E;
+      text-decoration:none;
+    }
   }
   .liquidador{
     color:#EB780E;
